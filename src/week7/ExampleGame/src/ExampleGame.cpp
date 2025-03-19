@@ -1,16 +1,5 @@
-﻿// ExampleGame.cpp
-// Finalized submission for Assignment #3: Physics Playground (including bonus)
-// Created: 2025/03/18
-// Author: Your Name
-//
-// This file creates:
-//   • 4 stacks of 9 crates each,
-//   • Brick walls enclosing the world,
-//   • A ground and lamppost with collision geometry,
-//   • Mouse-click projectile spawning (projectile fired in camera’s look direction),
-//   • Collision events from Bullet (for coins, character, walls, etc.),
-//   • A pause state (toggled via key 'P') that freezes physics and suspends updates,
-//   • BONUS: A teeter‐totter prop using a hinge constraint.
+﻿// Finalized submission for Assignment #3: Physics Playground (including bonus)
+
 #include "ExampleGame.h"
 #include "ComponentAnimController.h"
 #include "ComponentCharacterController.h"
@@ -168,9 +157,9 @@ bool ExampleGame::Init() {
      //m_pGameObjectManager->RegisterComponentFactory("GOC_TeeterTotter", TeeterTotter::CreateComponent);
 
     // Initialize Bullet physics.
-    BulletPhysicsManager::CreateInstance("data/As1/physics_materials.xml",
-        "data/shaders/lines.vsh",
-        "data/shaders/lines.fsh");
+    BulletPhysicsManager::CreateInstance("data/As3/physics_materials.xml",
+        "data/As3/shaders/lines.vsh",
+        "data/As3/shaders/lines.fsh");
 
     // --- Create the ground ---
     {
@@ -222,32 +211,32 @@ bool ExampleGame::Init() {
         pSpawner->SetPlayer(m_pCharacter);
         pCoinSpawner->AddComponent(pSpawner);
     }
-
+    /*
     // --- Set up cameras and (optionally) HUD ---
     {
         // Create LookAt camera GameObject.
-        //GameObject* pLookAtCamGO = m_pGameObjectManager->CreateGameObject();
-        //ComponentLookAtCamera* m_pLookAtCam = static_cast<ComponentLookAtCamera*>(ComponentLookAtCamera::CreateComponent(nullptr));
-        //pLookAtCamGO->AddComponent(m_pLookAtCam);
+        GameObject* pLookAtCamGO = m_pGameObjectManager->CreateGameObject();
+        ComponentLookAtCamera* m_pLookAtCam = static_cast<ComponentLookAtCamera*>(ComponentLookAtCamera::CreateComponent(nullptr));
+        pLookAtCamGO->AddComponent(m_pLookAtCam);
         
-       /* Common::SceneCamera* m_pLookAtCam = new Common::SceneCamera(45.0f, 1280.0f / 720.0f, 0.1f, 1000.0f,
-            vec3(0.0f, 65.0f, 70.0f),
-            vec3(0.0f, 0.0f, 0.0f),
-            vec3(0.0f, 1.0f, 0.0f));*/
+       // Common::SceneCamera* m_pLookAtCam = new Common::SceneCamera(45.0f, 1280.0f / 720.0f, 0.1f, 1000.0f,
+         //   vec3(0.0f, 65.0f, 70.0f),
+          //  vec3(0.0f, 0.0f, 0.0f),
+         //   vec3(0.0f, 1.0f, 0.0f));
         
         //ThirdPersonCamera* m_pThirdPersonCam = new ThirdPersonCamera(45.0f, 1280.0f / 720.0f, 0.1f, 1000.0f,
             //vec3(0.0f, 25.0f, 55.0f), 10.0f);
 
 
-        // Create ThirdPerson camera GameObject.
-        //GameObject* pThirdPersonCamGO = m_pGameObjectManager->CreateGameObject();
-        //ComponentThirdPersonCamera* pThirdPersonCam = static_cast<ComponentThirdPersonCamera*>(ComponentThirdPersonCamera::CreateComponent(nullptr));
-        //pThirdPersonCamGO->AddComponent(pThirdPersonCam);
+         //Create ThirdPerson camera GameObject.
+        GameObject* pThirdPersonCamGO = m_pGameObjectManager->CreateGameObject();
+        ComponentThirdPersonCamera* pThirdPersonCam = static_cast<ComponentThirdPersonCamera*>(ComponentThirdPersonCamera::CreateComponent(nullptr));
+        pThirdPersonCamGO->AddComponent(pThirdPersonCam);
 
         // Create a camera switcher to toggle cameras (using key 'C').
-        //GameObject* pCamSwitcherGO = m_pGameObjectManager->CreateGameObject();
-        //ComponentCameraSwitcher* pCamSwitcher = static_cast<ComponentCameraSwitcher*>(ComponentCameraSwitcher::CreateComponent(nullptr));
-        //pCamSwitcherGO->AddComponent(pCamSwitcher);
+        GameObject* pCamSwitcherGO = m_pGameObjectManager->CreateGameObject();
+        ComponentCameraSwitcher* pCamSwitcher = static_cast<ComponentCameraSwitcher*>(ComponentCameraSwitcher::CreateComponent(nullptr));
+        pCamSwitcherGO->AddComponent(pCamSwitcher);
 
         // (Optional) Create HUD with a pause/resume button.
         // If your HUD component supports a SetPauseCallback method, register it here.
@@ -256,7 +245,7 @@ bool ExampleGame::Init() {
         // pHUDComponent->SetPauseCallback([this]() { TogglePause(); });
         // pHUD->AddComponent(pHUDComponent);
     }
-
+    */
 #if defined(_WIN32)
     // Export objects to Lua.
     GameObjectManager::ExportToLua();
@@ -365,7 +354,7 @@ void ExampleGame::CreateWalls() {
             "data/As1/props/",
             "data/As1/shaders/textured.vsh",
             "data/As1/shaders/textured.fsh");
-        pWall->AddComponent(pWallMesh);
+        //pWall->AddComponent(pWallMesh);
         pWall->GetTransform().SetTranslation(wall.position);
         pWall->GetTransform().SetScale(wall.scale);
         ComponentRigidBody* pWallRB = new ComponentRigidBody();
@@ -436,6 +425,7 @@ void ExampleGame::CreateProjectile() {
         "data/As1/props/",
         "data/shaders/textured.vsh",
         "data/shaders/textured.fsh");
+
     pProjectile->AddComponent(pProjMesh);
     ComponentRigidBody* pProjRB = new ComponentRigidBody();
     pProjectile->AddComponent(pProjRB);
