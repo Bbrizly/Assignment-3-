@@ -1,0 +1,6 @@
+<!-- hud.xml -->
+<GameObject>
+    <GOC_HUD>
+    <Param name="playerObjectName" value="GameObject_2"/>
+  </GOC_HUD>
+</GameObject>

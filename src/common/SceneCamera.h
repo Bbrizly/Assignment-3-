@@ -53,6 +53,16 @@ namespace Common
 		const glm::mat4& GetProjectionMatrix() const;
 		virtual const glm::mat4& GetViewMatrix() const;
 
+		glm::vec3 GetLookDirection()
+		{
+			return (glm::normalize(m_vTarget - m_vPos));
+		}
+			
+		glm::vec3 GetPosition()
+		{
+			return m_vPos;
+		}
+
 		glm::vec3 m_vPos;
 
 	private:

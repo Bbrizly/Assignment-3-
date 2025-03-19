@@ -50,6 +50,60 @@ ComponentAnimController::~ComponentAnimController()
 }
 
 //------------------------------------------------------------------------------
+// Method:    Update
+// Parameter: float p_fDelta
+// Returns:   void
+// 
+// Updates the current animation and looks for a sibling component in the parent
+// GameObject in order to set the animation frame.
+//------------------------------------------------------------------------------
+void ComponentAnimController::Update(float p_fDelta)
+{
+	if (m_pCurrentAnim)
+	{
+		m_fAnimFrame += (p_fDelta * static_cast<float>(m_iAnimSpeed));
+		if(m_fAnimFrame >= static_cast<float>(m_pCurrentAnim->m_iEndFrame))
+		{
+			if (m_pCurrentAnim->m_bLoop)
+			{
+				m_fAnimFrame = static_cast<float>(m_pCurrentAnim->m_iStartFrame);
+			}
+			else
+			{
+				m_fAnimFrame = 0.0f;
+				m_pCurrentAnim = NULL;
+			}
+		}
+
+		// If the animation is still playing, then set the frame on our sibling component
+		if (m_pCurrentAnim)
+		{
+			if (m_pRenderable == nullptr)
+			{
+				// See if we're attached to an object yet. We allow initializing the component before we have a GameObject
+				// so we need to add all the anims here
+				Common::GameObject* pGameObject = this->GetGameObject();
+				ComponentBase* pComponent = pGameObject->GetComponent("GOC_Renderable");
+				if (pComponent)
+				{
+					m_pRenderable = static_cast<ComponentRenderableMesh*>(pComponent);
+					for (auto &animInfo : m_animMap)
+					{
+						m_pRenderable->GetModel()->AddAnimation(animInfo.first, animInfo.second->m_strResource);
+					}
+					m_pRenderable->GetModel()->SetAnim(m_pCurrentAnim->m_strAnimName);
+				}
+			}
+
+			if (m_pRenderable != nullptr)
+			{
+				m_pRenderable->GetModel()->SetAnimFrame(m_fAnimFrame);
+			}
+		}
+	}
+}
+
+//------------------------------------------------------------------------------
 // Method:    CreateComponent
 // Parameter: TiXmlNode * p_pNode
 // Returns:   Common::ComponentBase*
@@ -123,60 +177,6 @@ Common::ComponentBase* ComponentAnimController::CreateComponent(TiXmlNode* p_pNo
 }
 
 //------------------------------------------------------------------------------
-// Method:    Update
-// Parameter: float p_fDelta
-// Returns:   void
-// 
-// Updates the current animation and looks for a sibling component in the parent
-// GameObject in order to set the animation frame.
-//------------------------------------------------------------------------------
-void ComponentAnimController::Update(float p_fDelta)
-{
-	if (m_pCurrentAnim)
-	{
-		m_fAnimFrame += (p_fDelta * static_cast<float>(m_iAnimSpeed));
-		if(m_fAnimFrame >= static_cast<float>(m_pCurrentAnim->m_iEndFrame))
-		{
-			if (m_pCurrentAnim->m_bLoop)
-			{
-				m_fAnimFrame = static_cast<float>(m_pCurrentAnim->m_iStartFrame);
-			}
-			else
-			{
-				m_fAnimFrame = 0.0f;
-				m_pCurrentAnim = NULL;
-			}
-		}
-
-		// If the animation is still playing, then set the frame on our sibling component
-		if (m_pCurrentAnim)
-		{
-			if (m_pRenderable == nullptr)
-			{
-				// See if we're attached to an object yet. We allow initializing the component before we have a GameObject
-				// so we need to add all the anims here
-				Common::GameObject* pGameObject = this->GetGameObject();
-				ComponentBase* pComponent = pGameObject->GetComponent("GOC_Renderable");
-				if (pComponent)
-				{
-					m_pRenderable = static_cast<ComponentRenderableMesh*>(pComponent);
-					for (auto &animInfo : m_animMap)
-					{
-						m_pRenderable->GetModel()->AddAnimation(animInfo.first, animInfo.second->m_strResource);
-					}
-					m_pRenderable->GetModel()->SetAnim(m_pCurrentAnim->m_strAnimName);
-				}
-			}
-
-			if (m_pRenderable != nullptr)
-			{
-				m_pRenderable->GetModel()->SetAnimFrame(m_fAnimFrame);
-			}
-		}
-	}
-}
-
-//------------------------------------------------------------------------------
 // Method:    AddAnim
 // Parameter: const std::string & p_strAnimName
 // Parameter: const std::string & p_strResourcePath
@@ -187,6 +187,7 @@ void ComponentAnimController::Update(float p_fDelta)
 // 
 // Adds an animation to the animation controller.
 //------------------------------------------------------------------------------
+
 void ComponentAnimController::AddAnim(const std::string &p_strAnimName, const std::string &p_strResourcePath, int p_iStartFrame, int p_iEndFrame, bool p_bLoop)
 {
 	// Make sure we don't already have an anim with this name

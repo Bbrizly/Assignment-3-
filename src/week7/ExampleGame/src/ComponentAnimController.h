@@ -48,7 +48,6 @@ namespace week7
 		ComponentAnimController(int p_iAnimSpeed = 30);
 		virtual ~ComponentAnimController();
 
-		// Factory construction method
 		static Common::ComponentBase* CreateComponent(TiXmlNode* p_pNode);
 
 		virtual const std::string FamilyID() { return std::string("GOC_AnimController"); }

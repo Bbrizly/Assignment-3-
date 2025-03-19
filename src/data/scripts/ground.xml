@@ -1,0 +1,12 @@
+<!-- ground.xml -->
+<GameObject>
+    <Transform scale="5.0 1.0 5.0"/>
+    
+	<GOC_RenderableMesh>
+        <Param name="modelFile" value="data/As1/ground/ground.pod"/>
+        <Param name="modelPath" value="data/As1/ground/"/>
+        <Param name="vertexShader" value="data/As1/shaders/point_light.vsh"/>
+        <Param name="fragmentShader" value="data/As1/shaders/point_light.fsh"/>
+	</GOC_RenderableMesh>
+
+</GameObject>

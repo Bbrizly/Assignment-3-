@@ -28,6 +28,11 @@ namespace Common
 		virtual const std::string FamilyID(){ return std::string("GOC_RigidBody"); }
 		virtual void Update(float p_fDelta);
 
+		btRigidBody* GetRigidBody()
+		{
+			return m_pBody;
+		}
+
 		//------------------------------------------------------------------------------
 		// Public methods for "GOC_RigidBody" family of components
 		//------------------------------------------------------------------------------

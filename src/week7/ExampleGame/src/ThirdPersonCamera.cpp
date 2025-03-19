@@ -4,7 +4,7 @@
 
 using namespace std;
 
-using namespace week2;
+using namespace week7;
 
 ThirdPersonCamera::ThirdPersonCamera(float p_fFOV, float p_fAspectRatio, float p_fNearClip, float p_fFarClip,
     const glm::vec3& target, float distance)

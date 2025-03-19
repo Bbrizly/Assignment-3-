@@ -1,0 +1,11 @@
+<!-- lamppost.xml -->
+<GameObject>
+    <Transform translation="0.0 0.0 0.0"/>
+
+	<GOC_RenderableMesh>
+        <Param name="modelFile" value="data/As1/props/lamp.pod"/>
+        <Param name="modelPath" value="data/As1/props/"/>
+        <Param name="vertexShader" value="data/As1/shaders/point_light.vsh"/>
+        <Param name="fragmentShader" value="data/As1/shaders/point_light.fsh"/>
+	</GOC_RenderableMesh>
+</GameObject>
