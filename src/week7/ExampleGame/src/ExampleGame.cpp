@@ -169,11 +169,6 @@ bool ExampleGame::Init() {
 
     CreateCrateStacks();
 
-    m_pCharacter = m_pGameObjectManager->GetGameObject("player");
-    if (!m_pCharacter) {
-        std::cerr << "Warning: Character (GameObject_2) not found from XML." << std::endl;
-    }
-
 
     /*
     // --- Set up cameras and (optionally) HUD ---
@@ -234,6 +229,15 @@ bool ExampleGame::Init() {
         return false;
     }
 #endif
+
+    m_pCharacter = m_pGameObjectManager->GetGameObject("playerChar");
+    if (!m_pCharacter) {
+        std::cerr << "Warning: Character (player) not found from XML." << std::endl;
+    }
+    else
+    {
+        std::cout << "\n\nPLAYER EXITS\n";
+    }
 
     return true;
 }

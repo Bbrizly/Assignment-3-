@@ -1,5 +1,5 @@
 <!-- character.xml -->
-<GameObject name ="player">
+<GameObject name ="playerChar">
     <Transform scale="0.05 0.05 0.05" translation="0 0 0" rotation="0 0 0" />
 	<!-- <Transform scale="1 1 1" translation="0 0 0" rotation="0 0 0" /> -->
 

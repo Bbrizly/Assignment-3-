@@ -72,6 +72,7 @@ namespace Common {
                         }
                         else if (strcmp(szName, "playerObjectName") == 0)
                         {
+                            //std::cout << "Thirdperson\n-----------\n\n\n\n" << szValue << "\n\n\n-----";
                             comp->m_playerName = szValue;
                         }
                     }
