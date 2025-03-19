@@ -1,36 +1,4 @@
-﻿  CoinSpawner.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/CoinSpawner.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.h(28,31): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/CoinSpawner.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(129,26): warning C4129: ' ': unrecognized character escape sequence
-  (compiling source file 'src/CoinSpawner.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(60,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/CoinSpawner.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(66,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/CoinSpawner.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(72,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/CoinSpawner.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentThirdPersonCamera.h(70,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/CoinSpawner.cpp')
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\minwindef.h(130,9): warning C4005: 'APIENTRY': macro redefinition
-  (compiling source file 'src/CoinSpawner.cpp')
-      D:\Projects\z\upei-csc4650-main\src\glfw\include\GL\glfw.h(74,12):
-      see previous definition of 'APIENTRY'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(36,9): warning C4005: 'WINGDIAPI': macro redefinition
-  (compiling source file 'src/CoinSpawner.cpp')
-      D:\Projects\z\upei-csc4650-main\src\glfw\include\GL\glfw.h(91,11):
-      see previous definition of 'WINGDIAPI'
-  
-  ExampleGame.cpp
+﻿  ExampleGame.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/ExampleGame.cpp')
   
@@ -62,47 +30,5 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(36,9): w
       D:\Projects\z\upei-csc4650-main\src\glfw\include\GL\glfw.h(91,11):
       see previous definition of 'WINGDIAPI'
   
-  main.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/main.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.h(28,31): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/main.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(129,26): warning C4129: ' ': unrecognized character escape sequence
-  (compiling source file 'src/main.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(60,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/main.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(66,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/main.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(72,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/main.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentThirdPersonCamera.h(70,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/main.cpp')
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\minwindef.h(130,9): warning C4005: 'APIENTRY': macro redefinition
-  (compiling source file 'src/main.cpp')
-      D:\Projects\z\upei-csc4650-main\src\glfw\include\GL\glfw.h(74,12):
-      see previous definition of 'APIENTRY'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(36,9): warning C4005: 'WINGDIAPI': macro redefinition
-  (compiling source file 'src/main.cpp')
-      D:\Projects\z\upei-csc4650-main\src\glfw\include\GL\glfw.h(91,11):
-      see previous definition of 'WINGDIAPI'
-  
-  Generating Code...
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\BoundingVolumeComponent.h(72,1): warning C4715: 'Common::BoundingVolumeComponent::CreateComponent': not all control paths return a value
-BulletCollision_debug.lib(btCollisionWorld.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btCollisionWorld.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexConcaveCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexConcaveCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexConvexAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexConvexAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btBoxShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btBoxShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexInternalShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexInternalShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btPolyhedralConvexShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btPolyhedralConvexShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btGjkEpa2.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btGjkEpa2.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btRaycastCallback.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btRaycastCallback.obj)' or at ''; linking object as if no debug info
-BulletDynamics_debug.lib(btDiscreteDynamicsWorld.obj) : warning LNK4099: PDB '' was not found with 'BulletDynamics_debug.lib(btDiscreteDynamicsWorld.obj)' or at ''; linking object as if no debug info
   ExampleGame.vcxproj -> D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\Debug\ExampleGame.exe

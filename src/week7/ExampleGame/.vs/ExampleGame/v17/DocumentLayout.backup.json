@@ -3,27 +3,11 @@
   "WorkspaceRootPath": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentLookAtCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ComponentLookAtCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentThirdPersonCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ComponentThirdPersonCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCameraSwitcher.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ComponentCameraSwitcher.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ComponentCharacterController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ExampleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObjectManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,79 +26,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ComponentThirdPersonCamera.h",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentThirdPersonCamera.h",
-              "RelativeDocumentMoniker": "src\\ComponentThirdPersonCamera.h",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentThirdPersonCamera.h",
-              "RelativeToolTip": "src\\ComponentThirdPersonCamera.h",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowEgAAABBAAAAAAAAAA==",
+              "Title": "ComponentRigidBody.h",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.h",
+              "RelativeDocumentMoniker": "..\\..\\common\\ComponentRigidBody.h",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.h",
+              "RelativeToolTip": "..\\..\\common\\ComponentRigidBody.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-19T09:41:35.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T09:45:22.404Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ComponentLookAtCamera.h",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentLookAtCamera.h",
-              "RelativeDocumentMoniker": "src\\ComponentLookAtCamera.h",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentLookAtCamera.h",
-              "RelativeToolTip": "src\\ComponentLookAtCamera.h",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAswGsAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-19T09:36:31.919Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ComponentCharacterController.h",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.h",
-              "RelativeDocumentMoniker": "src\\ComponentCharacterController.h",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.h",
-              "RelativeToolTip": "src\\ComponentCharacterController.h",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAEEAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-19T09:36:32.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ComponentCameraSwitcher.h",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCameraSwitcher.h",
-              "RelativeDocumentMoniker": "src\\ComponentCameraSwitcher.h",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCameraSwitcher.h",
-              "RelativeToolTip": "src\\ComponentCameraSwitcher.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-19T09:37:03.223Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "ExampleGame.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp",
               "RelativeDocumentMoniker": "src\\ExampleGame.cpp",
               "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp",
               "RelativeToolTip": "src\\ExampleGame.cpp",
-              "ViewState": "AgIAALwAAAAAAAAAAAAswOUAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAkwKEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-19T09:10:19.786Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GameObjectManager.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObjectManager.cpp",
-              "RelativeDocumentMoniker": "..\\..\\common\\GameObjectManager.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObjectManager.cpp",
-              "RelativeToolTip": "..\\..\\common\\GameObjectManager.cpp",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAswKoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-19T09:14:47.255Z",
+              "WhenOpened": "2025-03-19T09:44:16.574Z",
               "EditorCaption": ""
             }
           ]

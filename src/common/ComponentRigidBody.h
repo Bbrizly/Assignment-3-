@@ -12,6 +12,7 @@
 
 #include "btBulletDynamicsCommon.h"
 #include "ComponentBase.h"
+#include "tinyxml.h"
 
 namespace Common
 {
@@ -27,6 +28,16 @@ namespace Common
 		virtual const std::string ComponentID(){ return std::string("GOC_RigidBody"); }
 		virtual const std::string FamilyID(){ return std::string("GOC_RigidBody"); }
 		virtual void Update(float p_fDelta);
+
+		static ComponentBase* CreateComponent(TiXmlNode* pNode)
+		{
+			if (std::strcmp(pNode->Value(), "CameraSwitcher") != 0 &&
+				std::strcmp(pNode->Value(), "GOC_CameraSwitcher") != 0)
+			{
+				return nullptr;
+			}
+			return new ComponentRigidBody();
+		}
 
 		btRigidBody* GetRigidBody()
 		{

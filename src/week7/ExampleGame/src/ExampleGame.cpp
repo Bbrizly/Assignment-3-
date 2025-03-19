@@ -157,6 +157,7 @@ bool ExampleGame::Init() {
     m_pGameObjectManager->RegisterComponentFactory("GOC_LookAtCamera", ComponentLookAtCamera::CreateComponent);
     m_pGameObjectManager->RegisterComponentFactory("GOC_ThirdPersonCamera", ComponentThirdPersonCamera::CreateComponent);
     m_pGameObjectManager->RegisterComponentFactory("GOC_CameraSwitcher", ComponentCameraSwitcher::CreateComponent);
+    m_pGameObjectManager->RegisterComponentFactory("GOC_RigidBody", ComponentRigidBody::CreateComponent);
     m_pGameObjectManager->RegisterComponentFactory("GOC_HUD", HUD::CreateComponent);
      //m_pGameObjectManager->RegisterComponentFactory("GOC_TeeterTotter", TeeterTotter::CreateComponent);
 
