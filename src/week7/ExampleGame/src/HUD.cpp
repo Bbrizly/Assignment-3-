@@ -63,7 +63,6 @@ void HUD::Update(float deltaTime)
 {
     if (m_textBox && m_scoreComponent)
     {
-        cout << "\n\n\n FUCKK\n\n\n";
         TextBox* txtBox = SceneManager::Instance()->GetTextBox(0);
 
         int scoreValue = m_scoreComponent->GetScore();

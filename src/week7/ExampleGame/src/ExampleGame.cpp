@@ -131,14 +131,18 @@ bool ExampleGame::Init() {
 #if defined(_WIN32)
     LuaScriptManager::CreateInstance();
 #endif
+    SceneManager::CreateInstance();
+
+#pragma region Camera
 
     // Create and attach a scene camera.
-    m_pSceneCamera = new Common::SceneCamera(45.0f, 1280.0f / 720.0f, 0.1f, 1000.0f,
+    /*  m_pSceneCamera = new Common::SceneCamera(45.0f, 1280.0f / 720.0f, 0.1f, 1000.0f,
         glm::vec3(0.0f, 15.0f, 25.0f),
         glm::vec3(0.0f, 5.0f, 0.0f),
         glm::vec3(0.0f, 1.0f, 0.0f));
-    SceneManager::CreateInstance();
-    SceneManager::Instance()->AttachCamera(m_pSceneCamera);
+    SceneManager::Instance()->AttachCamera(m_pSceneCamera);*/
+#pragma endregion
+
 
     // Create GameObjectManager.
     m_pGameObjectManager = new GameObjectManager();
@@ -161,56 +165,16 @@ bool ExampleGame::Init() {
         "data/As3/shaders/lines.vsh",
         "data/As3/shaders/lines.fsh");
 
-    // --- Create the ground ---
-    {
-        GameObject* pGround = m_pGameObjectManager->CreateGameObject();
-        ComponentRenderableMesh* pGroundMesh = new ComponentRenderableMesh();
-        pGroundMesh->Init("data/As1/ground/ground.pod",
-            "data/As1/ground/",
-            "data/As1/shaders/point_light.vsh",
-            "data/As1/shaders/point_light.fsh");
-        pGround->AddComponent(pGroundMesh);
-        pGround->GetTransform().SetScale(vec3(5.0f, 1.0f, 5.0f));
-        ComponentRigidBody* pGroundRB = new ComponentRigidBody();
-        pGround->AddComponent(pGroundRB);
-        pGroundRB->Init(new btStaticPlaneShape(btVector3(0, 1, 0), 0),
-            "Ground", 0.0f, vec3(0.0f), false);
-    }
-
-    // --- Create brick walls enclosing the world ---
     CreateWalls();
 
-    // --- Create the lamppost ---
-    {
-        GameObject* pLampPost = m_pGameObjectManager->CreateGameObject();
-        ComponentRenderableMesh* pLampMesh = new ComponentRenderableMesh();
-        pLampMesh->Init("data/As1/props/lamp.pod",
-            "data/As1/props/",
-            "data/As1/shaders/point_light.vsh",
-            "data/As1/shaders/point_light.fsh");
-        pLampPost->AddComponent(pLampMesh);
-        pLampPost->GetTransform().SetTranslation(vec3(0.0f, 0.0f, 0.0f));
-        ComponentRigidBody* pLampRB = new ComponentRigidBody();
-        pLampPost->AddComponent(pLampRB);
-        pLampRB->Init(new btCylinderShape(btVector3(1.0f, 5.0f, 1.0f)),
-            "Lamppost", 0.0f, vec3(0.0f), false);
-    }
-
-    // --- Create the player character ---
-    CreateCharacter();
-
-    // --- Create 4 stacks of 9 crates each ---
     CreateCrateStacks();
 
-     //CreateTeeterTotter();
-
-    // --- Set up the coin spawner ---
-    {
-        GameObject* pCoinSpawner = m_pGameObjectManager->CreateGameObject();
-        CoinSpawner* pSpawner = new CoinSpawner(5.0f, 10, 1);
-        pSpawner->SetPlayer(m_pCharacter);
-        pCoinSpawner->AddComponent(pSpawner);
+    m_pCharacter = m_pGameObjectManager->GetGameObject("player");
+    if (!m_pCharacter) {
+        std::cerr << "Warning: Character (GameObject_2) not found from XML." << std::endl;
     }
+
+
     /*
     // --- Set up cameras and (optionally) HUD ---
     {
@@ -247,7 +211,7 @@ bool ExampleGame::Init() {
     }
     */
 #if defined(_WIN32)
-    // Export objects to Lua.
+
     GameObjectManager::ExportToLua();
     ExampleGame::ExportToLua();
     ComponentRenderableMesh::ExportToLua();
@@ -305,7 +269,6 @@ bool ExampleGame::Update(float p_fDelta) {
         }
         bLastMouseDown = bCurrentMouseDown;
     }
-    // In PAUSED state, physics and object updates are skipped.
     return true;
 }
 
@@ -342,34 +305,35 @@ void ExampleGame::CreateWalls() {
         vec3 scale;
     };
     vector<WallData> walls = {
-        { vec3(0.0f, 5.0f, -50.0f), vec3(50.0f, 10.0f, 1.0f) },
-        { vec3(0.0f, 5.0f, 50.0f),  vec3(50.0f, 10.0f, 1.0f) },
-        { vec3(-50.0f, 5.0f, 0.0f), vec3(1.0f, 10.0f, 50.0f) },
-        { vec3(50.0f, 5.0f, 0.0f),  vec3(1.0f, 10.0f, 50.0f) }
+        { vec3(0.0f, 5.0f, -50.0f), vec3(50.0f, 10.0f, 0.1f) },
+        { vec3(0.0f, 5.0f, 50.0f),  vec3(50.0f, 10.0f, 0.1f) },
+        { vec3(-50.0f, 5.0f, 0.0f), vec3(0.1f, 10.0f, 50.0f) },
+        { vec3(50.0f, 5.0f, 0.0f),  vec3(0.1f, 10.0f, 50.0f) }
     };
     for (auto& wall : walls) {
         GameObject* pWall = m_pGameObjectManager->CreateGameObject();
         ComponentRenderableMesh* pWallMesh = new ComponentRenderableMesh();
-        pWallMesh->Init("data/As1/props/ground.pod",
+        pWallMesh->Init("data/As1/props/crate.pod",
             "data/As1/props/",
             "data/As1/shaders/textured.vsh",
             "data/As1/shaders/textured.fsh");
-        //pWall->AddComponent(pWallMesh);
+        pWall->AddComponent(pWallMesh);
         pWall->GetTransform().SetTranslation(wall.position);
         pWall->GetTransform().SetScale(wall.scale);
         ComponentRigidBody* pWallRB = new ComponentRigidBody();
         pWall->AddComponent(pWallRB);
         btVector3 halfExtents(wall.scale.x * 0.5f, wall.scale.y * 0.5f, wall.scale.z * 0.5f);
+        //btVector3 halfExtents(wall.scale.x , wall.scale.y , wall.scale.z );
         pWallRB->Init(new btBoxShape(halfExtents), "Wall", 0.0f, vec3(0.0f), false);
     }
 }
 
 void ExampleGame::CreateCrateStacks() {
     vector<vec3> stackPositions = {
-        vec3(-20.0f, 0.0f, -20.0f),
-        vec3(20.0f, 0.0f, -20.0f),
-        vec3(-20.0f, 0.0f, 20.0f),
-        vec3(20.0f, 0.0f, 20.0f)
+        vec3(-10.0f, 0.0f, -10.0f),
+        vec3(10.0f, 0.0f, -10.0f),
+        vec3(-10.0f, 0.0f, 10.0f),
+        vec3(10.0f, 0.0f, 10.0f)
     };
     const int cratesPerStack = 9;
     const float crateHeight = 2.0f;
@@ -391,29 +355,6 @@ void ExampleGame::CreateCrateStacks() {
             pCrateRB->Init(new btBoxShape(halfExtents), "Crate", 2.0f, vec3(0.0f, -1.5f, 0.0f), false);
         }
     }
-}
-
-void ExampleGame::CreateCharacter() {
-    m_pCharacter = m_pGameObjectManager->CreateGameObject();
-    m_pCharacter->GetTransform().SetScale(vec3(0.05f, 0.05f, 0.05f));
-    ComponentRenderableMesh* pRenderable = new ComponentRenderableMesh();
-    pRenderable->Init("data/characters/swat/Swat.pod",
-        "data/characters/swat/",
-        "data/shaders/skinned.vsh",
-        "data/shaders/skinned.fsh");
-    m_pCharacter->AddComponent(pRenderable);
-    ComponentAnimController* pAnimController = new ComponentAnimController();
-    pAnimController->AddAnim("idle", "data/characters/swat/anim/idle.pod", 0, 31, true);
-    pAnimController->AddAnim("walking", "data/characters/swat/anim/walking.pod", 0, 31, true);
-    pAnimController->AddAnim("standard_run", "data/characters/swat/anim/standard_run.pod", 0, 22, true);
-    pAnimController->SetAnim("idle");
-    m_pCharacter->AddComponent(pAnimController);
-    ComponentCharacterController* pController = new ComponentCharacterController();
-    m_pCharacter->AddComponent(pController);
-    PlayerScore* pScore = new PlayerScore();
-    m_pCharacter->AddComponent(pScore);
-    SphereVolume* playerSphere = new SphereVolume(vec3(0, 30, 0), 20.0f);
-    m_pCharacter->AddComponent(new BoundingVolumeComponent(playerSphere));
 }
 
 void ExampleGame::CreateProjectile() {
@@ -443,12 +384,11 @@ void ExampleGame::TogglePause() {
 }
 
 void ExampleGame::RenderPauseOverlay() {
-    // If you have a text rendering utility, draw a "Paused" message over the scene.
-    // For example: RenderText("Paused", 600, 50, 24, vec3(1.0f, 1.0f, 1.0f));
+    // BUTTONS??
+
 }
 
 void ExampleGame::CreateTeeterTotter() {
-    // BONUS: Create a teeter-totter prop using a hinge constraint.
     GameObject* pTeeter = m_pGameObjectManager->CreateGameObject();
     ComponentRenderableMesh* pPlankMesh = new ComponentRenderableMesh();
     pPlankMesh->Init("data/As1/props/ground.pod",

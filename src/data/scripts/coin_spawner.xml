@@ -7,6 +7,6 @@
         <Param name="spawnInterval" value="5.0" />
         <Param name="maxCoins"      value="10" />
         <Param name="coinValue"     value="50" />
-        <Param name="playerObjectName" value="GameObject_2" />
+        <Param name="playerObjectName" value="player" />
     </GOC_CoinSpawner>
 </GameObject>

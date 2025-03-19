@@ -62,7 +62,7 @@ namespace Common {
 
             if (volumeType == "Sphere")
             {
-                std::cout << "\nSPHERE BOUNDING VOLUME ADDED\n\n";
+                //std::cout << "\nSPHERE BOUNDING VOLUME ADDED\n\n";
                 SphereVolume* sphere = new SphereVolume(center, radius);
                 BoundingVolumeComponent* pBVC = new BoundingVolumeComponent(sphere);
                 return pBVC;
