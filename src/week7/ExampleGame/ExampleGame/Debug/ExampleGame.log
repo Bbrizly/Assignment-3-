@@ -1,8 +1,4 @@
-﻿  CoinSpawner.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/CoinSpawner.cpp')
-  
-  ExampleGame.cpp
+﻿  ExampleGame.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/ExampleGame.cpp')
   
@@ -10,9 +6,4 @@ D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(132,31
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(133,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(134,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(127,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  main.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/main.cpp')
-  
-  Generating Code...
   ExampleGame.vcxproj -> D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\Debug\ExampleGame.exe

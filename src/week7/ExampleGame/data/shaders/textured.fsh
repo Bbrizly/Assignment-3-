@@ -29,5 +29,6 @@ void main()
 	vec4 light = clamp(ambient + diffuse + specular, 0, 1);
     PixelColor = texture(texture1, v_uv1) * vec4( light.rgb, 1.0);
 	
+    //PixelColor = texture(texture1, v_uv1) * vec4( light.rgb, 1.0);
     PixelColor = texture(texture1, v_uv1) * vec4(1.0);//vec4( light.rgb, 1.0);
 }
