@@ -88,6 +88,7 @@
     <ClCompile Include="..\..\common\BulletPhysicsManager.cpp" />
     <ClCompile Include="..\..\common\BulletPhysicsMaterialManager.cpp" />
     <ClCompile Include="..\..\common\ComponentRigidBody.cpp" />
+    <ClCompile Include="..\..\common\DebugRender.cpp" />
     <ClCompile Include="..\..\common\GameObject.cpp" />
     <ClCompile Include="..\..\common\Game.cpp" />
     <ClCompile Include="..\..\common\GameObjectManager.cpp" />
@@ -118,6 +119,11 @@
     <ClCompile Include="..\..\tinyxml\tinyxml.cpp" />
     <ClCompile Include="..\..\tinyxml\tinyxmlerror.cpp" />
     <ClCompile Include="..\..\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\..\wolf\TextRendering\Font.cpp" />
+    <ClCompile Include="..\..\wolf\TextRendering\MiniFont.cpp" />
+    <ClCompile Include="..\..\wolf\TextRendering\TextBox.cpp" />
+    <ClCompile Include="..\..\wolf\TextRendering\TextRenderer.cpp" />
+    <ClCompile Include="..\..\wolf\TextRendering\TextTable.cpp" />
     <ClCompile Include="..\..\wolf\W_Buffer.cpp" />
     <ClCompile Include="..\..\wolf\W_BufferManager.cpp" />
     <ClCompile Include="..\..\wolf\W_Common.cpp" />
@@ -132,11 +138,18 @@
     <ClCompile Include="..\..\wolf\W_TextureManager.cpp" />
     <ClCompile Include="..\..\wolf\W_VertexBuffer.cpp" />
     <ClCompile Include="..\..\wolf\W_VertexDeclaration.cpp" />
+    <ClCompile Include="src\AABBVolume.cpp" />
+    <ClCompile Include="src\CoinComponent.cpp" />
+    <ClCompile Include="src\CoinSpawner.cpp" />
     <ClCompile Include="src\ComponentAnimController.cpp" />
     <ClCompile Include="src\ComponentCharacterController.cpp" />
     <ClCompile Include="src\ComponentRenderableMesh.cpp" />
+    <ClCompile Include="src\EventManager.cpp" />
     <ClCompile Include="src\ExampleGame.cpp" />
+    <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\SphereVolume.cpp" />
+    <ClCompile Include="src\ThirdPersonCamera.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\common\BulletPhysicsDebugDrawer.h" />
@@ -145,6 +158,8 @@
     <ClInclude Include="..\..\common\ComponentBase.h" />
     <ClInclude Include="..\..\common\ComponentRenderable.h" />
     <ClInclude Include="..\..\common\ComponentRigidBody.h" />
+    <ClInclude Include="..\..\common\DebugLayer.h" />
+    <ClInclude Include="..\..\common\DebugRender.h" />
     <ClInclude Include="..\..\common\GameObject.h" />
     <ClInclude Include="..\..\common\Game.h" />
     <ClInclude Include="..\..\common\GameObjectManager.h" />
@@ -180,6 +195,13 @@
     <ClInclude Include="..\..\PowerVR\PVRTVertex.h" />
     <ClInclude Include="..\..\tinyxml\tinystr.h" />
     <ClInclude Include="..\..\tinyxml\tinyxml.h" />
+    <ClInclude Include="..\..\wolf\TextRendering\CharInfo.h" />
+    <ClInclude Include="..\..\wolf\TextRendering\Font.h" />
+    <ClInclude Include="..\..\wolf\TextRendering\MiniFont.h" />
+    <ClInclude Include="..\..\wolf\TextRendering\TextBox.h" />
+    <ClInclude Include="..\..\wolf\TextRendering\TextRenderer.h" />
+    <ClInclude Include="..\..\wolf\TextRendering\TextTable.h" />
+    <ClInclude Include="..\..\wolf\TextRendering\TextVertex.h" />
     <ClInclude Include="..\..\wolf\W_Buffer.h" />
     <ClInclude Include="..\..\wolf\W_BufferManager.h" />
     <ClInclude Include="..\..\wolf\W_Common.h" />
@@ -195,10 +217,25 @@
     <ClInclude Include="..\..\wolf\W_Types.h" />
     <ClInclude Include="..\..\wolf\W_VertexBuffer.h" />
     <ClInclude Include="..\..\wolf\W_VertexDeclaration.h" />
+    <ClInclude Include="..\..\wolf\W_Wolf.h" />
+    <ClInclude Include="src\AABBVolume.h" />
+    <ClInclude Include="src\BoundingVolume.h" />
+    <ClInclude Include="src\BoundingVolumeComponent.h" />
+    <ClInclude Include="src\CoinComponent.h" />
+    <ClInclude Include="src\CoinSpawner.h" />
     <ClInclude Include="src\ComponentAnimController.h" />
+    <ClInclude Include="src\ComponentCameraSwitcher.h" />
     <ClInclude Include="src\ComponentCharacterController.h" />
+    <ClInclude Include="src\ComponentLookAtCamera.h" />
     <ClInclude Include="src\ComponentRenderableMesh.h" />
+    <ClInclude Include="src\ComponentThirdPersonCamera.h" />
+    <ClInclude Include="src\EventManager.h" />
     <ClInclude Include="src\ExampleGame.h" />
+    <ClInclude Include="src\Frustum.h" />
+    <ClInclude Include="src\HUD.h" />
+    <ClInclude Include="src\PlayerScore.h" />
+    <ClInclude Include="src\SphereVolume.h" />
+    <ClInclude Include="src\ThirdPersonCamera.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

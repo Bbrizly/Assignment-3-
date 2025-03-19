@@ -4,8 +4,11 @@
 //
 // See header for notes
 //-----------------------------------------------------------------------------
+
 #include "W_Texture.h"
 #include "W_Common.h"
+
+
 
 namespace wolf
 {
@@ -77,6 +80,29 @@ Texture::Texture(void* p_pData, unsigned int p_uiWidth, unsigned int p_uiHeight,
 	SetFilterMode(FM_TrilinearMipmap, FM_Linear);
 }
 
+//ARRAY TEXTURE
+
+//----------------------------------------------------------
+// Constructor for Array Textures (2D Array)
+//----------------------------------------------------------
+Texture::Texture(void* pData, unsigned int width, unsigned int height, unsigned int layers, Format fmt)
+	: m_eFilterMin(FM_Invalid), m_eFilterMag(FM_Invalid),
+	m_eWrapU(WM_Invalid), m_eWrapV(WM_Invalid),
+	m_uiWidth(width), m_uiHeight(height), m_uiTex(0), m_target(GL_TEXTURE_2D_ARRAY)
+{
+	glGenTextures(1, &m_uiTex);
+	glBindTexture(m_target, m_uiTex);
+
+	// Allocate storage for the array texture
+	glTexImage3D(m_target, 0, gs_aFormatMap[fmt], width, height, layers, 0,
+		gs_aFormatMap[fmt], gs_aTypeMap[fmt], pData);
+
+	SetWrapMode(WM_Clamp);
+	glGenerateMipmap(m_target);
+	SetFilterMode(FM_TrilinearMipmap, FM_Linear);
+}
+///
+
 //----------------------------------------------------------
 // Destructor
 //----------------------------------------------------------
@@ -89,11 +115,17 @@ Texture::~Texture()
 // Binds this texture as the current one (on the currently
 // active texture unit)
 //----------------------------------------------------------
-void Texture::Bind() const
-{
-	glBindTexture(GL_TEXTURE_2D, m_uiTex);
-}
+//void Texture::Bind() const
+//{
+//	glBindTexture(GL_TEXTURE_2D, m_uiTex);
+//}
 
+void Texture::Bind(int texUnit) const
+{
+	glActiveTexture(GL_TEXTURE0 + texUnit);
+	glBindTexture(m_target, m_uiTex); // use m_target
+	// glBindTexture(GL_TEXTURE_2D, m_glTex);
+}
 //----------------------------------------------------------
 // Builds the texture from the given DDS file, including mipmap
 // levels, if found in the DDS

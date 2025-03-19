@@ -54,7 +54,8 @@ class Texture
 		//-------------------------------------------------------------------------
 		// PUBLIC INTERFACE
 		//-------------------------------------------------------------------------
-		void Bind() const;
+		//void Bind() const;
+		void Bind(int texUnit = 0) const;
 
 		void SetWrapMode(WrapMode p_eWrapU, WrapMode p_eWrapV = WM_Invalid);
 		void SetFilterMode(FilterMode p_eFilterMin, FilterMode p_eFilterMag = FM_Invalid);
@@ -71,6 +72,10 @@ class Texture
 		// Made private to enforce creation/destruction via TextureManager
 		Texture(const std::string& p_strFile);
 		Texture(void* p_pData, unsigned int p_uiWidth, unsigned int p_uiHeight, Format p_eFormat);
+
+		//2d array constructor
+		Texture(void* pData, unsigned int width, unsigned int height, unsigned int layers, Format fmt);
+
 		virtual ~Texture();
 
 		void LoadFromDDS(const std::string& p_strFile);
@@ -87,6 +92,9 @@ class Texture
 		FilterMode		m_eFilterMag;
 		unsigned int	m_uiWidth;
 		unsigned int    m_uiHeight;
+
+		// 2D texture or array Texturee
+		GLenum         m_target = GL_TEXTURE_2D;
 		//-------------------------------------------------------------------------
 };
 

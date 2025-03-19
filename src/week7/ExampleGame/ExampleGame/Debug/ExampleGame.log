@@ -1,182 +1,66 @@
-﻿  BulletPhysicsDebugDrawer.cpp
-  BulletPhysicsManager.cpp
+﻿  DebugRender.cpp
+  AABBVolume.cpp
+  CoinComponent.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '../../common/BulletPhysicsManager.cpp')
+  (compiling source file 'src/CoinComponent.cpp')
   
-  BulletPhysicsMaterialManager.cpp
-  ComponentRigidBody.cpp
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinComponent.cpp(15,26): error C2039: 'MarkForDestruction': is not a member of 'Common::GameObject'
+      D:\Projects\z\upei-csc4650-main\src\common\GameObject.h(30,8):
+      see declaration of 'Common::GameObject'
+  
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinComponent.cpp(45,30): error C2039: 'IsMarkedForDestruction': is not a member of 'Common::GameObject'
+      D:\Projects\z\upei-csc4650-main\src\common\GameObject.h(30,8):
+      see declaration of 'Common::GameObject'
+  
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinComponent.cpp(46,30): error C2039: 'MarkForDestruction': is not a member of 'Common::GameObject'
+      D:\Projects\z\upei-csc4650-main\src\common\GameObject.h(30,8):
+      see declaration of 'Common::GameObject'
+  
+  CoinSpawner.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '../../common/ComponentRigidBody.cpp')
+  (compiling source file 'src/CoinSpawner.cpp')
   
-  GameObject.cpp
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinSpawner.cpp(3,10): error C1083: Cannot open include file: '../ExampleGame/src/ExampleGame.h': No such file or directory
+  HUD.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '../../common/GameObject.cpp')
+  (compiling source file 'src/HUD.cpp')
   
-  Game.cpp
-D:\Projects\z\upei-csc4650-main\src\common\Game.cpp(49,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Projects\z\upei-csc4650-main\src\common\Game.cpp(142,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  GameObjectManager.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '../../common/GameObjectManager.cpp')
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\HUD.cpp(55,53): error C2039: 'GetTextBox': is not a member of 'Common::SceneManager'
+      D:\Projects\z\upei-csc4650-main\src\common\SceneManager.h(19,8):
+      see declaration of 'Common::SceneManager'
   
-  LuaScriptManager.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '../../common/LuaScriptManager.cpp')
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\HUD.cpp(67,53): error C2039: 'GetTextBox': is not a member of 'Common::SceneManager'
+      D:\Projects\z\upei-csc4650-main\src\common\SceneManager.h(19,8):
+      see declaration of 'Common::SceneManager'
   
-  SceneCamera.cpp
-  SceneManager.cpp
-  Transform.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '../../common/Transform.cpp')
-  
-  W_LineDrawer.cpp
-D:\Projects\z\upei-csc4650-main\src\common\W_LineDrawer.cpp(79,21): warning C4018: '<': signed/unsigned mismatch
-  PVRTBoneBatch.cpp
-  PVRTDecompress.cpp
-  PVRTError.cpp
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTError.cpp(45,2): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  PVRTFixedPoint.cpp
-  PVRTGeometry.cpp
-  PVRTMatrixF.cpp
-  PVRTMatrixX.cpp
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTMatrixX.cpp(485,6): warning C4146: unary minus operator applied to unsigned type, result still unsigned
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTMatrixX.cpp(540,6): warning C4146: unary minus operator applied to unsigned type, result still unsigned
-  PVRTMisc.cpp
-  Generating Code...
-  Compiling...
-  PVRTModelPOD.cpp
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(2987,10): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(4551,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(4593,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(4714,6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(4721,6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  PVRTQuaternionF.cpp
-  PVRTQuaternionX.cpp
-  PVRTResourceFile.cpp
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTResourceFile.cpp(31,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTResourceFile.cpp(279,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  PVRTString.cpp
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTString.cpp(1525,17): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTString.cpp(1527,2): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTString.cpp(1789,17): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTString.cpp(1791,2): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  PVRTTexture.cpp
-  PVRTTrans.cpp
-  PVRTTriStrip.cpp
-  PVRTVector.cpp
-  PVRTVertex.cpp
-  tinystr.cpp
-  tinyxml.cpp
-  tinyxmlerror.cpp
-  tinyxmlparser.cpp
-  W_Buffer.cpp
-  W_BufferManager.cpp
-  W_Common.cpp
-D:\Projects\z\upei-csc4650-main\src\wolf\W_Common.cpp(20,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  W_IndexBuffer.cpp
-  W_Material.cpp
-  W_MaterialManager.cpp
-  Generating Code...
-  Compiling...
-  W_Model.cpp
-D:\Projects\z\upei-csc4650-main\src\wolf\W_Model.cpp(216,87): warning C4018: '<': signed/unsigned mismatch
-D:\Projects\z\upei-csc4650-main\src\wolf\W_Model.cpp(263,49): warning C4018: '<': signed/unsigned mismatch
-D:\Projects\z\upei-csc4650-main\src\wolf\W_Model.cpp(283,49): warning C4018: '<': signed/unsigned mismatch
-  W_Program.cpp
-  W_ProgramManager.cpp
-  W_Sprite.cpp
-  W_Texture.cpp
-  W_TextureManager.cpp
-  W_VertexBuffer.cpp
-  W_VertexDeclaration.cpp
-  ComponentAnimController.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/ComponentAnimController.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentAnimController.cpp(213,32): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
-  ComponentCharacterController.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/ComponentCharacterController.cpp')
-  
-  ComponentRenderableMesh.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/ComponentRenderableMesh.cpp')
-  
-  ExampleGame.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/ExampleGame.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(132,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(133,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(134,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(127,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   main.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.cpp')
   
+  SphereVolume.cpp
+  ThirdPersonCamera.cpp
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.h(38,26): error C3668: 'week2::ThirdPersonCamera::GetViewMatrix': method with override specifier 'override' did not override any base class methods
+  (compiling source file 'src/ThirdPersonCamera.cpp')
+  
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.h(28,31): warning C4305: 'initializing': truncation from 'double' to 'float'
+  (compiling source file 'src/ThirdPersonCamera.cpp')
+  
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.cpp(67,35): error C2248: 'Common::SceneCamera::m_vPos': cannot access private member declared in class 'Common::SceneCamera'
+      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(63,13):
+      see declaration of 'Common::SceneCamera::m_vPos'
+      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(17,8):
+      see declaration of 'Common::SceneCamera'
+  
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.cpp(87,51): error C2248: 'Common::SceneCamera::m_vPos': cannot access private member declared in class 'Common::SceneCamera'
+      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(63,13):
+      see declaration of 'Common::SceneCamera::m_vPos'
+      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(17,8):
+      see declaration of 'Common::SceneCamera'
+  
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.cpp(91,33): error C2248: 'Common::SceneCamera::m_vPos': cannot access private member declared in class 'Common::SceneCamera'
+      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(63,13):
+      see declaration of 'Common::SceneCamera::m_vPos'
+      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(17,8):
+      see declaration of 'Common::SceneCamera'
+  
   Generating Code...
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4217: symbol '_fprintf' defined in 'Game.obj' is imported by 'GLFW.lib(win32_window.obj)' in function '_getFBConfigs'
-LINK : warning LNK4217: symbol '___iob_func' defined in 'Game.obj' is imported by 'GLFW.lib(win32_window.obj)' in function '_getFBConfigs'
-BulletCollision_debug.lib(btCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btDbvt.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btDbvt.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btDbvtBroadphase.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btDbvtBroadphase.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btDispatcher.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btDispatcher.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btOverlappingPairCache.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btOverlappingPairCache.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btQuantizedBvh.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btQuantizedBvh.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btActivatingCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btActivatingCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btBoxBoxCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btBoxBoxCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btBoxBoxDetector.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btBoxBoxDetector.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btCollisionDispatcher.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btCollisionDispatcher.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btCollisionObject.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btCollisionObject.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btCollisionWorld.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btCollisionWorld.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btCompoundCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btCompoundCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexConcaveCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexConcaveCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexConvexAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexConvexAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexPlaneCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexPlaneCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btDefaultCollisionConfiguration.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btDefaultCollisionConfiguration.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btEmptyCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btEmptyCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btManifoldResult.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btManifoldResult.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btSimulationIslandManager.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btSimulationIslandManager.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btSphereSphereCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btSphereSphereCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btSphereTriangleCollisionAlgorithm.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btSphereTriangleCollisionAlgorithm.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btUnionFind.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btUnionFind.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(SphereTriangleDetector.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(SphereTriangleDetector.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btBoxShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btBoxShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btBvhTriangleMeshShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btBvhTriangleMeshShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btCapsuleShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btCapsuleShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btCollisionShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btCollisionShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConcaveShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConcaveShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexInternalShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexInternalShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexPolyhedron.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexPolyhedron.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btOptimizedBvh.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btOptimizedBvh.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btPolyhedralConvexShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btPolyhedralConvexShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btSphereShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btSphereShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btStaticPlaneShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btStaticPlaneShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btTriangleCallback.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btTriangleCallback.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btTriangleMeshShape.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btTriangleMeshShape.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btContinuousConvexCollision.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btContinuousConvexCollision.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btConvexCast.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btConvexCast.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btGjkConvexCast.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btGjkConvexCast.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btGjkEpa2.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btGjkEpa2.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btGjkEpaPenetrationDepthSolver.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btGjkEpaPenetrationDepthSolver.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btGjkPairDetector.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btGjkPairDetector.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btMinkowskiPenetrationDepthSolver.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btMinkowskiPenetrationDepthSolver.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btPersistentManifold.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btPersistentManifold.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btPolyhedralContactClipping.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btPolyhedralContactClipping.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btRaycastCallback.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btRaycastCallback.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btSubSimplexConvexCast.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btSubSimplexConvexCast.obj)' or at ''; linking object as if no debug info
-BulletCollision_debug.lib(btVoronoiSimplexSolver.obj) : warning LNK4099: PDB '' was not found with 'BulletCollision_debug.lib(btVoronoiSimplexSolver.obj)' or at ''; linking object as if no debug info
-BulletDynamics_debug.lib(btConeTwistConstraint.obj) : warning LNK4099: PDB '' was not found with 'BulletDynamics_debug.lib(btConeTwistConstraint.obj)' or at ''; linking object as if no debug info
-BulletDynamics_debug.lib(btGeneric6DofConstraint.obj) : warning LNK4099: PDB '' was not found with 'BulletDynamics_debug.lib(btGeneric6DofConstraint.obj)' or at ''; linking object as if no debug info
-BulletDynamics_debug.lib(btSequentialImpulseConstraintSolver.obj) : warning LNK4099: PDB '' was not found with 'BulletDynamics_debug.lib(btSequentialImpulseConstraintSolver.obj)' or at ''; linking object as if no debug info
-BulletDynamics_debug.lib(btTypedConstraint.obj) : warning LNK4099: PDB '' was not found with 'BulletDynamics_debug.lib(btTypedConstraint.obj)' or at ''; linking object as if no debug info
-BulletDynamics_debug.lib(btDiscreteDynamicsWorld.obj) : warning LNK4099: PDB '' was not found with 'BulletDynamics_debug.lib(btDiscreteDynamicsWorld.obj)' or at ''; linking object as if no debug info
-BulletDynamics_debug.lib(btRigidBody.obj) : warning LNK4099: PDB '' was not found with 'BulletDynamics_debug.lib(btRigidBody.obj)' or at ''; linking object as if no debug info
-LinearMath_debug.lib(btAlignedAllocator.obj) : warning LNK4099: PDB '' was not found with 'LinearMath_debug.lib(btAlignedAllocator.obj)' or at ''; linking object as if no debug info
-LinearMath_debug.lib(btConvexHullComputer.obj) : warning LNK4099: PDB '' was not found with 'LinearMath_debug.lib(btConvexHullComputer.obj)' or at ''; linking object as if no debug info
-LinearMath_debug.lib(btGeometryUtil.obj) : warning LNK4099: PDB '' was not found with 'LinearMath_debug.lib(btGeometryUtil.obj)' or at ''; linking object as if no debug info
-LinearMath_debug.lib(btQuickprof.obj) : warning LNK4099: PDB '' was not found with 'LinearMath_debug.lib(btQuickprof.obj)' or at ''; linking object as if no debug info
-LinearMath_debug.lib(btVector3.obj) : warning LNK4099: PDB '' was not found with 'LinearMath_debug.lib(btVector3.obj)' or at ''; linking object as if no debug info
-  ExampleGame.vcxproj -> D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\Debug\ExampleGame.exe

@@ -150,6 +150,35 @@
     <ClCompile Include="..\..\common\BulletPhysicsMaterialManager.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="src\CoinComponent.cpp" />
+    <ClCompile Include="src\CoinSpawner.cpp" />
+    <ClCompile Include="src\HUD.cpp" />
+    <ClCompile Include="src\EventManager.cpp" />
+    <ClCompile Include="src\ThirdPersonCamera.cpp" />
+    <ClCompile Include="..\..\wolf\TextRendering\Font.cpp">
+      <Filter>wolf\textrenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\TextRendering\MiniFont.cpp">
+      <Filter>wolf\textrenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\TextRendering\TextBox.cpp">
+      <Filter>wolf\textrenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\TextRendering\TextRenderer.cpp">
+      <Filter>wolf\textrenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\TextRendering\TextTable.cpp">
+      <Filter>wolf\textrenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\DebugRender.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AABBVolume.cpp">
+      <Filter>bounding</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SphereVolume.cpp">
+      <Filter>bounding</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="wolf">
@@ -163,6 +192,12 @@
     </Filter>
     <Filter Include="tinyxml">
       <UniqueIdentifier>{829c731c-9719-4700-b19a-5aae911a1000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wolf\textrenderer">
+      <UniqueIdentifier>{10a78aa6-f7ba-4374-922c-a8b79f6198ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bounding">
+      <UniqueIdentifier>{93023546-b9f8-44c2-b8b3-a57a8fdd49ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +372,58 @@
     </ClInclude>
     <ClInclude Include="..\..\common\BulletPhysicsMaterialManager.h">
       <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CoinComponent.h" />
+    <ClInclude Include="src\CoinSpawner.h" />
+    <ClInclude Include="src\ComponentCameraSwitcher.h" />
+    <ClInclude Include="src\ComponentLookAtCamera.h" />
+    <ClInclude Include="src\ComponentThirdPersonCamera.h" />
+    <ClInclude Include="src\EventManager.h" />
+    <ClInclude Include="src\HUD.h" />
+    <ClInclude Include="src\PlayerScore.h" />
+    <ClInclude Include="src\ThirdPersonCamera.h" />
+    <ClInclude Include="src\Frustum.h" />
+    <ClInclude Include="..\..\wolf\W_Wolf.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\TextRendering\CharInfo.h">
+      <Filter>wolf\textrenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\TextRendering\Font.h">
+      <Filter>wolf\textrenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\TextRendering\MiniFont.h">
+      <Filter>wolf\textrenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\TextRendering\TextBox.h">
+      <Filter>wolf\textrenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\TextRendering\TextRenderer.h">
+      <Filter>wolf\textrenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\TextRendering\TextTable.h">
+      <Filter>wolf\textrenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\TextRendering\TextVertex.h">
+      <Filter>wolf\textrenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\DebugLayer.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\DebugRender.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AABBVolume.h">
+      <Filter>bounding</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BoundingVolume.h">
+      <Filter>bounding</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BoundingVolumeComponent.h">
+      <Filter>bounding</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SphereVolume.h">
+      <Filter>bounding</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
