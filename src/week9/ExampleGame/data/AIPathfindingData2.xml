@@ -1,0 +1,179 @@
+<Paths>
+	<Nodes>
+		<PathNode idx="0" x="-25" y="0" z="-25" />
+		<PathNode idx="1" x="-15" y="0" z="-25" />
+		<PathNode idx="2" x="-5" y="0" z="-25" />
+		<PathNode idx="3" x="5" y="0" z="-25" />
+		<PathNode idx="4" x="15" y="0" z="-25" />
+		<PathNode idx="5" x="25" y="0" z="-25" />
+		
+		<PathNode idx="6" x="-25" y="0" z="-15" />
+		<PathNode idx="7" x="-15" y="0" z="-15" />
+		<PathNode idx="8" x="-5" y="0" z="-15" />
+		<PathNode idx="9" x="5" y="0" z="-15" />
+		<PathNode idx="10" x="15" y="0" z="-15" />
+		<PathNode idx="11" x="25" y="0" z="-15" />
+		
+		<PathNode idx="12" x="-25" y="0" z="-5" />
+		<PathNode idx="13" x="-15" y="0" z="-5" />
+		<PathNode idx="14" x="-5" y="0" z="-5" />
+		<PathNode idx="15" x="5" y="0" z="-5" />
+		<PathNode idx="16" x="15" y="0" z="-5" />
+		<PathNode idx="17" x="25" y="0" z="-5" />
+		
+		<PathNode idx="18" x="-25" y="0" z="5" />
+		<PathNode idx="19" x="-15" y="0" z="5" />
+		<PathNode idx="20" x="-5" y="0" z="5" />
+		<PathNode idx="21" x="5" y="0" z="5" />
+		<PathNode idx="22" x="15" y="0" z="5" />
+		<PathNode idx="23" x="25" y="0" z="5" />
+		
+		<PathNode idx="24" x="-25" y="0" z="15" />
+		<PathNode idx="25" x="-15" y="0" z="15" />
+		<PathNode idx="26" x="-5" y="0" z="15" />
+		<PathNode idx="27" x="5" y="0" z="15" />
+		<PathNode idx="28" x="15" y="0" z="15" />
+		<PathNode idx="29" x="25" y="0" z="15" />
+		
+		<PathNode idx="30" x="-25" y="0" z="25" />
+		<PathNode idx="31" x="-15" y="0" z="25" />
+		<PathNode idx="32" x="-5" y="0" z="25" />
+		<PathNode idx="33" x="5" y="0" z="25" />
+		<PathNode idx="34" x="15" y="0" z="25" />
+		<PathNode idx="35" x="25" y="0" z="25" />
+	</Nodes>
+	<Arcs>
+		<Path node1="0" node2="1" />
+		<Path node1="0" node2="6" />
+		<Path node1="0" node2="7" />
+		
+		<Path node1="1" node2="2" />
+		<Path node1="1" node2="6" />
+		<Path node1="1" node2="7" />
+		<Path node1="1" node2="8" />
+		
+		<Path node1="2" node2="3" />
+		<Path node1="2" node2="7" />
+		<Path node1="2" node2="8" />
+		<Path node1="2" node2="9" />
+		
+		<Path node1="3" node2="4" />
+		<Path node1="3" node2="8" />
+		<Path node1="3" node2="9" />
+		<Path node1="3" node2="10" />
+		
+		<Path node1="4" node2="5" />
+		<Path node1="4" node2="9" />
+		<Path node1="4" node2="10" />
+		<Path node1="4" node2="11" />
+		
+		<Path node1="5" node2="10" />
+		<Path node1="5" node2="11" />
+		
+		<Path node1="6" node2="7" />
+		<Path node1="6" node2="12" />
+		<Path node1="6" node2="13" />
+		
+		<Path node1="7" node2="8" />
+		<Path node1="7" node2="12" />
+		<Path node1="7" node2="13" />
+		<Path node1="7" node2="14" />
+		
+		<Path node1="8" node2="9" />
+		<Path node1="8" node2="13" />
+		<Path node1="8" node2="14" />
+		
+		<Path node1="9" node2="10" />
+		<Path node1="9" node2="15" />
+		<Path node1="9" node2="16" />
+		
+		<Path node1="10" node2="11" />
+		<Path node1="10" node2="15" />
+		<Path node1="10" node2="16" />
+		<Path node1="10" node2="17" />
+		
+		<Path node1="11" node2="16" />
+		<Path node1="11" node2="17" />
+		
+		<Path node1="12" node2="13" />
+		<Path node1="12" node2="18" />
+		<Path node1="12" node2="19" />
+		
+		<Path node1="13" node2="14" />
+		<Path node1="13" node2="18" />
+		<Path node1="13" node2="19" />
+		<Path node1="13" node2="20" />
+		
+		<Path node1="14" node2="19" />
+		<Path node1="14" node2="20" />
+		
+		<Path node1="15" node2="16" />
+		<Path node1="15" node2="21" />
+		<Path node1="15" node2="22" />
+		
+		<Path node1="16" node2="17" />
+		<Path node1="16" node2="21" />
+		<Path node1="16" node2="22" />
+		<Path node1="16" node2="23" />
+		
+		<Path node1="17" node2="22" />
+		<Path node1="17" node2="23" />
+		
+		<Path node1="18" node2="19" />
+		<Path node1="18" node2="24" />
+		<Path node1="18" node2="25" />
+		
+		<Path node1="19" node2="20" />
+		<Path node1="19" node2="24" />
+		<Path node1="19" node2="25" />
+		<Path node1="19" node2="26" />
+		
+		<Path node1="20" node2="25" />
+		<Path node1="20" node2="26" />
+		
+		<Path node1="21" node2="22" />
+		<Path node1="21" node2="27" />
+		<Path node1="21" node2="28" />
+		
+		<Path node1="22" node2="23" />
+		<Path node1="22" node2="27" />
+		<Path node1="22" node2="28" />
+		<Path node1="22" node2="29" />
+		
+		<Path node1="23" node2="28" />
+		<Path node1="23" node2="29" />
+		
+		<Path node1="24" node2="25" />
+		<Path node1="24" node2="30" />
+		<Path node1="24" node2="31" />
+		
+		<Path node1="25" node2="26" />
+		<Path node1="25" node2="30" />
+		<Path node1="25" node2="31" />
+		<Path node1="25" node2="32" />
+		
+		<Path node1="26" node2="27" />
+		<Path node1="26" node2="31" />
+		<Path node1="26" node2="32" />
+		<Path node1="26" node2="33" />
+		
+		<Path node1="27" node2="28" />
+		<Path node1="27" node2="32" />
+		<Path node1="27" node2="33" />
+		<Path node1="27" node2="34" />
+		
+		<Path node1="28" node2="29" />
+		<Path node1="28" node2="33" />
+		<Path node1="28" node2="34" />
+		<Path node1="28" node2="35" />
+		
+		<Path node1="29" node2="34" />
+		<Path node1="29" node2="35" />
+		
+		<Path node1="30" node2="31" />
+		<Path node1="31" node2="32" />
+		<Path node1="32" node2="33" />
+		<Path node1="33" node2="34" />
+		<Path node1="34" node2="35" />
+	</Arcs>
+</Paths>

@@ -1,0 +1,14 @@
+<GameObject>
+	<GOC_AnimController>
+		<Anim name="idle" resource="data/characters/swat/anim/idle.pod" start="0" end="31" loop="true"/>
+		<Anim name="walking" resource="data/characters/swat/anim/walking.pod" start="0" end="31" loop="true"/>
+		<Anim name="right_strafe" resource="data/characters/swat/anim/right_strafe.pod" start="0" end="31" loop="true"/>
+		<Anim name="right_strafe_walking" resource="data/characters/swat/anim/right_strafe_walking.pod" start="0" end="31" loop="true"/>
+		<Anim name="jump" resource="data/characters/swat/anim/jump.pod" start="0" end="31" loop="false"/>
+		<Anim name="left_strafe" resource="data/characters/swat/anim/left_strafe.pod" start="0" end="31" loop="true"/>
+		<Anim name="left_strafe_walking" resource="data/characters/swat/anim/left_strafe_walking.pod" start="0" end="31" loop="true"/>
+		<Anim name="left_turn_90" resource="data/characters/swat/anim/left_turn_90.pod" start="0" end="31" loop="false"/>
+		<Anim name="right_turn_90" resource="data/characters/swat/anim/right_turn_90.pod" start="0" end="31" loop="false"/>
+		<Anim name="standard_run" resource="data/characters/swat/anim/standard_run.pod" start="0" end="22" loop="true"/>
+	</GOC_AnimController>
+</GameObject>

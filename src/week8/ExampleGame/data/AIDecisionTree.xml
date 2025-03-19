@@ -1,0 +1,29 @@
+<DecisionNode type="proximityToGameObject" name="PlayerCharacter" threshold="20">
+	<Answer value="true">
+		<ActionNode action="ACTION_CHASE" />
+	</Answer>
+	<Answer value="false">
+		<DecisionNode type="stateTimer" threshold="2">
+			<Answer value="true">
+				<DecisionNode type="weightedRandom" threshold="49">
+					<Answer value="true">
+						<ActionNode action="ACTION_IDLE" />
+					</Answer>
+					<Answer value="false">
+						<ActionNode action="ACTION_WANDER" />
+					</Answer>
+				</DecisionNode>
+			</Answer>
+			<Answer value="false">
+				<DecisionNode type="statePrecondition" name="ACTION_IDLE">
+					<Answer value="true">
+						<ActionNode action="ACTION_IDLE" />
+					</Answer>
+					<Answer value="false">
+						<ActionNode action="ACTION_WANDER" />
+					</Answer>
+				</DecisionNode>
+			</Answer>
+		</DecisionNode>
+	</Answer>
+</DecisionNode>

@@ -1,0 +1,8 @@
+<DecisionNode type="proximityToGameObject" name="PlayerCharacter" threshold="1000">
+	<Answer value="true">
+		<ActionNode action="ACTION_CHASE" />
+	</Answer>
+	<Answer value="false">
+		<ActionNode action="ACTION_CHASE" />
+	</Answer>
+</DecisionNode>

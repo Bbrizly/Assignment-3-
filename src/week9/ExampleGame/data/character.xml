@@ -1,0 +1,7 @@
+<GameObject>
+	<GOC_AnimController>
+		<Anim name="idle" start="1" end="120" loop="true" />
+		<Anim name="run" start="252" end="276" loop="true" />
+		<Anim name="walk" start="305" end="340" loop="true" />
+	</GOC_AnimController>
+</GameObject>

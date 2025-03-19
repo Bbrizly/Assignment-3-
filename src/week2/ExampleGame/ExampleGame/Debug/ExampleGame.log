@@ -1,0 +1,105 @@
+﻿  GameObject.cpp
+D:\Projects\z\upei-csc4650-main\src\luaplus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '../../common/GameObject.cpp')
+  
+  Game.cpp
+D:\Projects\z\upei-csc4650-main\src\common\Game.cpp(49,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\common\Game.cpp(142,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  GameObjectManager.cpp
+D:\Projects\z\upei-csc4650-main\src\luaplus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '../../common/GameObjectManager.cpp')
+  
+  LuaScriptManager.cpp
+D:\Projects\z\upei-csc4650-main\src\luaplus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '../../common/LuaScriptManager.cpp')
+  
+  SceneCamera.cpp
+  SceneManager.cpp
+  Transform.cpp
+D:\Projects\z\upei-csc4650-main\src\luaplus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file '../../common/Transform.cpp')
+  
+  PVRTBoneBatch.cpp
+  PVRTDecompress.cpp
+  PVRTError.cpp
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTError.cpp(45,2): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  PVRTFixedPoint.cpp
+  PVRTGeometry.cpp
+  PVRTMatrixF.cpp
+  PVRTMatrixX.cpp
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTMatrixX.cpp(485,6): warning C4146: unary minus operator applied to unsigned type, result still unsigned
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTMatrixX.cpp(540,6): warning C4146: unary minus operator applied to unsigned type, result still unsigned
+  PVRTMisc.cpp
+  PVRTModelPOD.cpp
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(2987,10): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(4551,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(4593,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(4714,6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTModelPOD.cpp(4721,6): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  PVRTQuaternionF.cpp
+  PVRTQuaternionX.cpp
+  PVRTResourceFile.cpp
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTResourceFile.cpp(31,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTResourceFile.cpp(279,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  PVRTString.cpp
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTString.cpp(1525,17): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTString.cpp(1527,2): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTString.cpp(1789,17): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Projects\z\upei-csc4650-main\src\PowerVR\PVRTString.cpp(1791,2): warning C4996: '_vsnprintf': This function or variable may be unsafe. Consider using _vsnprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
+  Compiling...
+  PVRTTexture.cpp
+  PVRTTrans.cpp
+  PVRTTriStrip.cpp
+  PVRTVector.cpp
+  PVRTVertex.cpp
+  tinystr.cpp
+  tinyxml.cpp
+  tinyxmlerror.cpp
+  tinyxmlparser.cpp
+  W_Buffer.cpp
+  W_BufferManager.cpp
+  W_Common.cpp
+D:\Projects\z\upei-csc4650-main\src\wolf\W_Common.cpp(20,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  W_IndexBuffer.cpp
+  W_Material.cpp
+  W_MaterialManager.cpp
+  W_Model.cpp
+D:\Projects\z\upei-csc4650-main\src\wolf\W_Model.cpp(216,87): warning C4018: '<': signed/unsigned mismatch
+D:\Projects\z\upei-csc4650-main\src\wolf\W_Model.cpp(263,49): warning C4018: '<': signed/unsigned mismatch
+D:\Projects\z\upei-csc4650-main\src\wolf\W_Model.cpp(283,49): warning C4018: '<': signed/unsigned mismatch
+  W_Program.cpp
+  W_ProgramManager.cpp
+  W_Sprite.cpp
+  W_Texture.cpp
+  Generating Code...
+  Compiling...
+  W_TextureManager.cpp
+  W_VertexBuffer.cpp
+  W_VertexDeclaration.cpp
+  ComponentAnimController.cpp
+D:\Projects\z\upei-csc4650-main\src\luaplus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file 'src/ComponentAnimController.cpp')
+  
+D:\Projects\z\upei-csc4650-main\src\week2\ExampleGame\src\ComponentAnimController.cpp(140,32): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+  ComponentCharacterController.cpp
+D:\Projects\z\upei-csc4650-main\src\luaplus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file 'src/ComponentCharacterController.cpp')
+  
+  ComponentRenderableMesh.cpp
+D:\Projects\z\upei-csc4650-main\src\luaplus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file 'src/ComponentRenderableMesh.cpp')
+  
+  ExampleGame.cpp
+D:\Projects\z\upei-csc4650-main\src\luaplus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file 'src/ExampleGame.cpp')
+  
+  main.cpp
+D:\Projects\z\upei-csc4650-main\src\luaplus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file 'src/main.cpp')
+  
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4217: symbol '_fprintf' defined in 'Game.obj' is imported by 'GLFW.lib(win32_window.obj)' in function '_getFBConfigs'
+LINK : warning LNK4217: symbol '___iob_func' defined in 'Game.obj' is imported by 'GLFW.lib(win32_window.obj)' in function '_getFBConfigs'
+  ExampleGame.vcxproj -> D:\Projects\z\upei-csc4650-main\src\week2\ExampleGame\Debug\ExampleGame.exe

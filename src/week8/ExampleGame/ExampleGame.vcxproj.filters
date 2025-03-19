@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\wolf\W_Buffer.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_BufferManager.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_Common.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_IndexBuffer.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_Material.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_MaterialManager.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_Model.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_Program.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_ProgramManager.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_Texture.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_TextureManager.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_VertexBuffer.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_VertexDeclaration.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="..\..\PowerVR\PVRTBoneBatch.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTDecompress.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTError.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTFixedPoint.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTGeometry.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTMatrixF.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTMatrixX.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTMisc.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTModelPOD.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTQuaternionF.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTQuaternionX.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTResourceFile.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTString.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTTexture.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTTrans.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTTriStrip.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTVector.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\PowerVR\PVRTVertex.cpp">
+      <Filter>PVR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\Game.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\Transform.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\GameObject.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExampleGame.cpp" />
+    <ClCompile Include="src\ComponentAnimController.cpp" />
+    <ClCompile Include="src\ComponentCharacterController.cpp" />
+    <ClCompile Include="..\..\common\SceneCamera.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\SceneManager.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentRenderableMesh.cpp" />
+    <ClCompile Include="..\..\common\GameObjectManager.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinystr.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxml.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxmlerror.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxmlparser.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\LuaScriptManager.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wolf\W_Sprite.cpp">
+      <Filter>wolf</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentAIController.cpp" />
+    <ClCompile Include="src\AIDecisionTree.cpp" />
+    <ClCompile Include="src\AIDecisionNode.cpp" />
+    <ClCompile Include="src\AIActionNode.cpp" />
+    <ClCompile Include="..\..\common\StateMachine.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AIStateChasing.cpp" />
+    <ClCompile Include="src\AIStateChasingFast.cpp" />
+    <ClCompile Include="src\AIStateIdle.cpp" />
+    <ClCompile Include="src\AIStateWander.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="wolf">
+      <UniqueIdentifier>{a07fd912-f963-48c0-862b-f413dc520f69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PVR">
+      <UniqueIdentifier>{628cc568-0fe6-4e7f-ad76-989d6186daa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{19634876-5c4e-40df-bb47-8efed92f9c71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tinyxml">
+      <UniqueIdentifier>{829c731c-9719-4700-b19a-5aae911a1000}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\wolf\W_Buffer.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_BufferManager.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_Common.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_IndexBuffer.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_Material.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_MaterialManager.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_Model.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_Program.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_ProgramManager.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_Texture.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_TextureManager.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_Types.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_VertexBuffer.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_VertexDeclaration.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTArray.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTBackground.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTBoneBatch.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTDecompress.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTError.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTFixedPoint.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTGeometry.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTGlobal.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTHash.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTMathTable.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTMatrix.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTMemoryFileSystem.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTMisc.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTModelPOD.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTools.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTQuaternion.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTResourceFile.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTSingleton.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTSkipGraph.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTString.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTTexture.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTTrans.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTTriStrip.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTVector.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\PowerVR\PVRTVertex.h">
+      <Filter>PVR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\Game.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\Transform.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\GameObject.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExampleGame.h" />
+    <ClInclude Include="..\..\common\ComponentBase.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentAnimController.h" />
+    <ClInclude Include="src\ComponentCharacterController.h" />
+    <ClInclude Include="..\..\common\SceneCamera.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\SceneManager.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentRenderableMesh.h" />
+    <ClInclude Include="..\..\common\ComponentRenderable.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\GameObjectManager.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tinyxml\tinystr.h">
+      <Filter>tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tinyxml\tinyxml.h">
+      <Filter>tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\LuaScriptManager.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wolf\W_Sprite.h">
+      <Filter>wolf</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentAIController.h" />
+    <ClInclude Include="src\AIDecisionTree.h" />
+    <ClInclude Include="src\AINode.h" />
+    <ClInclude Include="src\AIActionNode.h" />
+    <ClInclude Include="src\AIDecisionNode.h" />
+    <ClInclude Include="..\..\common\StateBase.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\StateMachine.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIStateChasing.h" />
+    <ClInclude Include="src\AIStateChasingFast.h" />
+    <ClInclude Include="src\AIStateIdle.h" />
+    <ClInclude Include="src\AIStateWander.h" />
+  </ItemGroup>
+</Project>

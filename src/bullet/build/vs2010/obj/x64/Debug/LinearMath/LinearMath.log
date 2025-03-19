@@ -1,0 +1,18 @@
+﻿  btAlignedAllocator.cpp
+  btConvexHull.cpp
+  btConvexHullComputer.cpp
+  btGeometryUtil.cpp
+  btPolarDecomposition.cpp
+  btQuickprof.cpp
+  btSerializer.cpp
+  btVector3.cpp
+D:\Projects\z\upei-csc4650-main\src\bullet\src\LinearMath\btPolarDecomposition.cpp(63,36): warning C4244: 'initializing': conversion from 'double' to 'btScalar', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\bullet\src\LinearMath\btPolarDecomposition.cpp(63,30): warning C4244: 'initializing': conversion from 'double' to 'const btScalar', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\bullet\src\LinearMath\btVector3.cpp(172,42): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\bullet\src\LinearMath\btPolarDecomposition.cpp(66,36): warning C4244: 'argument': conversion from 'double' to 'const btScalar', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\bullet\src\LinearMath\btVector3.cpp(177,14): warning C4267: '-=': conversion from 'size_t' to 'unsigned long', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\bullet\src\LinearMath\btVector3.cpp(420,38): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\bullet\src\LinearMath\btVector3.cpp(557,42): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\bullet\src\LinearMath\btVector3.cpp(562,14): warning C4267: '-=': conversion from 'size_t' to 'unsigned long', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\bullet\src\LinearMath\btVector3.cpp(808,38): warning C4267: '=': conversion from 'size_t' to 'long', possible loss of data
+  LinearMath.vcxproj -> D:\Projects\z\upei-csc4650-main\src\bullet\lib\LinearMath_vs2010_x64_debug.lib

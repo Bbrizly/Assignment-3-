@@ -1,0 +1,21 @@
+<GameObject>	
+	<GOC_RenderableMesh>
+		<Model path="assignment2/data/props/coin.pod" />
+		<Textures path="assignment2/data/props/" />
+		<VertexProgram path="assignment2/data/shaders/textured.vsh" />
+		<FragmentProgram path="assignment2/data/shaders/textured.fsh" />
+	</GOC_RenderableMesh>
+	
+	<GOC_CoinMovement>
+		<RotationSpeed value="60.0f" />
+		<BobScale value="2.0f" />
+	</GOC_CoinMovement>
+	
+	<GOC_LifeSpan>
+		<Timer value="20.0f" />
+	</GOC_LifeSpan>
+
+	<GOC_CollisionSphere>
+		<Radius value="3.0f" />
+	</GOC_CollisionSphere>
+</GameObject>
