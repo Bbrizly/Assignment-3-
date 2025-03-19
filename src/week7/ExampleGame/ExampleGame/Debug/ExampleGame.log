@@ -1,66 +1,18 @@
-﻿  DebugRender.cpp
-  AABBVolume.cpp
-  CoinComponent.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/CoinComponent.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinComponent.cpp(15,26): error C2039: 'MarkForDestruction': is not a member of 'Common::GameObject'
-      D:\Projects\z\upei-csc4650-main\src\common\GameObject.h(30,8):
-      see declaration of 'Common::GameObject'
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinComponent.cpp(45,30): error C2039: 'IsMarkedForDestruction': is not a member of 'Common::GameObject'
-      D:\Projects\z\upei-csc4650-main\src\common\GameObject.h(30,8):
-      see declaration of 'Common::GameObject'
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinComponent.cpp(46,30): error C2039: 'MarkForDestruction': is not a member of 'Common::GameObject'
-      D:\Projects\z\upei-csc4650-main\src\common\GameObject.h(30,8):
-      see declaration of 'Common::GameObject'
-  
-  CoinSpawner.cpp
+﻿  CoinSpawner.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/CoinSpawner.cpp')
   
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinSpawner.cpp(3,10): error C1083: Cannot open include file: '../ExampleGame/src/ExampleGame.h': No such file or directory
-  HUD.cpp
+  ExampleGame.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/HUD.cpp')
+  (compiling source file 'src/ExampleGame.cpp')
   
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\HUD.cpp(55,53): error C2039: 'GetTextBox': is not a member of 'Common::SceneManager'
-      D:\Projects\z\upei-csc4650-main\src\common\SceneManager.h(19,8):
-      see declaration of 'Common::SceneManager'
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\HUD.cpp(67,53): error C2039: 'GetTextBox': is not a member of 'Common::SceneManager'
-      D:\Projects\z\upei-csc4650-main\src\common\SceneManager.h(19,8):
-      see declaration of 'Common::SceneManager'
-  
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(132,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(133,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(134,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp(127,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   main.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   (compiling source file 'src/main.cpp')
   
-  SphereVolume.cpp
-  ThirdPersonCamera.cpp
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.h(38,26): error C3668: 'week2::ThirdPersonCamera::GetViewMatrix': method with override specifier 'override' did not override any base class methods
-  (compiling source file 'src/ThirdPersonCamera.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.h(28,31): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/ThirdPersonCamera.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.cpp(67,35): error C2248: 'Common::SceneCamera::m_vPos': cannot access private member declared in class 'Common::SceneCamera'
-      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(63,13):
-      see declaration of 'Common::SceneCamera::m_vPos'
-      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(17,8):
-      see declaration of 'Common::SceneCamera'
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.cpp(87,51): error C2248: 'Common::SceneCamera::m_vPos': cannot access private member declared in class 'Common::SceneCamera'
-      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(63,13):
-      see declaration of 'Common::SceneCamera::m_vPos'
-      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(17,8):
-      see declaration of 'Common::SceneCamera'
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.cpp(91,33): error C2248: 'Common::SceneCamera::m_vPos': cannot access private member declared in class 'Common::SceneCamera'
-      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(63,13):
-      see declaration of 'Common::SceneCamera::m_vPos'
-      D:\Projects\z\upei-csc4650-main\src\common\SceneCamera.h(17,8):
-      see declaration of 'Common::SceneCamera'
-  
   Generating Code...
+  ExampleGame.vcxproj -> D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\Debug\ExampleGame.exe

@@ -9,7 +9,8 @@
 
 #include "SceneCamera.h"
 #include <glm/gtc/matrix_transform.hpp>
-
+#include "iostream"
+using namespace std;
 using namespace Common;
 
 //------------------------------------------------------------------------------
@@ -42,7 +43,7 @@ SceneCamera::SceneCamera()
 // Parameter: const glm::vec3 & p_vTarget
 // Parameter: const glm::vec3 & p_vUp
 // Returns:   
-// 
+
 // Constructor with explicit initialization of members
 //------------------------------------------------------------------------------
 SceneCamera::SceneCamera(float p_fFOV, float p_fAspectRatio, float p_fNearClip, float p_fFarClip, const glm::vec3 &p_vPos, const glm::vec3& p_vTarget, const glm::vec3& p_vUp)
@@ -261,6 +262,7 @@ const glm::mat4& SceneCamera::GetProjectionMatrix() const
 //------------------------------------------------------------------------------
 const glm::mat4& SceneCamera::GetViewMatrix() const
 {
+	//cout << "\nBrotha\n" << endl;
 	if (m_bViewDirty)
 	{
 		m_mViewMatrix = glm::lookAt(m_vPos, m_vTarget, m_vUp);

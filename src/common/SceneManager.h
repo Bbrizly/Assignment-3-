@@ -14,6 +14,9 @@
 #include "W_Sprite.h"
 #include "SceneCamera.h"
 
+#include "wolf/TextRendering/TextRenderer.h"
+#include "wolf/TextRendering/TextBox.h"
+
 namespace Common
 {
 	class SceneManager
@@ -32,6 +35,16 @@ namespace Common
 			DirectionalLight() : m_diffuse(0,0,0,0), m_specular(0,0,0,0), m_ambient(0,0,0,0) {}    
 		};
 
+		struct PointLight
+		{
+			glm::vec3 position;
+			glm::vec3 color;
+			float range;
+
+			PointLight(const glm::vec3& pos, float range, const glm::vec3& col)
+				: position(pos), range(range), color(col) {}
+		};
+
 	public:
 		//------------------------------------------------------------------------------
 		// Public methods.
@@ -39,6 +52,11 @@ namespace Common
 		static void CreateInstance();
 		static void DestroyInstance();
 		static SceneManager* Instance();
+
+		void AddTextBox(string text, float x, float y, float width, float height);
+		TextBox* GetTextBox(int id);
+		void RemoveTextBox(TextBox* pTextBox);
+		void ClearText();
 
 		void AddModel(wolf::Model* p_pModel);
 		void RemoveModel(wolf::Model* p_pModel);
@@ -51,7 +69,12 @@ namespace Common
 		void AttachCamera(SceneCamera* p_pCamera);
 		SceneCamera* GetCamera();
 
+		void AddPointLight(const glm::vec3& position, float range, const glm::vec3& color);
+		void UpdatePointLight(const int index, const glm::vec3& position);
+
 		DirectionalLight* GetDefaultLight() { return m_pLight; }
+		
+		ModelList getModels() { return m_lModelList; }
 
 		void Render();
 
@@ -72,6 +95,10 @@ namespace Common
 		// Static singleton instance
 		static SceneManager* s_pSceneManagerInstance;
 
+		// alist of textboxes to render
+		TextRenderer* m_textRenderer = nullptr;
+		Font* m_font = nullptr;
+
 		// A list of models to render
 		ModelList m_lModelList;
 
@@ -83,6 +110,8 @@ namespace Common
 		
 		// Default directional light
 		DirectionalLight* m_pLight;
+
+		std::vector<PointLight> m_PointLights;
 	};
 
 } // namespace common

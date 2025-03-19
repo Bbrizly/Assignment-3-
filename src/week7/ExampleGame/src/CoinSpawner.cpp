@@ -1,10 +1,10 @@
 #include "CoinSpawner.h"
 //#include "../common/ComponentRenderable.h"
-#include "../ExampleGame/src/ExampleGame.h"
-#include "../ExampleGame/src/ComponentRenderableMesh.h"
+#include "ExampleGame.h"
+#include "ComponentRenderableMesh.h"
 #include "iostream"
 
-using namespace std; using namespace glm; using namespace week2; using namespace Common;
+using namespace std; using namespace glm; using namespace week7; using namespace Common;
 
 int CoinSpawner::CountActiveCoins() {
     //count coints in gameobject manager

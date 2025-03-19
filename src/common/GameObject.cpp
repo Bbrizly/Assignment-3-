@@ -12,6 +12,7 @@
 
 #include "GameObject.h"
 #include <sstream>
+#include <iostream>
 
 using namespace Common;
 
@@ -59,6 +60,11 @@ GameObject::~GameObject()
 //------------------------------------------------------------------------------
 bool GameObject::AddComponent(ComponentBase* p_pComponent)
 {
+	//if (p_pComponent == nullptr) {
+	//	std::cerr << "tried to to add a null." << std::endl;
+	//	return false;
+	//}
+
 	// Make sure we don't already have a component of this type
 	if (m_mComponentMap.find(p_pComponent->FamilyID()) == m_mComponentMap.end())
 	{

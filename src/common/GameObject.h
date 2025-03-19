@@ -16,6 +16,7 @@
 #include "ComponentBase.h"
 #include "GameObjectManager.h"
 #include "Transform.h"
+#include "iostream"
 
 #if defined(_WIN32)
 #include "LuaScriptManager.h"
@@ -45,8 +46,21 @@ namespace Common
 
 		bool AddComponent(ComponentBase* p_pComponent);
 		ComponentBase* GetComponent(const std::string &p_strFamilyId);
+
+		void ShowComponents()
+		{
+			std::cout << "\nGAMEOBJ Components: \n";
+			for (auto x : m_mComponentMap)
+			{
+				std::cout << x.second->ComponentID() << ", ";
+			}
+		}
+
 		ComponentBase* RemoveComponent(const std::string &p_strFamilyId);
 		void DeleteAllComponents();
+
+		bool IsMarkedForDestruction() const { return m_bMarkedForDestruction; }
+		void MarkForDestruction() { m_bMarkedForDestruction = true; }
 
 		virtual void Update(float p_fDelta);
 
@@ -65,6 +79,8 @@ namespace Common
 		// Only GameObjectManager can create instances (private constructor/destructor)
 		GameObject(GameObjectManager* p_pGameObjectManager);
 		~GameObject();
+
+		bool m_bMarkedForDestruction = false;
 
 		// Only GameObjectManager can set new GUID as it maintains the mapping of GUID -> GO
 		void SetGUID(const std::string& p_strGUID) { m_strGUID = p_strGUID; }

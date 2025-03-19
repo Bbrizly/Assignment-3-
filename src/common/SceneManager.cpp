@@ -1,4 +1,4 @@
-//------------------------------------------------------------------------
+﻿//------------------------------------------------------------------------
 // SceneManager
 //
 // Created:	2012/12/23
@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------
 
 #include "SceneManager.h"
-
+#include "DebugRender.h"
 #include <algorithm>
 
 using namespace Common;
@@ -84,6 +84,40 @@ SceneManager::~SceneManager()
 		delete m_pLight;
 		m_pLight = NULL;
 	}
+}
+
+void SceneManager::AddTextBox(string text, float x, float y, float width, float height)
+{
+	if (!m_textRenderer)
+	{
+		//textrenderer setup
+		m_textRenderer = new TextRenderer();
+		m_textRenderer->init();
+		m_font = m_textRenderer->createFont("Arial"); //"data/Fonts/Arial"
+
+	}
+	TextBox* txtBox = m_textRenderer->createTextBox(m_font, text, x, y, width, height);
+	txtBox->SetColor(0, 0, 0, 255);
+	txtBox->SetAlignment(1);
+	txtBox->SetVerticalAlignment(1);
+	m_textRenderer->setTextBox(txtBox);
+}
+
+TextBox* SceneManager::GetTextBox(int id)
+{
+	if (m_textRenderer)
+	{
+		return m_textRenderer->GetTextBoxes()[id];
+	}
+}
+
+void SceneManager::RemoveTextBox(TextBox* pTextBox)
+{
+	m_textRenderer->~TextRenderer();
+}
+void SceneManager::ClearText()
+{
+	m_textRenderer->~TextRenderer();
 }
 
 //------------------------------------------------------------------------------
@@ -187,6 +221,25 @@ SceneCamera* SceneManager::GetCamera()
 	return m_pCamera;
 }
 
+void SceneManager::AddPointLight(const glm::vec3& position, const float range, const glm::vec3& color)
+{
+	m_PointLights.push_back(PointLight(position, range, color));
+}
+
+void SceneManager::UpdatePointLight(const int index, const glm::vec3& position)
+{
+	if (index >= 0 && index < m_PointLights.size())
+	{
+		m_PointLights[index].position = position;
+	}
+
+	//if (!m_PointLights.empty())
+	//{
+	//	m_PointLights[index].position = position; // Blue light follows the player
+	//}
+}
+
+
 //------------------------------------------------------------------------------
 // Method:    Render
 // Returns:   void
@@ -214,12 +267,38 @@ void SceneManager::Render()
 
 		for (wolf::Material* pMaterial : pModel->GetMaterials())
 		{
+			//pMaterial->SetUniform("NumPointLights", (int)m_PointLights.size());
+			float strength = 10.0f;
+
+			if (m_PointLights.size() >= 2)
+			{
+				//glm::vec3 blueLightPos = glm::vec3(0.0f, 10.0f, 1.0f)/* get player position */;
+				//glm::vec3 blueLightColor = glm::vec3(0.0f, 0.0f, 1.0f);
+				pMaterial->SetUniform("blueLight.PositionRange", glm::vec4(m_PointLights[0].position, m_PointLights[0].range));//blueLightPos
+				pMaterial->SetUniform("blueLight.Color", m_PointLights[0].color); //blueLightColor
+				pMaterial->SetUniform("blueLight.Strength", strength);
+
+
+				//glm::vec3 yellowLightPos = glm::vec3(0.0f, 5.0f, -10.0f); // Adjust as needed
+				//glm::vec3 yellowLightColor = glm::vec3(1.0f, 1.0f, 0.0f);
+				pMaterial->SetUniform("yellowLight.PositionRange", glm::vec4(m_PointLights[1].position, m_PointLights[1].range));//yellowLightPos
+				pMaterial->SetUniform("yellowLight.Color", m_PointLights[1].color); //yellowLightColor
+				pMaterial->SetUniform("yellowLight.Strength", strength);
+			}
+
+			/*for (size_t i = 0; i < m_PointLights.size(); ++i)
+			{
+				std::string index = std::to_string(i);
+				pMaterial->SetUniform("PointLights[" + index + "].Position", m_PointLights[i].position);
+				pMaterial->SetUniform("PointLights[" + index + "].Color", m_PointLights[i].color);
+			}*/
+
 			// Set the light parameters
-			pMaterial->SetUniform("ViewDir", glm::vec3(0.0f, 0.0f, 1.0f));
-			pMaterial->SetUniform("LightAmbient", m_pLight->m_ambient);
-			pMaterial->SetUniform("LightDiffuse", m_pLight->m_diffuse);
-			pMaterial->SetUniform("LightSpecular", m_pLight->m_specular);
-			pMaterial->SetUniform("LightDir", m_pLight->m_vDirection);
+			//pMaterial->SetUniform("ViewDir", glm::vec3(0.0f, 0.0f, 1.0f));
+			//pMaterial->SetUniform("LightAmbient", m_pLight->m_ambient);
+			//pMaterial->SetUniform("LightDiffuse", m_pLight->m_diffuse);
+			//pMaterial->SetUniform("LightSpecular", m_pLight->m_specular);
+			//pMaterial->SetUniform("LightDir", m_pLight->m_vDirection);
 		}
 
 		pModel->Render(mView, mProj);
@@ -236,5 +315,20 @@ void SceneManager::Render()
 	{
 		wolf::Sprite* pSprite = static_cast<wolf::Sprite*>(*sIt);
 		pSprite->Render(mOrthoProj);
+	}
+	DebugRender::Instance().SetLayerEnabled("BoundingVolumes", true);
+	DebugRender::Instance().Render(mProj, mView);
+	
+
+	//RENDERING TEXTTT
+	if (m_textRenderer)
+	{
+		glDisable(GL_DEPTH_TEST);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+		m_textRenderer->render(mOrthoProj, glm::mat4(1.0));
+		glDisable(GL_BLEND);
+		glEnable(GL_DEPTH_TEST);
 	}
 }

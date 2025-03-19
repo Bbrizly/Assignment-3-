@@ -2,6 +2,7 @@ D:\Projects\z\upei-csc4650-main\src\common\BulletPhysicsDebugDrawer.cpp;D:\Proje
 D:\Projects\z\upei-csc4650-main\src\common\BulletPhysicsManager.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\BulletPhysicsManager.obj
 D:\Projects\z\upei-csc4650-main\src\common\BulletPhysicsMaterialManager.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\BulletPhysicsMaterialManager.obj
 D:\Projects\z\upei-csc4650-main\src\common\ComponentRigidBody.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\ComponentRigidBody.obj
+D:\Projects\z\upei-csc4650-main\src\common\DebugRender.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\DebugRender.obj
 D:\Projects\z\upei-csc4650-main\src\common\GameObject.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\GameObject.obj
 D:\Projects\z\upei-csc4650-main\src\common\Game.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\Game.obj
 D:\Projects\z\upei-csc4650-main\src\common\GameObjectManager.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\GameObjectManager.obj
@@ -32,6 +33,11 @@ D:\Projects\z\upei-csc4650-main\src\tinyxml\tinystr.cpp;D:\Projects\z\upei-csc46
 D:\Projects\z\upei-csc4650-main\src\tinyxml\tinyxml.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\tinyxml.obj
 D:\Projects\z\upei-csc4650-main\src\tinyxml\tinyxmlerror.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\tinyxmlerror.obj
 D:\Projects\z\upei-csc4650-main\src\tinyxml\tinyxmlparser.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\tinyxmlparser.obj
+D:\Projects\z\upei-csc4650-main\src\wolf\TextRendering\Font.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\Font.obj
+D:\Projects\z\upei-csc4650-main\src\wolf\TextRendering\MiniFont.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\MiniFont.obj
+D:\Projects\z\upei-csc4650-main\src\wolf\TextRendering\TextBox.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\TextBox.obj
+D:\Projects\z\upei-csc4650-main\src\wolf\TextRendering\TextRenderer.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\TextRenderer.obj
+D:\Projects\z\upei-csc4650-main\src\wolf\TextRendering\TextTable.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\TextTable.obj
 D:\Projects\z\upei-csc4650-main\src\wolf\W_Buffer.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\W_Buffer.obj
 D:\Projects\z\upei-csc4650-main\src\wolf\W_BufferManager.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\W_BufferManager.obj
 D:\Projects\z\upei-csc4650-main\src\wolf\W_Common.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\W_Common.obj
@@ -46,8 +52,15 @@ D:\Projects\z\upei-csc4650-main\src\wolf\W_Texture.cpp;D:\Projects\z\upei-csc465
 D:\Projects\z\upei-csc4650-main\src\wolf\W_TextureManager.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\W_TextureManager.obj
 D:\Projects\z\upei-csc4650-main\src\wolf\W_VertexBuffer.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\W_VertexBuffer.obj
 D:\Projects\z\upei-csc4650-main\src\wolf\W_VertexDeclaration.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\W_VertexDeclaration.obj
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\AABBVolume.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\AABBVolume.obj
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinComponent.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\CoinComponent.obj
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\CoinSpawner.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\CoinSpawner.obj
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentAnimController.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\ComponentAnimController.obj
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentCharacterController.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\ComponentCharacterController.obj
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentRenderableMesh.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\ComponentRenderableMesh.obj
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\EventManager.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\EventManager.obj
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ExampleGame.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\ExampleGame.obj
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\HUD.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\HUD.obj
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\main.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\main.obj
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\SphereVolume.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\SphereVolume.obj
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.cpp;D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\ExampleGame\Debug\ThirdPersonCamera.obj

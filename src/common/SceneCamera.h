@@ -38,15 +38,22 @@ namespace Common
 
 		void SetPos(const glm::vec3 &p_vPos);
 		const glm::vec3& GetPos() const;
+		void Update(float deltaTime)
+		{
+			UpdateTarget(m_vTarget);
+		}
 
 		void SetTarget(const glm::vec3& p_vTarget);
 		const glm::vec3& GetTarget() const;
+		void UpdateTarget(const glm::vec3& t);
 
 		void SetUp(const glm::vec3& p_vUp);
 		const glm::vec3& GetUp() const;
 
 		const glm::mat4& GetProjectionMatrix() const;
-		const glm::mat4& GetViewMatrix() const;
+		virtual const glm::mat4& GetViewMatrix() const;
+
+		glm::vec3 m_vPos;
 
 	private:
 		//---------------------------------------------------------------------
@@ -60,7 +67,6 @@ namespace Common
 		float m_fFarClip;
 
 		// Position, target and up vectors
-		glm::vec3 m_vPos;
 		glm::vec3 m_vTarget;
 		glm::vec3 m_vUp;
 

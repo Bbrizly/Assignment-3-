@@ -9,6 +9,8 @@
 
 #include "GameObjectManager.h"
 #include "ComponentRenderable.h"
+#include "iostream"
+
 
 using namespace Common;
 
@@ -136,6 +138,84 @@ bool GameObjectManager::SetGameObjectGUID(GameObject* p_pGameObject, const std::
 	return true;
 }
 
+GameObject* GameObjectManager::CreateGameObject(const std::string& p_strGameObject)
+{
+	// Load the document and return NULL if it fails
+	TiXmlDocument doc(p_strGameObject.c_str());
+	if (!doc.LoadFile()) {
+		return nullptr;
+	}
+
+	// Look for <GameObject>
+	TiXmlNode* pNode = doc.FirstChild("GameObject");
+	if (!pNode) return nullptr;
+
+	GameObject* pGO = new GameObject(this);
+	m_mGOMap.insert(std::make_pair(pGO->GetGUID(), pGO));
+
+	// We do TWO passes:
+	//  1) parse a possible <Transform>
+	//  2) parse other <components>  (So the transform is known earlier or at least done.)
+	// Or you can do a single pass that checks node name.
+
+	TiXmlNode* pChildNode = pNode->FirstChild();
+	while (pChildNode)
+	{
+		//PARSING THE TRAnSFORM IN XMLL
+
+		if (std::strcmp(pChildNode->Value(), "Transform") == 0)
+		{
+			TiXmlElement* pElem = pChildNode->ToElement();
+
+			const char* scaleAttr = pElem->Attribute("scale");
+			const char* translationAttr = pElem->Attribute("translation");
+			const char* rotationAttr = pElem->Attribute("rotation");
+
+			if (scaleAttr)
+			{
+				float sx, sy, sz;
+				if (3 == sscanf(scaleAttr, "%f %f %f", &sx, &sy, &sz))
+				{
+					pGO->GetTransform().SetScale(glm::vec3(sx, sy, sz));
+				}
+			}
+			if (translationAttr)
+			{
+				float tx, ty, tz;
+				if (3 == sscanf(translationAttr, "%f %f %f", &tx, &ty, &tz))
+				{
+					pGO->GetTransform().SetTranslation(glm::vec3(tx, ty, tz));
+				}
+			}
+			if (rotationAttr)
+			{
+				float rx, ry, rz;
+				if (3 == sscanf(rotationAttr, "%f %f %f", &rx, &ry, &rz))
+				{
+					pGO->GetTransform().SetRotation(glm::vec3(rx, ry, rz));
+				}
+			}
+		}
+		else
+		{
+			const char* szComponentName = pChildNode->Value();
+			auto it = m_mComponentFactoryMap.find(szComponentName);
+			if (it != m_mComponentFactoryMap.end())
+			{
+				auto factory = it->second;
+				ComponentBase* pComp = factory(pChildNode);
+				if (pComp) pGO->AddComponent(pComp);
+			}
+		}
+
+		pChildNode = pChildNode->NextSibling();
+	}
+
+	return pGO;
+}
+
+
+/*
 //------------------------------------------------------------------------------
 // Method:    CreateGameObject
 // Parameter: const std::string & p_strGameObject
@@ -146,6 +226,7 @@ bool GameObjectManager::SetGameObjectGUID(GameObject* p_pGameObject, const std::
 //------------------------------------------------------------------------------
 GameObject* GameObjectManager::CreateGameObject(const std::string& p_strGameObject)
 {
+	
 	// Load the document and return NULL if it fails to parse
 	TiXmlDocument doc(p_strGameObject.c_str());
 	if (doc.LoadFile() == false)
@@ -162,6 +243,7 @@ GameObject* GameObjectManager::CreateGameObject(const std::string& p_strGameObje
 
 	// Create the game object
 	GameObject* pGO = new GameObject(this);
+	std::cout << "Name: " << pGO->GetGUID() << "\n\n";
 	m_mGOMap.insert(std::pair<std::string, GameObject*>(pGO->GetGUID(), pGO));
 
 	// Iterate components in the XML and delegate to factory methods to construct components
@@ -185,7 +267,7 @@ GameObject* GameObjectManager::CreateGameObject(const std::string& p_strGameObje
 		
 	return pGO;
 }
-
+*/
 //------------------------------------------------------------------------------
 // Method:    RegisterComponentFactory
 // Parameter: const std::string & p_strComponentId
@@ -215,6 +297,13 @@ void GameObjectManager::RegisterComponentFactory(const std::string& p_strCompone
 //------------------------------------------------------------------------------
 void GameObjectManager::Update(float p_fDelta)
 {
+
+	/*for (auto x : m_mGOMap)
+	{
+		std::cout << "\n\n";
+		x.second->ShowComponents();
+	}*/
+
 	GameObject* pGO = NULL;
 	GameObjectMap::iterator it = m_mGOMap.begin(), end = m_mGOMap.end();
 	for (; it != end; ++it)
@@ -222,6 +311,21 @@ void GameObjectManager::Update(float p_fDelta)
 		pGO = (GameObject*)it->second;
 		pGO->Update(p_fDelta);
 	}
+
+	for (auto it = m_mGOMap.begin(); it != m_mGOMap.end();)
+	{
+		GameObject* pGO = it->second;
+		if (pGO->IsMarkedForDestruction())
+		{
+			delete pGO; // calls destructor, which calls DeleteAllComponents
+			it = m_mGOMap.erase(it);
+		}
+		else
+		{
+			++it;
+		}
+	}
+
 }
 
 //------------------------------------------------------------------------------
@@ -319,7 +423,10 @@ LuaPlus::LuaObject GameObjectManager::LuaCreateGameObject()
 //------------------------------------------------------------------------------
 LuaPlus::LuaObject GameObjectManager::LuaCreateGameObjectXML(const char* p_strPath)
 {
+	std::cout<< "creating: " << p_strPath << "\n";
+
 	GameObject* pGO = CreateGameObject(p_strPath);
+
 	LuaPlus::LuaObject luaInstance;
 	luaInstance.AssignNewTable(LuaScriptManager::Instance()->GetLuaState());
 
