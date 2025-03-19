@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ExampleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ExampleGame.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\CoinSpawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,50 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 187,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ExampleGame.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp",
-              "RelativeDocumentMoniker": "src\\ExampleGame.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp",
-              "RelativeToolTip": "src\\ExampleGame.cpp",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAkwIUAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-19T04:49:01.247Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExampleGame.h",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.h",
-              "RelativeDocumentMoniker": "src\\ExampleGame.h",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.h",
-              "RelativeToolTip": "src\\ExampleGame.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-19T04:21:54.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CoinSpawner.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp",
-              "RelativeDocumentMoniker": "src\\CoinSpawner.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp",
-              "RelativeToolTip": "src\\CoinSpawner.cpp",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAswCQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-19T04:17:44.677Z",
-              "EditorCaption": ""
             }
           ]
         }
