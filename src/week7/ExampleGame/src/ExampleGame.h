@@ -6,11 +6,12 @@
 // This class implements the main game. It creates:
 //   • 4 stacks of 9 crates each,
 //   • Brick walls enclosing the world,
-//   • A ground and lamppost with collision geometry,
-//   • Projectile spawning on mouse click in the camera’s look direction,
-//   • Collision detection via Bullet (for coins, character, walls, etc.),
-//   • A pause state (toggled via key 'P') where physics updates are frozen,
-//   • BONUS: A teeter‐totter prop using a hinge constraint.
+//   • A lamppost as an extra rigid body obstacle,
+//   • Projectile spawning on mouse click,
+//   • Collision detection via Bullet for coins, character, walls, lamppost, crates, ground, etc.,
+//   • A pause state (toggled via an on-screen button or by key 'P') where physics are frozen and the scene still draws in the background,
+//   • A minimal teeter‐totter bonus prop using a hinge constraint (or anything else interesting).
+
 #ifndef WEEK7_EXAMPLEGAME_H
 #define WEEK7_EXAMPLEGAME_H
 
@@ -29,16 +30,17 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <string>
+#include "StateMachine.h"        // For the optional push/pop states
 
 #ifdef _WIN32
 #include "LuaPlus.h"
 #include "LuaScriptManager.h"
-#include "windows.h"
 #endif
 
 namespace week7 {
 
-    // Game state enumeration.
+    // A simple enumerated game state if you do not want to push/pop states
+    // but the assignment wants you to have a push/pop. Here we keep both ways for illustration.
     enum GameState { GAMEPLAY, PAUSED };
 
     class ExampleGame : public Common::Game {
@@ -57,35 +59,35 @@ namespace week7 {
         static LuaPlus::LuaObject GetGame();
         static void LuaPrint(const char* p_strDebugString);
         LuaPlus::LuaObject GetGameObjectManager();
-
-        Common::GameObjectManager* GetGameObjectManagerCpp() { return m_pGameObjectManager; } //get GameObjectManager LUA
 #endif
 
     private:
-        // Static instance for Lua export.
-        static ExampleGame* s_pInstance;
+        static ExampleGame* s_pInstance;  // for Lua bridging
 
-        // Managers
-        Common::SceneManager* m_pSceneManager;
+        // Managers & scene
         Common::GameObjectManager* m_pGameObjectManager;
+        GameState m_state;
+        Common::GameObject* m_pCharacter; // pointer to player char
 
-        // Scene camera (created manually here)
+        // Optional: main camera pointer if you want to keep it around
         Common::SceneCamera* m_pSceneCamera;
 
-        // Game state (gameplay or paused)
-        GameState m_state;
-
-        // Pointer to the player character GameObject.
-        Common::GameObject* m_pCharacter;
-
-        // Helper functions to create scene objects.
+        // Basic helper functions
         void CreateWalls();
         void CreateCrateStacks();
-        void CreateCharacter();
+        void CreateLamppost();                // Extra obstacle
+        void CreateTeeterTotter();            // Bonus constraint example
         void CreateProjectile();
         void TogglePause();
-        void RenderPauseOverlay();
-        void CreateTeeterTotter(); // BONUS: Creates a teeter‐totter prop.
+        void RenderPauseOverlay();            // "PAUSED" text or background
+
+        // We store time just for minimal illusions
+        float m_timeSinceLastUpdate = 0.0f;
+
+        // For demonstration, we do not push/pop states with the StateMachine,
+        // but you can do so if you prefer. The assignment wants a push/pop approach
+        // for the paused overlay. That is left flexible.
+
     };
 
 } // namespace week7

@@ -3,19 +3,13 @@
 
 #include "ComponentBase.h"
 #include "PlayerScore.h"
-
 #include "wolf/TextRendering/TextRenderer.h"
 #include "wolf/TextRendering/TextBox.h"
 #include "tinyxml.h"
-
-#include "ComponentBase.h"
 #include "GameObjectManager.h"
-#include "GameObject.h"
-#include "CoinComponent.h"
 #include "EventManager.h"
-#include <cstdlib>
 #include <glm/glm.hpp>
-#include "tinyxml.h"
+#include <string>
 
 namespace Common {
 
@@ -27,7 +21,6 @@ namespace Common {
         static Common::ComponentBase* CreateComponent(TiXmlNode* pNode);
 
         virtual void Update(float deltaTime) override;
-
         void Render();
 
         virtual const std::string FamilyID() override { return "GOC_HUD"; }
@@ -36,19 +29,18 @@ namespace Common {
         void setPlayerName(std::string x) { playerName = x; }
 
     private:
-
         void OnCoinCollected(const struct Event& e);
-
-        HUD* thiz()
-        {
-            return this;
-        }
 
         PlayerScore* m_scoreComponent;
 
         TextRenderer* m_textRenderer;
         TextBox* m_textBox;
+
+        // Extra text box for the "Pause" button
+        TextBox* m_pauseBtn = nullptr;
+
         std::string playerName = "";
+        bool m_bIsPaused = false;
     };
 
 } // namespace Common

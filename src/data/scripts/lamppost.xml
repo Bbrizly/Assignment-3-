@@ -1,6 +1,6 @@
 <!-- lamppost.xml -->
 <GameObject>
-    <Transform translation="0.0 0.0 0.0"/>
+    <Transform translation="3.0 0.0 3.0"/>
 
 	<GOC_RenderableMesh>
         <Param name="modelFile" value="data/As1/props/lamp.pod"/>

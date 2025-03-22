@@ -32,7 +32,7 @@ void CoinSpawner::SpawnCoin() {
 
     coin->AddComponent(new CoinLogic(lifespan));
     coin->AddComponent(new CoinMovement(amplitude, frequency, rotationSpeed));
-    coin->AddComponent(new CoinCollision(g_playerGameObject));
+    //coin->AddComponent(new CoinCollision(g_playerGameObject));
     coin->AddComponent(new CoinScore(coinValue));
 
     ComponentRenderableMesh* pCoinMesh = new ComponentRenderableMesh();

@@ -103,6 +103,30 @@ void ComponentRigidBody::Init(btCollisionShape* p_pCollisionShape, const std::st
 //------------------------------------------------------------------------------
 void ComponentRigidBody::Update(float p_fDelta)
 {
+    if (!m_bInitialized)
+    {
+        btCollisionShape* shape = nullptr;
+        if (m_storedShape == "box")
+        {
+            shape = new btBoxShape(btVector3(m_storedHalfExtents.x,
+                m_storedHalfExtents.y,
+                m_storedHalfExtents.z));
+        }
+        else if (m_storedShape == "sphere")
+        {
+            shape = new btSphereShape(m_storedHalfExtents.x);
+        }
+        else
+        {
+            shape = new btBoxShape(btVector3(m_storedHalfExtents.x,
+                m_storedHalfExtents.y,
+                m_storedHalfExtents.z));
+        }
+        this->Init(shape, m_storedMaterial, m_storedMass, m_storedOffset, m_storedKinematic);
+        m_bInitialized = true;
+    }
+
+
 	if (m_bKinematic)
 	{
 		// Get the rigid body transform
@@ -132,4 +156,81 @@ void ComponentRigidBody::Update(float p_fDelta)
 		transform.SetTranslation(vPos + vOffset);
 		transform.SetRotation(qRot);
 	}
+}
+
+ComponentBase* ComponentRigidBody::CreateComponent(TiXmlNode* pNode)
+{
+    ComponentRigidBody* rB = new ComponentRigidBody();
+
+    std::string shapeType = "box";
+    glm::vec3 halfExtents(1.5f, 1.5f, 1.5f);
+    float mass = 2.0f;
+    std::string material = "Crate";
+    glm::vec3 offset(0.0f);
+    bool kinematic = false;
+
+    TiXmlNode* pChild = pNode->FirstChild();
+    while (pChild)
+    {
+        if (std::strcmp(pChild->Value(), "Param") == 0)
+        {
+            TiXmlElement* pElem = pChild->ToElement();
+            const char* paramName = pElem->Attribute("name");
+            const char* paramValue = pElem->Attribute("value");
+            if (paramName && paramValue)
+            {
+                if (std::strcmp(paramName, "shape") == 0)
+                {
+                    shapeType = paramValue;
+                }
+                else if (std::strcmp(paramName, "halfExtents") == 0)
+                {
+                    float x, y, z;
+                    if (sscanf(paramValue, "%f %f %f", &x, &y, &z) == 3)
+                    {
+                        halfExtents = glm::vec3(x, y, z);
+                    }
+                }
+                else if (std::strcmp(paramName, "radius") == 0)
+                {
+                    float r;
+                    if (sscanf(paramValue, "%f", &r) == 1)
+                    {
+                        halfExtents.x = r;
+                    }
+                }
+                else if (std::strcmp(paramName, "mass") == 0)
+                {
+                    mass = static_cast<float>(atof(paramValue));
+                }
+                else if (std::strcmp(paramName, "material") == 0)
+                {
+                    material = paramValue;
+                }
+                else if (std::strcmp(paramName, "offset") == 0)
+                {
+                    float x, y, z;
+                    if (sscanf(paramValue, "%f %f %f", &x, &y, &z) == 3)
+                    {
+                        offset = glm::vec3(x, y, z);
+                    }
+                }
+                else if (std::strcmp(paramName, "kinematic") == 0)
+                {
+                    kinematic = (std::strcmp(paramValue, "true") == 0);
+                }
+            }
+        }
+        pChild = pChild->NextSibling();
+    }
+
+    rB->m_storedShape = shapeType;
+    rB->m_storedHalfExtents = halfExtents;
+    rB->m_storedMass = mass;
+    rB->m_storedMaterial = material;
+    rB->m_storedOffset = offset;
+    rB->m_storedKinematic = kinematic;
+    rB->m_bInitialized = false;
+
+    return rB;
 }

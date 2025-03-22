@@ -29,15 +29,7 @@ namespace Common
 		virtual const std::string FamilyID(){ return std::string("GOC_RigidBody"); }
 		virtual void Update(float p_fDelta);
 
-		static ComponentBase* CreateComponent(TiXmlNode* pNode)
-		{
-			if (std::strcmp(pNode->Value(), "CameraSwitcher") != 0 &&
-				std::strcmp(pNode->Value(), "GOC_CameraSwitcher") != 0)
-			{
-				return nullptr;
-			}
-			return new ComponentRigidBody();
-		}
+		static ComponentBase* CreateComponent(TiXmlNode* pNode);
 
 		btRigidBody* GetRigidBody()
 		{
@@ -54,17 +46,23 @@ namespace Common
 		// Private members.
 		//------------------------------------------------------------------------------
 
-		// Bullet physics rigid body
 		btRigidBody* m_pBody;
 
-		// Collision shape
 		btCollisionShape* m_pCollisionShape;
 
-		// Offset from rigid body
 		glm::vec3 m_vOffset;
 
-		// Is Physics controlled or manually controlled
 		bool m_bKinematic;
+
+		//initalization shit
+		bool m_bInitialized = false;
+		std::string m_storedShape;
+		glm::vec3 m_storedHalfExtents;
+		float m_storedMass;
+		std::string m_storedMaterial;
+		glm::vec3 m_storedOffset;
+		bool m_storedKinematic;
+
 	};
 }
 
