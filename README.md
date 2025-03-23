@@ -1,6 +1,27 @@
-# CSC 4650 Code
+# CSC 4650 Assignment 3
 
-Included in this repository is the weekly codebase for CSC4650.
+Hello
+
+# Controls:
+
+Q to switch shoulders
+C to switch cameras
+Tab to unlock mouse (To press on pause and resume top right)  [alternatively P to pause]
+
+
+WASD For movement
+Shift for faster movement
+Left Click to launch projectiles
+
+# What I did:
+
+- Bullet used for all collions
+- Projectile interactes with game objects and collects coins. [coins identify it using an identifier projectile component]
+- Character cannot walk through walls and lamppost (veocity based movement)
+- Data-driven game object creation (found in src/data/scripts/)
+- Collision events are called when bullet collisions happen
+- Scene pauses correctly (by setting delta time to 0)
+- Added teeter totter and have different collision shapes.
 
 ## Toubleshooting
 
@@ -19,3 +40,4 @@ Install: [Microsoft Visual C++ Redistributable 2012](https://www.microsoft.com/e
 
 1. in Visual Studio, rightclick on `ExampleGame` in the Solution Explorer
 2. select `Build`
+
