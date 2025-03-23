@@ -19,6 +19,7 @@
 #include "GameObject.h"
 #include "SceneManager.h"
 #include "tinyxml.h"
+#include "ComponentProjectile.h" 
 
 namespace week7
 {

@@ -42,21 +42,13 @@ void CoinCollision::OnBulletCollision(const Event& e)
     GameObject* other = (A == coinGO) ? B : A;
 
     bool isPlayer = (other == g_playerGameObject);
-    bool isProjectile = false;
-
-    std::string otherName = other->GetGUID();
-    if (otherName.find("Projectile") != std::string::npos) {
-        isProjectile = true;
-    }
+    bool isProjectile = (other->GetComponent("GOC_Projectile") != nullptr);
 
     if (!isPlayer && !isProjectile)
         return;
 
-    // Ok, so coin + (player or projectile). We'll "collect" or destroy coin
-    // Possibly also do score logic if it was a player
     CoinScore* cScore = dynamic_cast<CoinScore*>(coinGO->GetComponent("GOC_CoinScore"));
 
-    // If you want to send a "CoinCollected" event with the coin's value:
     Event e2;
     e2.type = EventType::CoinCollected;
     e2.sender = coinGO;
@@ -65,15 +57,12 @@ void CoinCollision::OnBulletCollision(const Event& e)
     }
     EventManager::Instance().TriggerEvent(e2);
 
-    // Mark coin for destruction
     coinGO->MarkForDestruction();
 
-    // Optionally if a player is colliding, we add to the player's score directly
-    // if (isPlayer && cScore) {
-    //     PlayerScore* pScore = dynamic_cast<PlayerScore*>(other->GetComponent("GOC_PlayerScore"));
-    //     if (pScore) {
-    //         pScore->AddScore( cScore->GetValue() );
-    //     }
-    // }
-    // Then coin destroyed
+     if (isPlayer && cScore) {
+         PlayerScore* pScore = dynamic_cast<PlayerScore*>(g_playerGameObject->GetComponent("GOC_PlayerScore"));
+         if (pScore) {
+             pScore->AddScore( cScore->GetValue() );
+         }
+     }
 }

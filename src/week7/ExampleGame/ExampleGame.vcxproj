@@ -227,6 +227,7 @@
     <ClInclude Include="src\ComponentCameraSwitcher.h" />
     <ClInclude Include="src\ComponentCharacterController.h" />
     <ClInclude Include="src\ComponentLookAtCamera.h" />
+    <ClInclude Include="src\ComponentProjectile.h" />
     <ClInclude Include="src\ComponentRenderableMesh.h" />
     <ClInclude Include="src\ComponentThirdPersonCamera.h" />
     <ClInclude Include="src\EventManager.h" />

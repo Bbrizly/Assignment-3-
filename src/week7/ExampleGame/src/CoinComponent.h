@@ -10,6 +10,7 @@
 #include <glm/glm.hpp>
 #include <string>
 #include <cmath>
+#include "PlayerScore.h"
 
 namespace Common {
 

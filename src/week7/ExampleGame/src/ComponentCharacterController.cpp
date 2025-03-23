@@ -175,9 +175,12 @@ void ComponentCharacterController::CreateProjectile()
         "data/shaders/textured.fsh");
     pProjectile->AddComponent(pProjMesh);
 
+
     ComponentRigidBody* pProjRB = new ComponentRigidBody();
     pProjectile->AddComponent(pProjRB);
     pProjRB->Init(new btSphereShape(1.0f), "Bouncy", 1.0f, vec3(0.0f), false);
+
+    pProjectile->AddComponent(new ComponentProjectile());
 
     vec3 lookDir = cam->GetLookDirection();
     float projectileSpeed = 50.f;
