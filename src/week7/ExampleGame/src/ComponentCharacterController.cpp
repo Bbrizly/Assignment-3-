@@ -102,33 +102,26 @@ void ComponentCharacterController::Update(float p_fDelta)
     bLastMouseDown = bCurrentMouseDown;
 
     btRigidBody* body = m_pRigidBody->GetRigidBody();
+    btVector3 oldVel = body->getLinearVelocity();
+    float oldY = oldVel.getY();
 
     float lenMove = length(moveDir);
     if (lenMove > 0.001f) {
         moveDir = normalize(moveDir) * moveSpeed;
 
-        btVector3 newVel(moveDir.x, 0, moveDir.z);
+        btVector3 newVel(moveDir.x, oldY, moveDir.z);
         body->setLinearVelocity(newVel);
 
         float vx = newVel.x();
         float vz = newVel.z();
         float speed2D = std::sqrt(vx * vx + vz * vz);
         if (speed2D > 0.001f) {
-            // compute heading
-            float angle = std::atan2(vx, vz); // rotate Y so: angle=atan2(X, Z)
-            // build a quaternion around Y only
-            btQuaternion rot(btVector3(0, 1, 0), angle);
 
-            btTransform currentTrans;
-            body->getMotionState()->getWorldTransform(currentTrans);
-            btVector3 pos = currentTrans.getOrigin();
-            currentTrans.setOrigin(pos);
-            currentTrans.setRotation(rot);
+            float angle = std::atan2(vx, vz);
 
-            body->getMotionState()->setWorldTransform(currentTrans);
+            m_rot = btQuaternion(btVector3(0, 1, 0), angle);
 
         }
-
 
         if (m_pAnimComponent) {
             if (isRunning && !isRunningAnim) {
@@ -142,16 +135,11 @@ void ComponentCharacterController::Update(float p_fDelta)
                 isWalkingAnim = true;
             }
         }
-
-
-
     }
     else {
 
-        btVector3 velocity = body->getLinearVelocity();
-        velocity.setX(0.f);
-        velocity.setZ(0.f);
-        body->setLinearVelocity(velocity);
+        btVector3 newVel(0.f, oldY, 0.f);
+        body->setLinearVelocity(newVel);
 
         if (m_pAnimComponent && (isRunningAnim || isWalkingAnim)) {
             m_pAnimComponent->SetAnim("idle");
@@ -159,13 +147,21 @@ void ComponentCharacterController::Update(float p_fDelta)
             isWalkingAnim = false;
         }
     }
+
+    btTransform currentTrans;
+    body->getMotionState()->getWorldTransform(currentTrans);
+    btVector3 pos = currentTrans.getOrigin();
+    currentTrans.setOrigin(pos);
+    currentTrans.setRotation(m_rot);
+
+    body->getMotionState()->setWorldTransform(currentTrans);
 }
 
 void ComponentCharacterController::CreateProjectile()
 {
 
     GameObject* pProjectile = GetGameObject()->GetManager()->CreateGameObject();
-    // spawn at camera pos
+
     SceneCamera* cam = SceneManager::Instance()->GetCamera();
     if (!cam) return;
 

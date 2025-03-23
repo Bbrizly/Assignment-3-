@@ -40,6 +40,7 @@ namespace week7
         Common::ComponentRigidBody* m_pRigidBody = nullptr;
 
         ComponentAnimController* m_pAnimComponent = nullptr;
+        btQuaternion m_rot;
 
         bool m_bKeysDown[256];
         bool m_bKeysDownLast[256];
