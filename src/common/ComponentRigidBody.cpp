@@ -140,6 +140,10 @@ void ComponentRigidBody::Update(float p_fDelta)
         {
             shape = new btCapsuleShape(m_storedHalfExtents.x, m_storedHalfExtents.y);
         }
+        else if (m_storedShape == "cylinder")
+        {
+            shape = new btCylinderShape(btVector3(m_storedHalfExtents.x, m_storedHalfExtents.y, m_storedHalfExtents.z));
+        }
         else
         {
             shape = new btBoxShape(btVector3(m_storedHalfExtents.x,

@@ -10,7 +10,7 @@
 	</GOC_RenderableMesh>
 
     <GOC_RigidBody>
-		<Param name="shape" value="box" />
+		<Param name="shape" value="cylinder" />
 		<Param name="halfExtents" value="1.0 20.0 1.0" />
 		<Param name="material" value="Crate" />
 		<Param name="mass" value="0" />

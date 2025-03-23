@@ -19,7 +19,7 @@ using namespace std;
 using namespace week7;
 using namespace Common;
 
-ComponentCharacterController::ComponentCharacterController()
+ComponentCharacterController::ComponentCharacterController(): m_rot(0, 0, 0, 1)
 {
     memset(m_bKeysDown, 0, sizeof(m_bKeysDown));
     memset(m_bKeysDownLast, 0, sizeof(m_bKeysDownLast));
