@@ -11,17 +11,18 @@
 #include <glm/glm.hpp>
 #include <string>
 
+#include "ExampleGame.h"
+
 namespace Common {
 
     class HUD : public ComponentBase {
     public:
         HUD(PlayerScore* scoreComponent = nullptr);
         virtual ~HUD();
-
+        
         static Common::ComponentBase* CreateComponent(TiXmlNode* pNode);
-
+        
         virtual void Update(float deltaTime) override;
-        // We don't have a separate "Render()" now, because SceneManager does it automatically.
 
         virtual const std::string FamilyID()    override { return "GOC_HUD"; }
         virtual const std::string ComponentID() override { return "GOC_HUD"; }
@@ -33,19 +34,20 @@ namespace Common {
 
         PlayerScore* m_scoreComponent = nullptr;
 
-        // We'll store pointers to the text boxes we create in SceneManager
-        TextBox* m_textBox = nullptr; // shows "Score: X"
-        TextBox* m_pauseBtn = nullptr; // "Pause"/"Resume" button
+        TextBox* m_textBox = nullptr;
+        TextBox* m_pauseBtn = nullptr;
 
         bool m_bIsPaused = false;
 
-        // We'll store bounding or position for the button
-        float m_pauseBtnX = 10.f;
-        float m_pauseBtnY = 60.f;
+        float m_pauseBtnX = 520.f;
+        float m_pauseBtnY = 350.f;
+
+        float m_pauseBtnBoundingX = 1160.f;
+        float m_pauseBtnBoundingY = 669.f;
+
         float m_pauseBtnW = 90.f;
         float m_pauseBtnH = 40.f;
 
-        // The player's name in case we need to find them
         std::string m_playerName;
     };
 

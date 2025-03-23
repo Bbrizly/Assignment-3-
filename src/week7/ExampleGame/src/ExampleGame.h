@@ -31,6 +31,9 @@ namespace week7 {
     public:
         ExampleGame();
         virtual ~ExampleGame();
+        static ExampleGame* GetInstance() { return s_pInstance; }
+
+        void TogglePause();
 
     protected:
         virtual bool Init();
@@ -54,12 +57,8 @@ namespace week7 {
 
         Common::SceneCamera* m_pSceneCamera;
 
-        void CreateWalls();
-        void CreateCrateStacks();
-        void CreateLamppost();
         void CreateTeeterTotter();
-        void CreateProjectile();
-        void TogglePause();
+
         void RenderPauseOverlay();
 
         float m_timeSinceLastUpdate = 0.0f;

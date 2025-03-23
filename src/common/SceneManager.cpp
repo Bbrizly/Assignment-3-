@@ -94,7 +94,6 @@ TextBox* SceneManager::AddTextBox(string text, float x, float y, float width, fl
 		m_textRenderer = new TextRenderer();
 		m_textRenderer->init();
 		m_font = m_textRenderer->createFont("Arial"); //"data/Fonts/Arial"
-
 	}
 	TextBox* txtBox = m_textRenderer->createTextBox(m_font, text, x, y, width, height);
 	txtBox->SetColor(0, 0, 0, 255);

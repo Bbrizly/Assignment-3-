@@ -17,6 +17,7 @@ void CoinLogic::Update(float deltaTime) {
 }
 
 void CoinMovement::Update(float deltaTime) {
+    if (deltaTime == 0) return;
     m_time += deltaTime;
     Common::Transform& t = GetGameObject()->GetTransform();
     vec3 pos = t.GetTranslation();

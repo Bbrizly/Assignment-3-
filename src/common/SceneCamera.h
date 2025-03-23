@@ -40,6 +40,7 @@ namespace Common
 		const glm::vec3& GetPos() const;
 		void Update(float deltaTime)
 		{
+			if (deltaTime == 0) return;
 			UpdateTarget(m_vTarget);
 		}
 

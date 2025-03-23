@@ -42,6 +42,8 @@ Common::ComponentBase* ComponentCharacterController::CreateComponent(TiXmlNode* 
 
 void ComponentCharacterController::Update(float p_fDelta)
 {
+    if (p_fDelta == 0) return;
+
     if (!m_pRigidBody) {
         std::cout << "\n\nNO rigidbody\n\n";
         m_pRigidBody = dynamic_cast<Common::ComponentRigidBody*>(GetGameObject()->GetComponent("GOC_RigidBody"));
