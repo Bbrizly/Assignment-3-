@@ -69,6 +69,7 @@ namespace Common
 		static void ExportToLua();
 		bool AddComponentLua(LuaPlus::LuaObject luaObject);
 		LuaPlus::LuaObject GetTransformLua();
+		LuaPlus::LuaObject GetRigidBodyLua();
 #endif
 		
 	private:

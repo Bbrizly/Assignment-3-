@@ -45,6 +45,12 @@ namespace Common
 		//------------------------------------------------------------------------------
 		virtual void Init(btCollisionShape* p_pCollisionShape, const std::string& p_strMaterial, float p_fMass, const glm::vec3& p_vOffset, bool p_bIsKinematic = false);
 
+		void Scale(const glm::vec3& scale);
+		void ScaleXYZ(float sx, float sy, float sz) { Scale(glm::vec3(sx, sy, sz)); }
+		#if defined(_WIN32)
+			static void ExportToLua();
+		#endif
+
 	private:
 		//------------------------------------------------------------------------------
 		// Private members.

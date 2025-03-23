@@ -152,6 +152,7 @@ bool ExampleGame::Init()
     ComponentBase::ExportToLua();
     GameObject::ExportToLua();
     Transform::ExportToLua();
+    ComponentRigidBody::ExportToLua();
 
     int status =
         LuaScriptManager::Instance()->GetLuaState()->DoFile("data/scripts/mainXML.lua");
@@ -202,8 +203,6 @@ bool ExampleGame::Update(float p_fDelta)
 
 void ExampleGame::Render()
 {
-
-    // sync transforms to pass them into the Wolf model rendering
     m_pGameObjectManager->SyncTransforms();
     SceneManager::Instance()->Render();
 
@@ -295,36 +294,12 @@ void ExampleGame::CreateCrateStacks()
     }
 }
 
-void ExampleGame::CreateLamppost()
-{
-    // A simple lamppost so the player can't walk through it
-    GameObject* pLamp = m_pGameObjectManager->CreateGameObject();
-    // We re-use a prop mesh from "lamppost" or any POD. Adjust path as needed.
-    // If you don't have a lamppost asset, just use crate or sphere.
-    ComponentRenderableMesh* pMesh = new ComponentRenderableMesh();
-    pMesh->Init("data/As2/props/lamppost.pod",  // or any path
-        "data/As2/props/",
-        "data/As1/shaders/textured.vsh",
-        "data/As1/shaders/textured.fsh");
-    pLamp->AddComponent(pMesh);
-
-    pLamp->GetTransform().SetTranslation(vec3(0.f, 0.f, 20.f));
-    pLamp->GetTransform().SetScale(vec3(1.f, 1.f, 1.f));
-
-    ComponentRigidBody* pRB = new ComponentRigidBody();
-    pLamp->AddComponent(pRB);
-
-    // We approximate lamppost as a cylinder or box. Let’s just do a tall box for simplicity
-    btVector3 halfExtents(0.5f, 5.0f, 0.5f);
-    pRB->Init(new btBoxShape(halfExtents), "LampPost", 0.0f, vec3(0.f), false);
-}
-
 void ExampleGame::CreateTeeterTotter()
 {
     // Example of a hinged constraint bonus
     GameObject* pTeeter = m_pGameObjectManager->CreateGameObject();
     ComponentRenderableMesh* pPlankMesh = new ComponentRenderableMesh();
-    // We can reuse "ground.pod" or "crate" for a plank
+
     pPlankMesh->Init("data/As1/props/ground.pod",
         "data/As1/bonus/",
         "data/shaders/textured.vsh",

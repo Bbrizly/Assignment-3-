@@ -70,14 +70,12 @@ end
 function spawnWall(posStr, scaleStr)
     local wall = gameObjectManager:CreateGameObjectXML("data/scripts/wall.xml")
     local transform = wall:GetTransform()
+    local rb = wall:GetRigidBody()
     
     transform:Translate(posStr[1], posStr[2], posStr[3])
     transform:Scale(scaleStr[1], scaleStr[2], scaleStr[3])
 
-    -- local rb = wall:GetComponent("GOC_RigidBody")
-    -- if rb and rb.UpdateCollisionShape then
-        -- rb:UpdateCollisionShape(scaleTable)
-    -- end
+    rb:Scale(scaleStr[1], scaleStr[2], scaleStr[3])
 
     return wall
 end

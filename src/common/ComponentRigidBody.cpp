@@ -11,6 +11,9 @@
 #include "ComponentRigidBody.h"
 #include "GameObject.h"
 
+#include "LuaScriptManager.h"
+#include "LuaPlus.h"
+
 using namespace Common;
 
 //------------------------------------------------------------------------------
@@ -35,6 +38,17 @@ ComponentRigidBody::ComponentRigidBody()
 //------------------------------------------------------------------------------
 ComponentRigidBody::~ComponentRigidBody()
 {
+    if (m_pBody)
+    {
+        BulletPhysicsManager::Instance()->GetWorld()->removeRigidBody(m_pBody);
+        delete m_pBody;
+        m_pBody = nullptr;
+    }
+    if (m_pCollisionShape)
+    {
+        delete m_pCollisionShape;
+        m_pCollisionShape = nullptr;
+    }
 }
 
 //------------------------------------------------------------------------------
@@ -251,3 +265,50 @@ ComponentBase* ComponentRigidBody::CreateComponent(TiXmlNode* pNode)
 
     return rB;
 }
+
+void ComponentRigidBody::Scale(const glm::vec3& scale)
+{
+    // If we have a shape, multiply its local scaling
+    if (m_pCollisionShape)
+    {
+        // bullet shape’s old scale
+        btVector3 oldScale = m_pCollisionShape->getLocalScaling();
+        btVector3 newScale(
+            oldScale.x() * scale.x,
+            oldScale.y() * scale.y,
+            oldScale.z() * scale.z);
+        m_pCollisionShape->setLocalScaling(newScale);
+
+        // Also if dynamic body, re-calc inertia
+        if (m_pBody) {
+            //m_pBody->getInvMass
+            btScalar invMass = m_pBody->getInvMass(); // 0 => static or kinematic
+
+            if (invMass > 0.f) {
+                float mass = 1.f / invMass;
+                btVector3 localInertia(0, 0, 0);
+                m_pCollisionShape->calculateLocalInertia(mass, localInertia);
+                m_pBody->setMassProps(mass, localInertia);
+            }
+        }
+    }
+    else {
+        // If shape not built yet, we can multiply the storedHalfExtents ourselves
+        // so it starts with that scale
+        m_storedHalfExtents *= scale;
+    }
+}
+
+
+
+#if defined(_WIN32)
+
+void ComponentRigidBody::ExportToLua()
+{
+    LuaPlus::LuaObject metaTable =
+        LuaScriptManager::Instance()->GetLuaState()->GetGlobals().CreateTable("ComponentRigidBodyMetaTable");
+    metaTable.SetObject("__index", metaTable);
+
+    metaTable.RegisterObjectDirect("Scale", (ComponentRigidBody*)0, &ComponentRigidBody::ScaleXYZ);
+}
+#endif
