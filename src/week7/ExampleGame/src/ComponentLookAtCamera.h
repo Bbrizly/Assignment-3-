@@ -115,7 +115,7 @@ namespace Common {
                     //std::cout << m_playerName << " - - WHAT\n\n";
                     if (playerGO)
                     {
-                        //std::cout << "\n\FUCK\n\n";
+                        //std::cout << "\n\AH\n\n";
                         glm::vec3 playerPos = playerGO->GetTransform().GetTranslation();
                         m_camera->SetTarget(playerPos);
                     }
@@ -126,7 +126,6 @@ namespace Common {
 
         void MakeActive()
         {
-            std::cout << "\n\ 1A\n\n";
             if (m_camera)
             {
                 Common::SceneManager::Instance()->AttachCamera(m_camera);

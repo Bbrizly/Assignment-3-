@@ -18,6 +18,8 @@ namespace week7 {
         void SetTarget(const glm::vec3& target);
         void SwitchShoulder();
 
+        bool lockMouse = true;
+
     private:
         glm::vec2 currentMousePos;
         glm::vec2 m_lastMousePos;

@@ -21,26 +21,32 @@ namespace Common {
         static Common::ComponentBase* CreateComponent(TiXmlNode* pNode);
 
         virtual void Update(float deltaTime) override;
-        void Render();
+        // We don't have a separate "Render()" now, because SceneManager does it automatically.
 
-        virtual const std::string FamilyID() override { return "GOC_HUD"; }
+        virtual const std::string FamilyID()    override { return "GOC_HUD"; }
         virtual const std::string ComponentID() override { return "GOC_HUD"; }
 
-        void setPlayerName(std::string x) { playerName = x; }
+        void setPlayerName(const std::string& x) { m_playerName = x; }
 
     private:
         void OnCoinCollected(const struct Event& e);
 
-        PlayerScore* m_scoreComponent;
+        PlayerScore* m_scoreComponent = nullptr;
 
-        TextRenderer* m_textRenderer;
-        TextBox* m_textBox;
+        // We'll store pointers to the text boxes we create in SceneManager
+        TextBox* m_textBox = nullptr; // shows "Score: X"
+        TextBox* m_pauseBtn = nullptr; // "Pause"/"Resume" button
 
-        // Extra text box for the "Pause" button
-        TextBox* m_pauseBtn = nullptr;
-
-        std::string playerName = "";
         bool m_bIsPaused = false;
+
+        // We'll store bounding or position for the button
+        float m_pauseBtnX = 10.f;
+        float m_pauseBtnY = 60.f;
+        float m_pauseBtnW = 90.f;
+        float m_pauseBtnH = 40.f;
+
+        // The player's name in case we need to find them
+        std::string m_playerName;
     };
 
 } // namespace Common

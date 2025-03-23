@@ -86,7 +86,7 @@ SceneManager::~SceneManager()
 	}
 }
 
-void SceneManager::AddTextBox(string text, float x, float y, float width, float height)
+TextBox* SceneManager::AddTextBox(string text, float x, float y, float width, float height)
 {
 	if (!m_textRenderer)
 	{
@@ -101,6 +101,8 @@ void SceneManager::AddTextBox(string text, float x, float y, float width, float 
 	txtBox->SetAlignment(1);
 	txtBox->SetVerticalAlignment(1);
 	m_textRenderer->setTextBox(txtBox);
+
+	return txtBox;
 }
 
 TextBox* SceneManager::GetTextBox(int id)

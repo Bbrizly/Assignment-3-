@@ -277,7 +277,10 @@ void unpackModulations(const PVRTCWord& word, int offsetX, int offsetY, PVRTint3
 				ModulationBits &= ~0x1; /*clear it*/
 			}
 
-			// run through all the pixels in the block. Note we can now treat all the
+			// run through all the pixels in the b
+			// 
+			// 
+			// . Note we can now treat all the
 			// "stored" values as if they have 2bits (even when they didn't!)
 			for(int y = 0; y < 4; y++)
 			{

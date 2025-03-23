@@ -53,7 +53,7 @@ namespace Common
 		static void DestroyInstance();
 		static SceneManager* Instance();
 
-		void AddTextBox(string text, float x, float y, float width, float height);
+		TextBox* AddTextBox(string text, float x, float y, float width, float height);
 		TextBox* GetTextBox(int id);
 		void RemoveTextBox(TextBox* pTextBox);
 		void ClearText();

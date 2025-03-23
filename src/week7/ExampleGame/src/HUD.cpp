@@ -1,21 +1,18 @@
 #include "HUD.h"
 #include <iostream>
 #include "EventManager.h"
-#include <glm/gtc/matrix_transform.hpp> 
-#include <GL/glew.h>
 #include "SceneManager.h"
 #include "ExampleGame.h"
+#include "PlayerScore.h"
+#include <GL/glew.h>
+#include "glfw/include/GL/glfw.h"
 
 using namespace std;
 using namespace Common;
 
 HUD::HUD(PlayerScore* scoreComponent)
     : m_scoreComponent(scoreComponent)
-    , m_textRenderer(nullptr)
-    , m_textBox(nullptr)
-    , m_pauseBtn(nullptr)
 {
-    // Listen for coin collisions if you still want
     EventManager::Instance().AddListener(EventType::CoinCollected, [this](const Event& e) {
         OnCoinCollected(e);
         });
@@ -23,18 +20,18 @@ HUD::HUD(PlayerScore* scoreComponent)
 
 HUD::~HUD()
 {
-    m_textRenderer = nullptr;
     m_textBox = nullptr;
     m_pauseBtn = nullptr;
 }
 
 void HUD::OnCoinCollected(const Event& e)
 {
-    // If you were still doing that event
+    //ADD MONEY
 }
 
 Common::ComponentBase* HUD::CreateComponent(TiXmlNode* pNode)
 {
+    if (!pNode) return nullptr;
     if (std::strcmp(pNode->Value(), "HUD") != 0 &&
         std::strcmp(pNode->Value(), "GOC_HUD") != 0)
     {
@@ -42,6 +39,7 @@ Common::ComponentBase* HUD::CreateComponent(TiXmlNode* pNode)
     }
 
     std::string playerName;
+    // parse any params
     TiXmlNode* pChild = pNode->FirstChild();
     while (pChild)
     {
@@ -52,7 +50,7 @@ Common::ComponentBase* HUD::CreateComponent(TiXmlNode* pNode)
             const char* szValue = elem->Attribute("value");
             if (szName && szValue)
             {
-                if (std::strcmp(szName, "playerObjectName") == 0)
+                if (!std::strcmp(szName, "playerObjectName"))
                 {
                     playerName = szValue;
                 }
@@ -68,86 +66,91 @@ Common::ComponentBase* HUD::CreateComponent(TiXmlNode* pNode)
 
 void HUD::Update(float deltaTime)
 {
-    // We create text boxes once (lazy init)
-    if (!m_textRenderer) {
-        m_textRenderer = new TextRenderer();
-        m_textRenderer->init();
+    if (!m_textBox)
+    {
+        // Score text in top-right area
+        // e.g. x=1080, y=10, width=190, height=50
+        m_textBox = SceneManager::Instance()->AddTextBox("Score: 0", 0.f, 350.f, 190.f, 50.f);
+        if (m_textBox) {
+            m_textBox->SetColor(255, 255, 255, 255);
+        }
 
-        Font* font = m_textRenderer->createFont("Arial");
-
-        // Score box
-        m_textBox = m_textRenderer->createTextBox(font, "Score: 0", 640 - 200, 10, 190, 50);
-        m_textBox->SetColor(255, 255, 255, 255);
-
-        // Pause Button box (top-right corner)
-        m_pauseBtn = m_textRenderer->createTextBox(font, "Pause", 640 - 100, 60, 90, 40);
-        m_pauseBtn->SetColor(255, 255, 255, 255);
-
-        // Maybe a "PAUSED" display if you want 
-        // ...
+        // Pause button in top-right corner
+        m_pauseBtn = SceneManager::Instance()->AddTextBox("Pause", m_pauseBtnX, m_pauseBtnY, m_pauseBtnW, m_pauseBtnH);
+        if (m_pauseBtn) {
+            m_pauseBtn->SetColor(255, 255, 255, 255);
+        }
     }
 
-    // If we have a player, get its score
-    if (!m_scoreComponent) {
-        if (GetGameObject()) {
-            GameObject* pOwner = GetGameObject();
-            GameObject* pPlayer = pOwner->GetManager()->GetGameObject(playerName);
+    // If we do not yet have the player's score
+    if (!m_scoreComponent)
+    {
+        // Attempt to find the player by name, then fetch GOC_PlayerScore
+        GameObject* pOwner = GetGameObject();
+        if (pOwner)
+        {
+            GameObject* pPlayer = pOwner->GetManager()->GetGameObject(m_playerName);
             if (pPlayer) {
                 m_scoreComponent = dynamic_cast<PlayerScore*>(pPlayer->GetComponent("GOC_PlayerScore"));
             }
         }
     }
-    if (m_scoreComponent && m_textBox) {
-        int scoreVal = m_scoreComponent->GetScore();
-        m_textBox->SetText("Score: " + std::to_string(scoreVal));
+
+    // If we have a score, update the text
+    if (m_scoreComponent && m_textBox)
+    {
+        int val = m_scoreComponent->GetScore();
+        m_textBox->SetText("Score: " + std::to_string(val));
     }
 
-    // For a clickable approach, check if the user clicked the "Pause" box
-    static bool lastMouseDown = false;
-    bool curMouseDown = (glfwGetMouseButton(GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS);
-    //if (curMouseDown && !lastMouseDown) {
-    //    // see if the click is within m_pauseBtn bounds
-    //    int mx, my;
-    //    glfwGetMousePos(&mx, &my);
-    //    // text box is at (540,60) size(90,40) => quick bounding check
-    //    if (m_pauseBtn) {
-    //        float x = m_pauseBtn->GetX();
-    //        float y = m_pauseBtn->GetY();
-    //        float w = m_pauseBtn->GetWidth();
-    //        float h = m_pauseBtn->GetHeight();
-    //        if (mx >= x && mx <= x + w && my >= y && my <= y + h)
-    //        {
-    //            // toggle
-    //            // We can get the ExampleGame instance and call TogglePause
-    //            // Or set a flag
-    //            ExampleGame* theGame = (ExampleGame*)ExampleGame::s_pInstance;
-    //            if (theGame) {
-    //                theGame->TogglePause();
-    //            }
+    // Check if user clicked on "Pause" or "Resume"
+    static bool bLastMouseDown = false;
+    bool bCurrentMouseDown = (glfwGetMouseButton(GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS);
+    if (bCurrentMouseDown && !bLastMouseDown)
+    {
+        // get the mouse
+        int mx, my;
+        glfwGetMousePos(&mx, &my);
 
-    //            // Also update label
-    //            m_bIsPaused = !m_bIsPaused;
-    //            if (m_pauseBtn) {
-    //                m_pauseBtn->SetText(m_bIsPaused ? "Resume" : "Pause");
-    //            }
-    //        }
-    //    }
-    //}
-    lastMouseDown = curMouseDown;
-}
+        // invert if your coordinate system is 0 at top or bottom
+        my = 720 - my; // if 0,0 is bottom-left in ortho
 
-void HUD::Render()
-{
-    if (!m_textRenderer) return;
+        // Check bounds for the pause button
+        if (m_pauseBtn)
+        {
+            float x = m_pauseBtn->getPosX();
+            float y = m_pauseBtn->getPosY();
+            float w = m_pauseBtn->getWidth();
+            float h = m_pauseBtn->getHeight();
 
-    // We rely on SceneManager's orthographic projection for text
-    glm::mat4 ortho = glm::ortho(0.0f, 1280.0f, 720.0f, 0.0f, 0.f, 1000.f);
-    glDisable(GL_DEPTH_TEST);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            if (mx >= x && mx <= x + w && my >= y && my <= y + h)
+            {
+                std::cout << "\n\nPASUED??\n\n";
+                //// Toggle pause
+                //ExampleGame* theGame = week7::ExampleGame::s_pInstance;
+                //if (theGame)
+                //{
+                //    theGame->TogglePause();
+                //}
 
-    m_textRenderer->render(ortho, glm::mat4(1.f));
+                //m_bIsPaused = !m_bIsPaused;
+                //if (m_pauseBtn)
+                //{
+                //    m_pauseBtn->SetText(m_bIsPaused ? "Resume" : "Pause");
+                //}
 
-    glDisable(GL_BLEND);
-    glEnable(GL_DEPTH_TEST);
+                //// Optionally unlock mouse on pause
+                //if (m_bIsPaused)
+                //{
+                //    glfwEnable(GLFW_MOUSE_CURSOR);
+                //}
+                //else
+                //{
+                //    // re-lock if you want
+                //    //glfwDisable(GLFW_MOUSE_CURSOR);
+                //}
+            }
+        }
+    }
+    bLastMouseDown = bCurrentMouseDown;
 }

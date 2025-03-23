@@ -20,6 +20,12 @@ ThirdPersonCamera::ThirdPersonCamera(float p_fFOV, float p_fAspectRatio, float p
 }
 
 void ThirdPersonCamera::Update(float deltaTime) {
+
+    if (glfwGetKey(GLFW_KEY_TAB) == GLFW_PRESS)
+    {
+        lockMouse = !lockMouse;
+    }
+
     ProcessMouseInput();
     UpdateCameraPosition();
 }
@@ -35,8 +41,16 @@ void ThirdPersonCamera::ProcessMouseInput() {
     if (glm::length(mouseMovement) > 0.01f)
     {
         Rotate(mouseMovement.x * m_sensitivity, -mouseMovement.y * m_sensitivity);
-        glfwSetMousePos(640, 360);
-        m_lastMousePos = glm::vec2(640, 360);
+        if (lockMouse)
+        {
+            glfwSetMousePos(640, 360);
+            m_lastMousePos = glm::vec2(640, 360);
+        }
+        else
+        {
+            glfwGetMousePos(&xpos, &ypos);
+            m_lastMousePos = glm::vec2(xpos, ypos);
+        }
     }
     static bool bLastShoulderKeyDown = false;
     bool bShoulderKeyDown = glfwGetKey('Q') || glfwGetKey('q');

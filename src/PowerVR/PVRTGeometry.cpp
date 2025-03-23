@@ -19,7 +19,11 @@
     Start collecting triangles from there
 	  Add the triangle which gives the highest triangles/vertex number (extra tris usually come for free)
 	  When full, test against current best
-	    If markedly better tri/vtx, take new block
+	    If markedly better tri/vtx, take new b
+
+
+
+
 		If close-enough to prev tri/vtx, take block which closes the highest number of edges (and opens fewest)
 	  If not quite full, goto 1 to continue filling block
   If no block has been found, start at any free triangle and use resulting block
@@ -158,7 +162,9 @@ protected:
 
 public:
 	int			nVtxNum;			// Number of vertices in the block
-	int			nEdgNum;			// Number of edges in the block
+	int			nEdgNum;			// Number of edges in the b
+
+
 	int			nTriNum;			// Number of triangles in the block
 
 	SVtx		**psVtx;			// Pointers to vertices
