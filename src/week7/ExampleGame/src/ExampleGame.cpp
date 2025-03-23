@@ -142,7 +142,7 @@ bool ExampleGame::Init()
     //CreateWalls();
     //CreateCrateStacks();
     //CreateLamppost();
-    //CreateTeeterTotter();
+    CreateTeeterTotter();
 
 #if defined(_WIN32)
     GameObjectManager::ExportToLua();
@@ -230,41 +230,78 @@ void ExampleGame::Shutdown()
 
 void ExampleGame::CreateTeeterTotter()
 {
-    // Example of a hinged constraint bonus
-    GameObject* pTeeter = m_pGameObjectManager->CreateGameObject();
+    // Create the teeter totter plank.
+    GameObject* pPlankObj = m_pGameObjectManager->CreateGameObject();
+
+    // Use a crate mesh (or any suitable asset) to represent the plank.
     ComponentRenderableMesh* pPlankMesh = new ComponentRenderableMesh();
+    pPlankMesh->Init("data/As1/props/crate.pod",
+        "data/As1/props/",
+        "data/As1/shaders/textured.vsh",
+        "data/As1/shaders/textured.fsh");
+    pPlankObj->AddComponent(pPlankMesh);
 
-    pPlankMesh->Init("data/As1/props/ground.pod",
-        "data/As1/bonus/",
-        "data/shaders/textured.vsh",
-        "data/shaders/textured.fsh");
-    pTeeter->AddComponent(pPlankMesh);
-    pTeeter->GetTransform().SetTranslation(vec3(0.0f, 0.5f, 30.0f));
-    pTeeter->GetTransform().SetScale(vec3(4.0f, 0.5f, 1.0f));
+    // Set the plank's transform:
+    // Position the plank at a height of 5 units above the ground and 30 units into the scene.
+    pPlankObj->GetTransform().SetTranslation(vec3(0.0f, 5.0f, 30.0f));
+    // Scale the plank to be long and wide: 20 units long, 0.5 units high, and 2 units wide.
+    pPlankObj->GetTransform().SetScale(vec3(10.0f, 0.5f, 1.0f));
+
+    // Add a rigid body to the plank.
     ComponentRigidBody* pPlankRB = new ComponentRigidBody();
-    pTeeter->AddComponent(pPlankRB);
-    btVector3 halfExtents(2.0f, 0.25f, 0.5f);
-    pPlankRB->Init(new btBoxShape(halfExtents), "TeeterPlank", 5.0f, vec3(0.0f), false);
+    pPlankObj->AddComponent(pPlankRB);
+    // Calculate half-extents for the box shape from the scale.
+    btVector3 plankHalfExtents(10.0f, 0.25f, 1.0f);
+    // Make the plank dynamic (mass > 0) so that it can swing.
+    pPlankRB->Init(new btBoxShape(plankHalfExtents), "TeeterPlank", 5.0f, vec3(0.0f), false);
 
-    GameObject* pFulcrum = m_pGameObjectManager->CreateGameObject();
-    pFulcrum->GetTransform().SetTranslation(vec3(0.0f, 0.5f, 30.0f));
+    // Create the fulcrum (pivot support) for the teeter totter.
+    GameObject* pFulcrumObj = m_pGameObjectManager->CreateGameObject();
+
+    // Position the fulcrum below the middle of the plank.
+    // For example, place it 2 units below the plank's center.
+    pFulcrumObj->GetTransform().SetTranslation(vec3(0.0f, 3.0f, 30.0f));
+    // Scale the fulcrum to be a modest cube (2 units per side).
+    pFulcrumObj->GetTransform().SetScale(vec3(2.0f, 2.0f, 2.0f));
+
+    // Optionally, give the fulcrum a mesh (using the crate mesh here).
+    ComponentRenderableMesh* pFulcrumMesh = new ComponentRenderableMesh();
+    pFulcrumMesh->Init("data/As1/props/crate.pod",
+        "data/As1/props/",
+        "data/As1/shaders/textured.vsh",
+        "data/As1/shaders/textured.fsh");
+    pFulcrumObj->AddComponent(pFulcrumMesh);
+
+    // Add a rigid body to the fulcrum.
     ComponentRigidBody* pFulcrumRB = new ComponentRigidBody();
-    pFulcrum->AddComponent(pFulcrumRB);
-    pFulcrumRB->Init(new btBoxShape(btVector3(0.5f, 0.5f, 0.5f)), "Fulcrum", 0.0f, vec3(0.f), false);
+    pFulcrumObj->AddComponent(pFulcrumRB);
+    // Use a small static box for the fulcrum.
+    btVector3 fulcrumHalfExtents(1.0f, 1.0f, 1.0f);
+    pFulcrumRB->Init(new btBoxShape(fulcrumHalfExtents), "Fulcrum", 0.0f, vec3(0.0f), false);
 
-    btRigidBody* bodyA = pPlankRB->GetRigidBody();
-    btRigidBody* bodyB = pFulcrumRB->GetRigidBody();
-    vec3 pivotInA(0.f, 0.f, 0.f), pivotInB(0.f, 0.f, 0.f);
-    vec3 axisInA(0.f, 0.f, 1.f);
+    // Retrieve the rigid bodies.
+    btRigidBody* bodyPlank = pPlankRB->GetRigidBody();
+    btRigidBody* bodyFulcrum = pFulcrumRB->GetRigidBody();
 
-    btHingeConstraint* hinge = new btHingeConstraint(
-        *bodyA, *bodyB,
-        btVector3(pivotInA.x, pivotInA.y, pivotInA.z),
-        btVector3(pivotInB.x, pivotInB.y, pivotInB.z),
-        btVector3(axisInA.x, axisInA.y, axisInA.z),
-        btVector3(axisInA.x, axisInA.y, axisInA.z)
-    );
+    // Define pivot points in each body's local space.
+    // For the plank, we set the pivot at its bottom center.
+    btVector3 pivotPlank(0, -0.25f, 0);
+    // For the fulcrum, set the pivot at its top center.
+    btVector3 pivotFulcrum(0, 1.0f, 0);
+
+    // Define the hinge axis (rotate around the Z axis, so the plank will tilt forward/back).
+    btVector3 hingeAxis(0, 0, 1);
+
+    // Create the hinge constraint linking the plank and the fulcrum.
+    btHingeConstraint* hinge = new btHingeConstraint(*bodyPlank, *bodyFulcrum,
+        pivotPlank, pivotFulcrum,
+        hingeAxis, hingeAxis);
+    // Optionally, set limits to restrict the swing (e.g., ±90 degrees).
+    hinge->setLimit(-SIMD_HALF_PI, SIMD_HALF_PI);
+
+    // Add the constraint to the Bullet world.
     BulletPhysicsManager::Instance()->GetWorld()->addConstraint(hinge, true);
+    pPlankRB->AddConstraint(hinge);
 }
 
 void ExampleGame::TogglePause()

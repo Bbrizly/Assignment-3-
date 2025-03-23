@@ -105,13 +105,15 @@ void ComponentCharacterController::Update(float p_fDelta)
 
     btRigidBody* body = m_pRigidBody->GetRigidBody();
     btVector3 oldVel = body->getLinearVelocity();
-    float oldY = oldVel.getY();
+    const float gravity = -10.0f;
+
+    float newY = oldVel.getY() + gravity * p_fDelta;
 
     float lenMove = length(moveDir);
     if (lenMove > 0.001f) {
         moveDir = normalize(moveDir) * moveSpeed;
 
-        btVector3 newVel(moveDir.x, oldY, moveDir.z);
+        btVector3 newVel(moveDir.x, newY, moveDir.z);
         body->setLinearVelocity(newVel);
 
         float vx = newVel.x();
@@ -140,7 +142,7 @@ void ComponentCharacterController::Update(float p_fDelta)
     }
     else {
 
-        btVector3 newVel(0.f, oldY, 0.f);
+        btVector3 newVel(0.f, newY, 0.f);
         body->setLinearVelocity(newVel);
 
         if (m_pAnimComponent && (isRunningAnim || isWalkingAnim)) {

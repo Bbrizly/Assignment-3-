@@ -38,6 +38,17 @@ ComponentRigidBody::ComponentRigidBody()
 //------------------------------------------------------------------------------
 ComponentRigidBody::~ComponentRigidBody()
 {
+    btDiscreteDynamicsWorld* world = BulletPhysicsManager::Instance()->GetWorld();
+    for (auto* constraint : m_constraints)
+    {
+        if (constraint)
+        {
+            world->removeConstraint(constraint);
+            delete constraint;
+        }
+    }
+    m_constraints.clear();
+
     if (m_pBody)
     {
         BulletPhysicsManager::Instance()->GetWorld()->removeRigidBody(m_pBody);

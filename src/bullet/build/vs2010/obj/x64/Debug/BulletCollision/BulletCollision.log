@@ -55,10 +55,10 @@
   btOptimizedBvh.cpp
   btPolyhedralConvexShape.cpp
   btScaledBvhTriangleMeshShape.cpp
-D:\Projects\z\upei-csc4650-main\src\bullet\src\BulletCollision\CollisionShapes\btCompoundShape.cpp(81,51): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
-D:\Projects\z\upei-csc4650-main\src\bullet\src\BulletCollision\CollisionShapes\btCompoundShape.cpp(313,61): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
   btShapeHull.cpp
+D:\Projects\z\upei-csc4650-main\src\bullet\src\BulletCollision\CollisionShapes\btCompoundShape.cpp(81,51): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
   btSphereShape.cpp
+D:\Projects\z\upei-csc4650-main\src\bullet\src\BulletCollision\CollisionShapes\btCompoundShape.cpp(313,61): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
   btStaticPlaneShape.cpp
   btStridingMeshInterface.cpp
   btTetrahedronShape.cpp

@@ -29,6 +29,11 @@ namespace Common
 		virtual const std::string FamilyID(){ return std::string("GOC_RigidBody"); }
 		virtual void Update(float p_fDelta);
 
+		void AddConstraint(btTypedConstraint* constraint)
+		{
+			m_constraints.push_back(constraint);
+		}
+
 		static ComponentBase* CreateComponent(TiXmlNode* pNode);
 
 		btRigidBody* GetRigidBody()
@@ -73,6 +78,10 @@ namespace Common
 		std::string m_storedMaterial;
 		glm::vec3 m_storedOffset;
 		bool m_storedKinematic;
+
+
+		std::vector<btTypedConstraint*> m_constraints;
+
 
 	};
 }

@@ -27,7 +27,7 @@
 		<Param name="shape" value="capsule" />
 		<Param name="halfExtents" value="1.5 4 3" />
 		<Param name="material" value="Crate" />
-		<Param name="mass" value="2.0" />
+		<Param name="mass" value="200000000.0" />
 		<Param name="offset" value="0 -4 0" />
 		<Param name="kinematic" value="false" />
 		<Param name="disableDeactivation" value="true" />
