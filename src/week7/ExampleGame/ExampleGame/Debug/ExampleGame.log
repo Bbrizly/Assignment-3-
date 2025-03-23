@@ -1,49 +1,11 @@
-﻿  ComponentRigidBody.cpp
+﻿  ComponentCharacterController.cpp
 D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '../../common/ComponentRigidBody.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\common\ComponentRigidBody.cpp(214,25): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\common\ComponentRigidBody.cpp(222,25): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-D:\Projects\z\upei-csc4650-main\src\common\ComponentRigidBody.cpp(238,25): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  GameObject.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file '../../common/GameObject.cpp')
-  
-  ExampleGame.cpp
-D:\Projects\z\upei-csc4650-main\src\luaPlus\include\LuaCall.inl(122,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/ExampleGame.cpp')
+  (compiling source file 'src/ComponentCharacterController.cpp')
   
 D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ThirdPersonCamera.h(28,31): warning C4305: 'initializing': truncation from 'double' to 'float'
-  (compiling source file 'src/ExampleGame.cpp')
+  (compiling source file 'src/ComponentCharacterController.cpp')
   
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(129,26): warning C4129: ' ': unrecognized character escape sequence
-  (compiling source file 'src/ExampleGame.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(60,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/ExampleGame.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(66,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/ExampleGame.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentLookAtCamera.h(72,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/ExampleGame.cpp')
-  
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentThirdPersonCamera.h(70,29): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  (compiling source file 'src/ExampleGame.cpp')
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\minwindef.h(130,9): warning C4005: 'APIENTRY': macro redefinition
-  (compiling source file 'src/ExampleGame.cpp')
-      D:\Projects\z\upei-csc4650-main\src\glfw\include\GL\glfw.h(74,12):
-      see previous definition of 'APIENTRY'
-  
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\wingdi.h(36,9): warning C4005: 'WINGDIAPI': macro redefinition
-  (compiling source file 'src/ExampleGame.cpp')
-      D:\Projects\z\upei-csc4650-main\src\glfw\include\GL\glfw.h(91,11):
-      see previous definition of 'WINGDIAPI'
-  
-  Generating Code...
-D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\BoundingVolumeComponent.h(72,1): warning C4715: 'Common::BoundingVolumeComponent::CreateComponent': not all control paths return a value
-  LINK : D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\Debug\ExampleGame.exe not found or not built by the last incremental link; performing full link
+D:\Projects\z\upei-csc4650-main\src\week7\ExampleGame\src\ComponentCharacterController.cpp(49,26): warning C4129: 'S': unrecognized character escape sequence
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
 LINK : warning LNK4217: symbol '_fprintf' defined in 'Game.obj' is imported by 'GLFW.lib(win32_window.obj)' in function '_getFBConfigs'
 LINK : warning LNK4217: symbol '___iob_func' defined in 'Game.obj' is imported by 'GLFW.lib(win32_window.obj)' in function '_getFBConfigs'

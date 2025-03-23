@@ -3,10 +3,14 @@
   "WorkspaceRootPath": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ComponentCharacterController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -54,11 +58,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 187,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ComponentCharacterController.cpp",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp",
+              "RelativeDocumentMoniker": "src\\ComponentCharacterController.cpp",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp",
+              "RelativeToolTip": "src\\ComponentCharacterController.cpp",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAAAI4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-23T03:55:19.051Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -75,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "btRigidBody.h",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\bullet\\src\\BulletDynamics\\Dynamics\\btRigidBody.h",
               "RelativeDocumentMoniker": "..\\..\\bullet\\src\\BulletDynamics\\Dynamics\\btRigidBody.h",
@@ -88,20 +105,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ComponentRigidBody.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
               "RelativeDocumentMoniker": "..\\..\\common\\ComponentRigidBody.cpp",
               "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
               "RelativeToolTip": "..\\..\\common\\ComponentRigidBody.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAtwDIAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAkwCABAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-23T03:19:46.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "GameObject.h",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObject.h",
               "RelativeDocumentMoniker": "..\\..\\common\\GameObject.h",
@@ -114,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CoinSpawner.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp",
               "RelativeDocumentMoniker": "src\\CoinSpawner.cpp",
@@ -127,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CoinComponent.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.cpp",
               "RelativeDocumentMoniker": "src\\CoinComponent.cpp",
@@ -140,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BulletPhysicsManager.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\BulletPhysicsManager.cpp",
               "RelativeDocumentMoniker": "..\\..\\common\\BulletPhysicsManager.cpp",
@@ -153,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "BulletPhysicsManager.h",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\BulletPhysicsManager.h",
               "RelativeDocumentMoniker": "..\\..\\common\\BulletPhysicsManager.h",
@@ -166,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "EventManager.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\EventManager.cpp",
               "RelativeDocumentMoniker": "src\\EventManager.cpp",
@@ -178,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "SceneCamera.h",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\SceneCamera.h",
               "RelativeDocumentMoniker": "..\\..\\common\\SceneCamera.h",
@@ -190,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "GameObjectManager.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObjectManager.cpp",
               "RelativeDocumentMoniker": "..\\..\\common\\GameObjectManager.cpp",
@@ -202,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "HUD.h",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\HUD.h",
               "RelativeDocumentMoniker": "src\\HUD.h",
@@ -214,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "HUD.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\HUD.cpp",
               "RelativeDocumentMoniker": "src\\HUD.cpp",

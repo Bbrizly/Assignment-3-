@@ -110,6 +110,26 @@ void ComponentCharacterController::Update(float p_fDelta)
         btVector3 newVel(moveDir.x, 0, moveDir.z);
         body->setLinearVelocity(newVel);
 
+        float vx = newVel.x();
+        float vz = newVel.z();
+        float speed2D = std::sqrt(vx * vx + vz * vz);
+        if (speed2D > 0.001f) {
+            // compute heading
+            float angle = std::atan2(vx, vz); // rotate Y so: angle=atan2(X, Z)
+            // build a quaternion around Y only
+            btQuaternion rot(btVector3(0, 1, 0), angle);
+
+            btTransform currentTrans;
+            body->getMotionState()->getWorldTransform(currentTrans);
+            btVector3 pos = currentTrans.getOrigin();
+            currentTrans.setOrigin(pos);
+            currentTrans.setRotation(rot);
+
+            body->getMotionState()->setWorldTransform(currentTrans);
+
+        }
+
+
         if (m_pAnimComponent) {
             if (isRunning && !isRunningAnim) {
                 m_pAnimComponent->SetAnim("standard_run");
@@ -122,6 +142,9 @@ void ComponentCharacterController::Update(float p_fDelta)
                 isWalkingAnim = true;
             }
         }
+
+
+
     }
     else {
 
@@ -141,31 +164,10 @@ void ComponentCharacterController::Update(float p_fDelta)
 void ComponentCharacterController::CreateProjectile()
 {
 
-
-
-
     GameObject* pProjectile = GetGameObject()->GetManager()->CreateGameObject();
     // spawn at camera pos
     SceneCamera* cam = SceneManager::Instance()->GetCamera();
     if (!cam) return;
-
-
-
-    //GameObject* pCrate = GetGameObject()->GetManager()->CreateGameObject();
-    ////vec3 cratePos = pos + vec3(0.f, i * crateHeight, 0.f);
-    //pCrate->GetTransform().SetTranslation(cam->GetPos());
-
-    //ComponentRenderableMesh* pCrateMesh = new ComponentRenderableMesh();
-    //pCrateMesh->Init("data/As1/props/crate.pod",
-    //    "data/As1/props/",
-    //    "data/As1/shaders/textured.vsh",
-    //    "data/As1/shaders/textured.fsh");
-    //pCrate->AddComponent(pCrateMesh);
-
-    //ComponentRigidBody* pCrateRB = new ComponentRigidBody();
-    //pCrate->AddComponent(pCrateRB);
-    //btVector3 halfExtents(1.5f, 1.5f, 1.5f);
-    //pCrateRB->Init(new btBoxShape(halfExtents), "Crate", 2.0f, vec3(0.f), false);
 
 
     pProjectile->GetTransform().SetTranslation(cam->GetPos());
@@ -179,7 +181,7 @@ void ComponentCharacterController::CreateProjectile()
 
     ComponentRigidBody* pProjRB = new ComponentRigidBody();
     pProjectile->AddComponent(pProjRB);
-    pProjRB->Init(new btSphereShape(1.0f), "Projectile", 1.0f, vec3(0.0f), false);
+    pProjRB->Init(new btSphereShape(1.0f), "Bouncy", 1.0f, vec3(0.0f), false);
 
     vec3 lookDir = cam->GetLookDirection();
     float projectileSpeed = 50.f;

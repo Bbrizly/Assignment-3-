@@ -268,10 +268,8 @@ ComponentBase* ComponentRigidBody::CreateComponent(TiXmlNode* pNode)
 
 void ComponentRigidBody::Scale(const glm::vec3& scale)
 {
-    // If we have a shape, multiply its local scaling
     if (m_pCollisionShape)
     {
-        // bullet shape’s old scale
         btVector3 oldScale = m_pCollisionShape->getLocalScaling();
         btVector3 newScale(
             oldScale.x() * scale.x,
@@ -279,10 +277,8 @@ void ComponentRigidBody::Scale(const glm::vec3& scale)
             oldScale.z() * scale.z);
         m_pCollisionShape->setLocalScaling(newScale);
 
-        // Also if dynamic body, re-calc inertia
         if (m_pBody) {
-            //m_pBody->getInvMass
-            btScalar invMass = m_pBody->getInvMass(); // 0 => static or kinematic
+            btScalar invMass = m_pBody->getInvMass();
 
             if (invMass > 0.f) {
                 float mass = 1.f / invMass;
@@ -293,9 +289,7 @@ void ComponentRigidBody::Scale(const glm::vec3& scale)
         }
     }
     else {
-        // If shape not built yet, we can multiply the storedHalfExtents ourselves
-        // so it starts with that scale
-        m_storedHalfExtents *= scale;
+        m_storedHalfExtents = scale;
     }
 }
 
