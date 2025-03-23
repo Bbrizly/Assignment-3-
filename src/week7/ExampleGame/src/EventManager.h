@@ -41,7 +41,7 @@ namespace Common {
         }
 
         void TriggerEvent(const Event& e) {
-            std::cout << "Event Type: " << static_cast<int>(e.type) << "\n";
+            //std::cout << "Event Type: " << static_cast<int>(e.type) << "\n";
             auto it = m_listeners.find(e.type);
             if (it != m_listeners.end()) {
                 for (auto& listener : it->second) {

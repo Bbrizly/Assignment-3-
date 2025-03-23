@@ -136,7 +136,7 @@ bool ExampleGame::Init()
         "data/As3/shaders/lines.fsh"
     );
 
-    BulletPhysicsManager::Instance()->ToggleDebugRendering();
+    //BulletPhysicsManager::Instance()->ToggleDebugRendering();
 
     // Create environment
     //CreateWalls();

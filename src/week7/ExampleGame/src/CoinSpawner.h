@@ -35,7 +35,7 @@ namespace Common {
         float m_spawnInterval;
         int m_maxCoins;
         float m_timeSinceLastSpawn;
-        int coinValue;// = 100;
+        int coinValue;
         int CountActiveCoins();
         void SpawnCoin();
         std::string m_playerName;

@@ -13,7 +13,6 @@ void CoinLogic::Update(float deltaTime) {
         EventManager::Instance().TriggerEvent(e);
 
         GetGameObject()->MarkForDestruction();
-        //al;so delete tjhe shit
     }
 }
 
@@ -28,37 +27,53 @@ void CoinMovement::Update(float deltaTime) {
     t.Rotate(vec3(0.0f, m_rotationSpeed * deltaTime, 0.0f));
 }
 
-//void CoinCollision::Update(float deltaTime) {
-//    if (CollidesWithPlayer()) {
-//
-//        Event e;
-//        e.type = EventType::CoinCollected;
-//        e.sender = GetGameObject();
-//
-//        CoinScore* coinScore = dynamic_cast<CoinScore*>(GetGameObject()->GetComponent("GOC_CoinScore"));
-//        if (!coinScore) return;
-//        
-//        e.extra = reinterpret_cast<void*>(static_cast<intptr_t>(coinScore->GetValue()));
-//
-//        EventManager::Instance().TriggerEvent(e);
-//
-//        //g_playerGameObject->GetComponent("GOC_PlayerScore")->Update(deltaTime);
-//        if(!GetGameObject()->IsMarkedForDestruction())
-//            GetGameObject()->MarkForDestruction();
-//    }
-//}
+void CoinCollision::OnBulletCollision(const Event& e)
+{
+    GameObject* coinGO = GetGameObject();
+    if (!coinGO) return;
 
-//bool CoinCollision::CollidesWithPlayer() {
-//
-//    BoundingVolumeComponent* coinBV = dynamic_cast<BoundingVolumeComponent*>(GetGameObject()->GetComponent("GOC_BoundingVolume"));
-//    if (!coinBV) return false;
-//
-//    //GET player's vounding bolume
-//    if (!g_playerGameObject) return false;
-//    
-//    BoundingVolumeComponent* playerBV = dynamic_cast<BoundingVolumeComponent*>(g_playerGameObject->GetComponent("GOC_BoundingVolume"));
-//    if (!playerBV) return false;
-//
-//    //Check for collision
-//    return coinBV->GetVolume()->Overlaps(*playerBV->GetVolume());
-//}
+    GameObject* A = static_cast<GameObject*>(e.sender);
+    GameObject* B = static_cast<GameObject*>(e.extra);
+    if (!A || !B) return;
+
+    if (A != coinGO && B != coinGO)
+        return; // coin not in this collision
+
+    GameObject* other = (A == coinGO) ? B : A;
+
+    bool isPlayer = (other == g_playerGameObject);
+    bool isProjectile = false;
+
+    std::string otherName = other->GetGUID();
+    if (otherName.find("Projectile") != std::string::npos) {
+        isProjectile = true;
+    }
+
+    if (!isPlayer && !isProjectile)
+        return;
+
+    // Ok, so coin + (player or projectile). We'll "collect" or destroy coin
+    // Possibly also do score logic if it was a player
+    CoinScore* cScore = dynamic_cast<CoinScore*>(coinGO->GetComponent("GOC_CoinScore"));
+
+    // If you want to send a "CoinCollected" event with the coin's value:
+    Event e2;
+    e2.type = EventType::CoinCollected;
+    e2.sender = coinGO;
+    if (cScore) {
+        e2.extra = reinterpret_cast<void*>(static_cast<intptr_t>(cScore->GetValue()));
+    }
+    EventManager::Instance().TriggerEvent(e2);
+
+    // Mark coin for destruction
+    coinGO->MarkForDestruction();
+
+    // Optionally if a player is colliding, we add to the player's score directly
+    // if (isPlayer && cScore) {
+    //     PlayerScore* pScore = dynamic_cast<PlayerScore*>(other->GetComponent("GOC_PlayerScore"));
+    //     if (pScore) {
+    //         pScore->AddScore( cScore->GetValue() );
+    //     }
+    // }
+    // Then coin destroyed
+}

@@ -14,7 +14,7 @@
     <Param name="halfExtents" value="1.5 1.5 1.5" />
     <Param name="material" value="Normal" />
     <Param name="mass" value="2.0" />
-    <Param name="offset" value="0 0 0" />
+    <Param name="offset" value="0 -1.5 0" />
     <Param name="kinematic" value="false" />
   </GOC_RigidBody>
 </GameObject>

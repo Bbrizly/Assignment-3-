@@ -23,14 +23,12 @@ function init()
     gameObject = gameObjectManager:CreateGameObjectXML("data/scripts/ground.xml")
     gameObject = gameObjectManager:CreateGameObjectXML("data/scripts/lamppost.xml")
 
-    -- spawnCrateStacks()
+    spawnCrateStacks()
     spawnWalls()
     
     -- gameObject = gameObjectManager:CreateGameObjectXML("data/scripts/crate.xml")
 	-- transform = gameObject:GetTransform()
-    -- transform:Translate(0, 10, 0)
-
-    -- gameObject = gameObjectManager:CreateGameObjectXML("data/scripts/wall.xml")
+    -- transform:Translate(5, 1, 5)
 
     print("ENVIRONMENT DONE")
     return true
@@ -59,7 +57,7 @@ function spawnCrateStacks()
         { 10, 0, 10 }
     }
     local cratesPerStack = 9
-    local crateHeight = 2.0
+    local crateHeight = 3.0
     for i, pos in ipairs(stackPositions) do
         for j = 0, cratesPerStack - 1 do
             spawnCrate(pos[1], pos[2] + j * crateHeight, pos[3])
