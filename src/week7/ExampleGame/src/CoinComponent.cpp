@@ -13,6 +13,7 @@ void CoinLogic::Update(float deltaTime) {
         EventManager::Instance().TriggerEvent(e);
 
         GetGameObject()->MarkForDestruction();
+        //al;so delete tjhe shit
     }
 }
 

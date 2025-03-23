@@ -1,0 +1,20 @@
+<!-- Crate.xml -->
+<GameObject>
+
+  <!-- <Transform scale="5.0 1.0 5.0"/> -->
+
+  <GOC_RenderableMesh>
+    <Param name="modelFile" value="data/As1/props/crate.pod"/>
+    <Param name="modelPath" value="data/As1/props/"/>
+    <Param name="vertexShader" value="data/As1/shaders/textured.vsh"/>
+    <Param name="fragmentShader" value="data/As1/shaders/textured.fsh"/>
+  </GOC_RenderableMesh>
+  <GOC_RigidBody>
+    <Param name="shape" value="box" />
+    <Param name="halfExtents" value="1.5 1.5 1.5" />
+    <Param name="material" value="Normal" />
+    <Param name="mass" value="2.0" />
+    <Param name="offset" value="0 0 0" />
+    <Param name="kinematic" value="false" />
+  </GOC_RigidBody>
+</GameObject>

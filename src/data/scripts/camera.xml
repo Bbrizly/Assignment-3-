@@ -18,7 +18,7 @@
       <Param name="nearPlane" value="0.1"/>
       <Param name="farPlane"  value="1000"/>
       <Param name="distance" value="25"/>
-      <Param name="targetOffset" value="0 5 0"/>
+      <Param name="targetOffset" value="0 8 0"/>
       <Param name="playerObjectName" value="playerChar"/>
     </GOC_ThirdPersonCamera>
 

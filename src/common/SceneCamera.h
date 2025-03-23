@@ -52,12 +52,18 @@ namespace Common
 
 		const glm::mat4& GetProjectionMatrix() const;
 		virtual const glm::mat4& GetViewMatrix() const;
-
+		
 		glm::vec3 GetLookDirection()
 		{
-			return (glm::normalize(m_vTarget - m_vPos));
+			const glm::mat4& view = GetViewMatrix();
+			glm::mat4 invView = glm::inverse(view);
+
+			glm::vec4 localForward(0.0f, 0.0f, -1.0f, 0.0f);
+
+			glm::vec4 worldForward = invView * localForward;
+			return glm::normalize(glm::vec3(worldForward));
 		}
-			
+
 		glm::vec3 GetPosition()
 		{
 			return m_vPos;

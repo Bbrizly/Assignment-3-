@@ -140,11 +140,10 @@ bool ExampleGame::Init()
 
     // Create environment
     //CreateWalls();
-    CreateCrateStacks();
+    //CreateCrateStacks();
     //CreateLamppost();
     //CreateTeeterTotter();
 
-    // Attempt to load from script or XML
 #if defined(_WIN32)
     GameObjectManager::ExportToLua();
     ExampleGame::ExportToLua();
@@ -170,7 +169,6 @@ bool ExampleGame::Init()
     }
 #endif
 
-    // Suppose we gave the player object a name "playerChar" in XML
     m_pCharacter = m_pGameObjectManager->GetGameObject("playerChar");
     if (!m_pCharacter) {
         std::cerr << "[WARNING] Player character object not found in XML.\n";
@@ -194,14 +192,6 @@ bool ExampleGame::Update(float p_fDelta)
         BulletPhysicsManager::Instance()->Update(p_fDelta);
         m_pGameObjectManager->Update(p_fDelta);
         EventManager::Instance().Update();
-
-        // Fire projectile on left mouse
-        /*static bool bLastMouseDown = false;
-        bool bCurrentMouseDown = (glfwGetMouseButton(GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS);
-        if (bCurrentMouseDown && !bLastMouseDown) {
-            CreateProjectile();
-        }
-        bLastMouseDown = bCurrentMouseDown;*/
     }
     else if (m_state == PAUSED) {
         m_pGameObjectManager->Update(0.0f);

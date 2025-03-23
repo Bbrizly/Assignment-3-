@@ -3,28 +3,34 @@
   "WorkspaceRootPath": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ComponentCharacterController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ExampleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\CoinComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ComponentCharacterController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\CoinSpawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\BulletPhysicsManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\BulletPhysicsManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\EventManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\EventManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\SceneCamera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObjectManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\HUD.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -33,22 +39,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\HUD.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\HUD.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\CoinSpawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\CoinComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\EventManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\EventManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\CoinComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -67,84 +57,108 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ComponentRigidBody.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
-              "RelativeDocumentMoniker": "..\\..\\common\\ComponentRigidBody.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
-              "RelativeToolTip": "..\\..\\common\\ComponentRigidBody.cpp",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAowMIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T02:20:39.427Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ComponentCharacterController.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp",
-              "RelativeDocumentMoniker": "src\\ComponentCharacterController.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp",
-              "RelativeToolTip": "src\\ComponentCharacterController.cpp",
-              "ViewState": "AgIAAHAAAAAAAAAAAAArwL4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-22T22:59:11.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ExampleGame.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp",
-              "RelativeDocumentMoniker": "src\\ExampleGame.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp",
-              "RelativeToolTip": "src\\ExampleGame.cpp",
-              "ViewState": "AgIAAAEBAAAAAAAAAAAtwBQBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-19T09:44:16.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "ComponentRigidBody.h",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.h",
               "RelativeDocumentMoniker": "..\\..\\common\\ComponentRigidBody.h",
               "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.h",
               "RelativeToolTip": "..\\..\\common\\ComponentRigidBody.h",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAowB8AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T01:59:12.337Z",
+              "WhenOpened": "2025-03-23T03:19:52.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ComponentRigidBody.cpp",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
+              "RelativeDocumentMoniker": "..\\..\\common\\ComponentRigidBody.cpp",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
+              "RelativeToolTip": "..\\..\\common\\ComponentRigidBody.cpp",
+              "ViewState": "AgIAADEAAAAAAAAAAAAowP0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-23T03:19:46.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CoinSpawner.cpp",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp",
+              "RelativeDocumentMoniker": "src\\CoinSpawner.cpp",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp",
+              "RelativeToolTip": "src\\CoinSpawner.cpp",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowG0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-19T22:37:34.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CoinComponent.cpp",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.cpp",
+              "RelativeDocumentMoniker": "src\\CoinComponent.cpp",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.cpp",
+              "RelativeToolTip": "src\\CoinComponent.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-19T22:33:51.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ComponentCharacterController.h",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.h",
-              "RelativeDocumentMoniker": "src\\ComponentCharacterController.h",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.h",
-              "RelativeToolTip": "src\\ComponentCharacterController.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-23T01:40:28.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GameObject.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObject.cpp",
-              "RelativeDocumentMoniker": "..\\..\\common\\GameObject.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObject.cpp",
-              "RelativeToolTip": "..\\..\\common\\GameObject.cpp",
-              "ViewState": "AgIAAIQAAAAAAAAAAAArwJYAAAAAAAAAAAAAAA==",
+              "Title": "BulletPhysicsManager.cpp",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\BulletPhysicsManager.cpp",
+              "RelativeDocumentMoniker": "..\\..\\common\\BulletPhysicsManager.cpp",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\BulletPhysicsManager.cpp",
+              "RelativeToolTip": "..\\..\\common\\BulletPhysicsManager.cpp",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAkwOYAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-22T22:14:08.752Z",
+              "WhenOpened": "2025-03-23T02:45:25.077Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "BulletPhysicsManager.h",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\BulletPhysicsManager.h",
+              "RelativeDocumentMoniker": "..\\..\\common\\BulletPhysicsManager.h",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\BulletPhysicsManager.h",
+              "RelativeToolTip": "..\\..\\common\\BulletPhysicsManager.h",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAowEwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-23T02:45:24.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EventManager.cpp",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\EventManager.cpp",
+              "RelativeDocumentMoniker": "src\\EventManager.cpp",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\EventManager.cpp",
+              "RelativeToolTip": "src\\EventManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-23T02:44:36.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SceneCamera.h",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\SceneCamera.h",
+              "RelativeDocumentMoniker": "..\\..\\common\\SceneCamera.h",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\SceneCamera.h",
+              "RelativeToolTip": "..\\..\\common\\SceneCamera.h",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAtwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-23T02:32:59.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "GameObjectManager.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\GameObjectManager.cpp",
               "RelativeDocumentMoniker": "..\\..\\common\\GameObjectManager.cpp",
@@ -152,24 +166,11 @@
               "RelativeToolTip": "..\\..\\common\\GameObjectManager.cpp",
               "ViewState": "AgIAAOcAAAAAAAAAAAAtwBsBAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-22T22:17:24.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-22T22:17:24.675Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CoinSpawner.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp",
-              "RelativeDocumentMoniker": "src\\CoinSpawner.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinSpawner.cpp",
-              "RelativeToolTip": "src\\CoinSpawner.cpp",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAYwCIAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-19T22:37:34.005Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "HUD.h",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\HUD.h",
               "RelativeDocumentMoniker": "src\\HUD.h",
@@ -177,12 +178,11 @@
               "RelativeToolTip": "src\\HUD.h",
               "ViewState": "AgIAABAAAAAAAAAAAADgvycAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-19T22:39:28.658Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T22:39:28.658Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "HUD.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\HUD.cpp",
               "RelativeDocumentMoniker": "src\\HUD.cpp",
@@ -190,44 +190,7 @@
               "RelativeToolTip": "src\\HUD.cpp",
               "ViewState": "AgIAAFwAAAAAAAAAAAAYwGsAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-19T22:39:31.003Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "EventManager.h",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\EventManager.h",
-              "RelativeDocumentMoniker": "src\\EventManager.h",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\EventManager.h",
-              "RelativeToolTip": "src\\EventManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-19T22:35:16.892Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CoinComponent.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.cpp",
-              "RelativeDocumentMoniker": "src\\CoinComponent.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.cpp",
-              "RelativeToolTip": "src\\CoinComponent.cpp",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwDAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-19T22:33:51.713Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CoinComponent.h",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.h",
-              "RelativeDocumentMoniker": "src\\CoinComponent.h",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\CoinComponent.h",
-              "RelativeToolTip": "src\\CoinComponent.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAADgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-19T22:34:01.468Z"
+              "WhenOpened": "2025-03-19T22:39:31.003Z"
             }
           ]
         }

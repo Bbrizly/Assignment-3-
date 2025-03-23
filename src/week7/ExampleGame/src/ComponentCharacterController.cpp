@@ -151,24 +151,24 @@ void ComponentCharacterController::CreateProjectile()
 
 
 
-    GameObject* pCrate = GetGameObject()->GetManager()->CreateGameObject();
-    //vec3 cratePos = pos + vec3(0.f, i * crateHeight, 0.f);
-    pCrate->GetTransform().SetTranslation(cam->GetPos());
+    //GameObject* pCrate = GetGameObject()->GetManager()->CreateGameObject();
+    ////vec3 cratePos = pos + vec3(0.f, i * crateHeight, 0.f);
+    //pCrate->GetTransform().SetTranslation(cam->GetPos());
 
-    ComponentRenderableMesh* pCrateMesh = new ComponentRenderableMesh();
-    pCrateMesh->Init("data/As1/props/crate.pod",
-        "data/As1/props/",
-        "data/As1/shaders/textured.vsh",
-        "data/As1/shaders/textured.fsh");
-    pCrate->AddComponent(pCrateMesh);
+    //ComponentRenderableMesh* pCrateMesh = new ComponentRenderableMesh();
+    //pCrateMesh->Init("data/As1/props/crate.pod",
+    //    "data/As1/props/",
+    //    "data/As1/shaders/textured.vsh",
+    //    "data/As1/shaders/textured.fsh");
+    //pCrate->AddComponent(pCrateMesh);
 
-    ComponentRigidBody* pCrateRB = new ComponentRigidBody();
-    pCrate->AddComponent(pCrateRB);
-    btVector3 halfExtents(1.5f, 1.5f, 1.5f);
-    pCrateRB->Init(new btBoxShape(halfExtents), "Crate", 2.0f, vec3(0.f), false);
+    //ComponentRigidBody* pCrateRB = new ComponentRigidBody();
+    //pCrate->AddComponent(pCrateRB);
+    //btVector3 halfExtents(1.5f, 1.5f, 1.5f);
+    //pCrateRB->Init(new btBoxShape(halfExtents), "Crate", 2.0f, vec3(0.f), false);
 
 
-    /*pProjectile->GetTransform().SetTranslation(cam->GetPos());
+    pProjectile->GetTransform().SetTranslation(cam->GetPos());
 
     ComponentRenderableMesh* pProjMesh = new ComponentRenderableMesh();
     pProjMesh->Init("data/As1/props/ball.pod",
@@ -186,5 +186,5 @@ void ComponentCharacterController::CreateProjectile()
     btVector3 velocity(lookDir.x * projectileSpeed,
         lookDir.y * projectileSpeed,
         lookDir.z * projectileSpeed);
-    pProjRB->GetRigidBody()->setLinearVelocity(velocity);*/
+    pProjRB->GetRigidBody()->setLinearVelocity(velocity);
 }

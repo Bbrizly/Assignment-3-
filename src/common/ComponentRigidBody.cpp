@@ -97,6 +97,7 @@ void ComponentRigidBody::Init(btCollisionShape* p_pCollisionShape, const std::st
 
     // Add rigid body to the world
     BulletPhysicsManager::Instance()->GetWorld()->addRigidBody(m_pBody);
+    m_bInitialized = true;
 }
 
 //------------------------------------------------------------------------------

@@ -3,4 +3,5 @@
 	<Normal friction="0.5" restitution="0.25" />
 	<Bouncy friction="0.5" restitution="0.95" />
 	<Slippery friction="0.0" restitution="0.25" />
+	<Crate friction="0.5" restitution="0.25" />
 </physics_materials>
