@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ComponentCharacterController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
@@ -11,10 +15,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ExampleGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|solutionrelative:src\\ComponentCharacterController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA478063-BFB3-4543-88C4-B41CF132F6F0}|ExampleGame.vcxproj|D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -58,41 +58,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 187,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ComponentRigidBody.cpp",
-              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
-              "RelativeDocumentMoniker": "..\\..\\common\\ComponentRigidBody.cpp",
-              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
-              "RelativeToolTip": "..\\..\\common\\ComponentRigidBody.cpp",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAowPsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-23T02:20:39.427Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "ComponentRigidBody.cpp",
+              "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
+              "RelativeDocumentMoniker": "..\\..\\common\\ComponentRigidBody.cpp",
+              "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.cpp",
+              "RelativeToolTip": "..\\..\\common\\ComponentRigidBody.cpp",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAowMIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-23T02:20:39.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ComponentCharacterController.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp",
               "RelativeDocumentMoniker": "src\\ComponentCharacterController.cpp",
               "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.cpp",
               "RelativeToolTip": "src\\ComponentCharacterController.cpp",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAowKgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAArwJMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-22T22:59:11.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ExampleGame.cpp",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ExampleGame.cpp",
               "RelativeDocumentMoniker": "src\\ExampleGame.cpp",
@@ -105,13 +105,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ComponentRigidBody.h",
               "DocumentMoniker": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.h",
               "RelativeDocumentMoniker": "..\\..\\common\\ComponentRigidBody.h",
               "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\common\\ComponentRigidBody.h",
               "RelativeToolTip": "..\\..\\common\\ComponentRigidBody.h",
-              "ViewState": "AgIAABAAAAAAAAAAAAAowB8AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAowB8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-23T01:59:12.337Z",
               "EditorCaption": ""
@@ -124,7 +124,7 @@
               "RelativeDocumentMoniker": "src\\ComponentCharacterController.h",
               "ToolTip": "D:\\Projects\\z\\upei-csc4650-main\\src\\week7\\ExampleGame\\src\\ComponentCharacterController.h",
               "RelativeToolTip": "src\\ComponentCharacterController.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-23T01:40:28.325Z",
               "EditorCaption": ""
