@@ -1,6 +1,6 @@
 <!-- character.xml -->
 <GameObject name ="playerChar">
-    <Transform scale="0.05 0.05 0.05" translation="0 0 0" rotation="0 0 0" />
+    <Transform scale="0.05 0.05 0.05" translation="0 2 0" rotation="0 0 0" />
 	<!-- <Transform scale="1 1 1" translation="0 0 0" rotation="0 0 0" /> -->
 
 	<GOC_AnimController>
@@ -24,14 +24,14 @@
 	</GOC_RenderableMesh>
 
 	<GOC_RigidBody>
-		<Param name="shape" value="box" />
-		<Param name="halfExtents" value="1.5 1.5 1.5" />
+		<Param name="shape" value="capsule" />
+		<Param name="halfExtents" value="1.5 4 3" />
 		<Param name="material" value="Crate" />
 		<Param name="mass" value="2.0" />
-		<Param name="offset" value="0 0 0" />
+		<Param name="offset" value="0 -4 0" />
 		<Param name="kinematic" value="false" />
+		<Param name="disableDeactivation" value="true" />
 	</GOC_RigidBody>
-
 
 	<GOC_CharacterController />
 	<GOC_PlayerScore />

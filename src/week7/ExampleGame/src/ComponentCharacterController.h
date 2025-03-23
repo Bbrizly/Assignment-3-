@@ -30,6 +30,8 @@ namespace week7
 
         static Common::ComponentBase* CreateComponent(TiXmlNode* p_pNode);
 
+        void CreateProjectile();
+
         virtual const std::string FamilyID() override { return std::string("GOC_CharacterController"); }
         virtual const std::string ComponentID() override { return std::string("GOC_CharacterController"); }
         virtual void Update(float p_fDelta) override;

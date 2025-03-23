@@ -9,4 +9,13 @@
         <Param name="fragmentShader" value="data/As1/shaders/point_light.fsh"/>
 	</GOC_RenderableMesh>
 
+    <GOC_RigidBody>
+		<Param name="shape" value="box" />
+		<Param name="halfExtents" value="100.0 0.1 100.0" />
+		<Param name="material" value="Crate" />
+		<Param name="mass" value="0.0" />
+		<Param name="offset" value="0 0 0" />
+		<Param name="kinematic" value="false" />
+	</GOC_RigidBody>
+
 </GameObject>

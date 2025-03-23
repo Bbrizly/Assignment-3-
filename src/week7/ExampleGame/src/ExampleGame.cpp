@@ -1,8 +1,6 @@
-﻿// Finalized submission for Assignment #3: Physics Playground (including bonus)
-
-#include "ExampleGame.h"
+﻿#include "ExampleGame.h"
 #include "ComponentAnimController.h"
-#include "ComponentCharacterController.h"   // Our custom velocity-based character
+#include "ComponentCharacterController.h"
 #include "ComponentRenderableMesh.h"
 #include "ComponentRigidBody.h"
 #include "BulletPhysicsManager.h"
@@ -138,9 +136,11 @@ bool ExampleGame::Init()
         "data/As3/shaders/lines.fsh"
     );
 
+    BulletPhysicsManager::Instance()->ToggleDebugRendering();
+
     // Create environment
     //CreateWalls();
-    //CreateCrateStacks();
+    CreateCrateStacks();
     //CreateLamppost();
     //CreateTeeterTotter();
 
@@ -196,17 +196,15 @@ bool ExampleGame::Update(float p_fDelta)
         EventManager::Instance().Update();
 
         // Fire projectile on left mouse
-        static bool bLastMouseDown = false;
+        /*static bool bLastMouseDown = false;
         bool bCurrentMouseDown = (glfwGetMouseButton(GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS);
         if (bCurrentMouseDown && !bLastMouseDown) {
             CreateProjectile();
         }
-        bLastMouseDown = bCurrentMouseDown;
+        bLastMouseDown = bCurrentMouseDown;*/
     }
     else if (m_state == PAUSED) {
-        // no Bullet update => objects are 'frozen'
-        // only update the HUD if you want
-        m_pGameObjectManager->Update(0.0f); // or partial
+        m_pGameObjectManager->Update(0.0f);
     }
 
     return true;
@@ -214,10 +212,14 @@ bool ExampleGame::Update(float p_fDelta)
 
 void ExampleGame::Render()
 {
+
     // sync transforms to pass them into the Wolf model rendering
     m_pGameObjectManager->SyncTransforms();
-
     SceneManager::Instance()->Render();
+
+    BulletPhysicsManager::Instance()->Render(
+        SceneManager::Instance()->GetCamera()->GetProjectionMatrix(),
+        SceneManager::Instance()->GetCamera()->GetViewMatrix());
 
     if (m_state == PAUSED) {
         RenderPauseOverlay();
@@ -268,25 +270,6 @@ void ExampleGame::CreateWalls()
         pWall->AddComponent(pWallRB);
         btVector3 halfExtents(wall.scale.x * 0.5f, wall.scale.y * 0.5f, wall.scale.z * 0.5f);
         pWallRB->Init(new btBoxShape(halfExtents), "Wall", 0.0f, vec3(0.0f), false);
-    }
-
-    // Also create a ground plane
-    {
-        GameObject* pGround = m_pGameObjectManager->CreateGameObject();
-        ComponentRenderableMesh* pGrMesh = new ComponentRenderableMesh();
-        pGrMesh->Init("data/As1/props/ground.pod",
-            "data/As1/props/",
-            "data/As1/shaders/textured.vsh",
-            "data/As1/shaders/textured.fsh");
-        pGround->AddComponent(pGrMesh);
-        pGround->GetTransform().SetTranslation(vec3(0.0f, 0.0f, 0.0f));
-        pGround->GetTransform().SetScale(vec3(100.f, 1.f, 100.f));
-
-        ComponentRigidBody* pGrRB = new ComponentRigidBody();
-        pGround->AddComponent(pGrRB);
-        // Big box shape for ground
-        btVector3 groundExtents(50.f, 0.5f, 50.f);
-        pGrRB->Init(new btBoxShape(groundExtents), "Ground", 0.0f, vec3(0.f), false);
     }
 }
 
@@ -383,36 +366,6 @@ void ExampleGame::CreateTeeterTotter()
         btVector3(axisInA.x, axisInA.y, axisInA.z)
     );
     BulletPhysicsManager::Instance()->GetWorld()->addConstraint(hinge, true);
-}
-
-void ExampleGame::CreateProjectile()
-{
-    GameObject* pProjectile = m_pGameObjectManager->CreateGameObject();
-    // spawn at camera pos
-    SceneCamera* cam = SceneManager::Instance()->GetCamera();
-    if (!cam) return;
-
-    pProjectile->GetTransform().SetTranslation(cam->GetPos());
-    // sphere mesh
-    ComponentRenderableMesh* pProjMesh = new ComponentRenderableMesh();
-    pProjMesh->Init("data/As1/props/ball.pod",
-        "data/As1/props/",
-        "data/shaders/textured.vsh",
-        "data/shaders/textured.fsh");
-    pProjectile->AddComponent(pProjMesh);
-
-    // bullet shape
-    ComponentRigidBody* pProjRB = new ComponentRigidBody();
-    pProjectile->AddComponent(pProjRB);
-    pProjRB->Init(new btSphereShape(0.5f), "Projectile", 1.0f, vec3(0.0f), false);
-
-    // set velocity
-    vec3 lookDir = cam->GetLookDirection();
-    float projectileSpeed = 50.f;
-    btVector3 velocity(lookDir.x * projectileSpeed,
-        lookDir.y * projectileSpeed,
-        lookDir.z * projectileSpeed);
-    pProjRB->GetRigidBody()->setLinearVelocity(velocity);
 }
 
 void ExampleGame::TogglePause()

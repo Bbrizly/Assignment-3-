@@ -20,10 +20,10 @@ using namespace Common;
 // Constructor.
 //------------------------------------------------------------------------------
 ComponentRigidBody::ComponentRigidBody()
-	:
-	m_pBody(NULL),
-	m_pCollisionShape(NULL),
-	m_bKinematic(false)
+    :
+    m_pBody(NULL),
+    m_pCollisionShape(NULL),
+    m_bKinematic(false)
 {
 }
 
@@ -49,49 +49,54 @@ ComponentRigidBody::~ComponentRigidBody()
 //------------------------------------------------------------------------------
 void ComponentRigidBody::Init(btCollisionShape* p_pCollisionShape, const std::string& p_strMaterial, float p_fMass, const glm::vec3& p_vOffset, bool p_bIsKinematic)
 {
-	m_pCollisionShape = p_pCollisionShape;
-	m_bKinematic = p_bIsKinematic;
-	m_vOffset = p_vOffset;
+    m_pCollisionShape = p_pCollisionShape;
+    m_bKinematic = p_bIsKinematic;
+    m_vOffset = p_vOffset;
 
-	// Set mass
-	btScalar mass(p_fMass);
-	bool isDynamic = (mass != 0.f);
-	btVector3 localInertia(0,0,0);
-	if (isDynamic)
-	{
-		m_pCollisionShape->calculateLocalInertia(mass, localInertia);
-	}
+    // Set mass
+    btScalar mass(p_fMass);
+    bool isDynamic = (mass != 0.f);
+    btVector3 localInertia(0, 0, 0);
+    if (isDynamic)
+    {
+        m_pCollisionShape->calculateLocalInertia(mass, localInertia);
+    }
 
-	// Set initial transform
-	Transform& transform = this->GetGameObject()->GetTransform();
-	btTransform startTransform;
-	startTransform.setIdentity();
-	startTransform.setOrigin(btVector3(transform.GetTranslation().x, transform.GetTranslation().y, transform.GetTranslation().z));
+    // Set initial transform
+    Transform& transform = this->GetGameObject()->GetTransform();
+    btTransform startTransform;
+    startTransform.setIdentity();
+    startTransform.setOrigin(btVector3(transform.GetTranslation().x, transform.GetTranslation().y, transform.GetTranslation().z));
 
-	// Setup the motion state
-	btDefaultMotionState* myMotionState = new btDefaultMotionState(startTransform);
-	btRigidBody::btRigidBodyConstructionInfo rbInfo(mass, myMotionState, m_pCollisionShape, localInertia);
+    // Setup the motion state
+    btDefaultMotionState* myMotionState = new btDefaultMotionState(startTransform);
+    btRigidBody::btRigidBodyConstructionInfo rbInfo(mass, myMotionState, m_pCollisionShape, localInertia);
 
-	// Material specific properties
-	BulletPhysicsMaterialManager::PhysicsMaterial* pMaterial = BulletPhysicsManager::Instance()->GetMaterial(p_strMaterial);
-	if (pMaterial)
-	{
-		rbInfo.m_restitution = pMaterial->restitution;
-		rbInfo.m_friction = pMaterial->friction;
-	}
+    // Material specific properties
+    BulletPhysicsMaterialManager::PhysicsMaterial* pMaterial = BulletPhysicsManager::Instance()->GetMaterial(p_strMaterial);
+    if (pMaterial)
+    {
+        rbInfo.m_restitution = pMaterial->restitution;
+        rbInfo.m_friction = pMaterial->friction;
+    }
 
-	m_pBody = new btRigidBody(rbInfo);
-	m_pBody->setUserPointer(this->GetGameObject());
+    m_pBody = new btRigidBody(rbInfo);
+    m_pBody->setUserPointer(this->GetGameObject());
 
-	// Set kinematic flags if this rigid body is manually positioned
-	if (m_bKinematic)
-	{
-		m_pBody->setCollisionFlags( m_pBody->getCollisionFlags() | btCollisionObject::CF_KINEMATIC_OBJECT);
-		m_pBody->setActivationState(DISABLE_DEACTIVATION);
-	}
+    // Set kinematic flags if this rigid body is manually positioned
+    if (m_bKinematic)
+    {
+        m_pBody->setCollisionFlags(m_pBody->getCollisionFlags() | btCollisionObject::CF_KINEMATIC_OBJECT);
+        m_pBody->setActivationState(DISABLE_DEACTIVATION);
+    }
+    else if (m_disabledDeactivation)
+    {
+        m_pBody->setActivationState(DISABLE_DEACTIVATION);
+    }
 
-	// Add rigid body to the world
-	BulletPhysicsManager::Instance()->GetWorld()->addRigidBody(m_pBody);
+
+    // Add rigid body to the world
+    BulletPhysicsManager::Instance()->GetWorld()->addRigidBody(m_pBody);
 }
 
 //------------------------------------------------------------------------------
@@ -116,6 +121,10 @@ void ComponentRigidBody::Update(float p_fDelta)
         {
             shape = new btSphereShape(m_storedHalfExtents.x);
         }
+        else if (m_storedShape == "capsule")
+        {
+            shape = new btCapsuleShape(m_storedHalfExtents.x, m_storedHalfExtents.y);
+        }
         else
         {
             shape = new btBoxShape(btVector3(m_storedHalfExtents.x,
@@ -127,35 +136,35 @@ void ComponentRigidBody::Update(float p_fDelta)
     }
 
 
-	if (m_bKinematic)
-	{
-		// Get the rigid body transform
-		btTransform trans;
-		m_pBody->getMotionState()->getWorldTransform(trans);
+    if (m_bKinematic)
+    {
+        // Get the rigid body transform
+        btTransform trans;
+        m_pBody->getMotionState()->getWorldTransform(trans);
 
-		// Apply to the rigid body
-		const glm::vec3& vPosition = this->GetGameObject()->GetTransform().GetTranslation();
-		const glm::quat& qRotation = this->GetGameObject()->GetTransform().GetRotation();
-		trans.setOrigin(btVector3(vPosition.x, vPosition.y, vPosition.z) - btVector3(m_vOffset.x, m_vOffset.y, m_vOffset.z));
-		trans.setRotation(btQuaternion(qRotation.x, qRotation.y, qRotation.z, qRotation.w));
-		m_pBody->getMotionState()->setWorldTransform(trans);
-	}
-	else
-	{
-		// Get the rigid body transform
-		btTransform trans;
-		m_pBody->getMotionState()->getWorldTransform(trans);
+        // Apply to the rigid body
+        const glm::vec3& vPosition = this->GetGameObject()->GetTransform().GetTranslation();
+        const glm::quat& qRotation = this->GetGameObject()->GetTransform().GetRotation();
+        trans.setOrigin(btVector3(vPosition.x, vPosition.y, vPosition.z) - btVector3(m_vOffset.x, m_vOffset.y, m_vOffset.z));
+        trans.setRotation(btQuaternion(qRotation.x, qRotation.y, qRotation.z, qRotation.w));
+        m_pBody->getMotionState()->setWorldTransform(trans);
+    }
+    else
+    {
+        // Get the rigid body transform
+        btTransform trans;
+        m_pBody->getMotionState()->getWorldTransform(trans);
 
-		// Rotation and translation
-		glm::quat qRot = glm::quat(trans.getRotation().getW(), trans.getRotation().getX(), trans.getRotation().getY(), trans.getRotation().getZ());
-		glm::vec3 vPos = glm::vec3(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ());
-		glm::vec3 vOffset = glm::mat3_cast(qRot) * m_vOffset;
+        // Rotation and translation
+        glm::quat qRot = glm::quat(trans.getRotation().getW(), trans.getRotation().getX(), trans.getRotation().getY(), trans.getRotation().getZ());
+        glm::vec3 vPos = glm::vec3(trans.getOrigin().getX(), trans.getOrigin().getY(), trans.getOrigin().getZ());
+        glm::vec3 vOffset = glm::mat3_cast(qRot) * m_vOffset;
 
-		// Apply to the game object
-		Transform& transform = this->GetGameObject()->GetTransform();
-		transform.SetTranslation(vPos + vOffset);
-		transform.SetRotation(qRot);
-	}
+        // Apply to the game object
+        Transform& transform = this->GetGameObject()->GetTransform();
+        transform.SetTranslation(vPos + vOffset);
+        transform.SetRotation(qRot);
+    }
 }
 
 ComponentBase* ComponentRigidBody::CreateComponent(TiXmlNode* pNode)
@@ -168,6 +177,7 @@ ComponentBase* ComponentRigidBody::CreateComponent(TiXmlNode* pNode)
     std::string material = "Crate";
     glm::vec3 offset(0.0f);
     bool kinematic = false;
+    bool disabledDeactivation = false;
 
     TiXmlNode* pChild = pNode->FirstChild();
     while (pChild)
@@ -219,6 +229,10 @@ ComponentBase* ComponentRigidBody::CreateComponent(TiXmlNode* pNode)
                 {
                     kinematic = (std::strcmp(paramValue, "true") == 0);
                 }
+                else if (std::strcmp(paramName, "disableDeactivation") == 0)
+                {
+                    disabledDeactivation = (std::strcmp(paramValue, "true") == 0);
+                }
             }
         }
         pChild = pChild->NextSibling();
@@ -231,6 +245,8 @@ ComponentBase* ComponentRigidBody::CreateComponent(TiXmlNode* pNode)
     rB->m_storedOffset = offset;
     rB->m_storedKinematic = kinematic;
     rB->m_bInitialized = false;
+    rB->m_disabledDeactivation = disabledDeactivation;
+
 
     return rB;
 }

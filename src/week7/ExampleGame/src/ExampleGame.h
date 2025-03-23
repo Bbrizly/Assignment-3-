@@ -1,18 +1,4 @@
-﻿// ExampleGame.h
-// Finalized header for Assignment #3: Physics Playground
-// Created: 2025/03/18
-// Author: Your Name
-//
-// This class implements the main game. It creates:
-//   • 4 stacks of 9 crates each,
-//   • Brick walls enclosing the world,
-//   • A lamppost as an extra rigid body obstacle,
-//   • Projectile spawning on mouse click,
-//   • Collision detection via Bullet for coins, character, walls, lamppost, crates, ground, etc.,
-//   • A pause state (toggled via an on-screen button or by key 'P') where physics are frozen and the scene still draws in the background,
-//   • A minimal teeter‐totter bonus prop using a hinge constraint (or anything else interesting).
-
-#ifndef WEEK7_EXAMPLEGAME_H
+﻿#ifndef WEEK7_EXAMPLEGAME_H
 #define WEEK7_EXAMPLEGAME_H
 
 #include "common/Game.h"
@@ -39,8 +25,6 @@
 
 namespace week7 {
 
-    // A simple enumerated game state if you do not want to push/pop states
-    // but the assignment wants you to have a push/pop. Here we keep both ways for illustration.
     enum GameState { GAMEPLAY, PAUSED };
 
     class ExampleGame : public Common::Game {
@@ -62,31 +46,23 @@ namespace week7 {
 #endif
 
     private:
-        static ExampleGame* s_pInstance;  // for Lua bridging
+        static ExampleGame* s_pInstance;
 
-        // Managers & scene
         Common::GameObjectManager* m_pGameObjectManager;
         GameState m_state;
-        Common::GameObject* m_pCharacter; // pointer to player char
+        Common::GameObject* m_pCharacter;
 
-        // Optional: main camera pointer if you want to keep it around
         Common::SceneCamera* m_pSceneCamera;
 
-        // Basic helper functions
         void CreateWalls();
         void CreateCrateStacks();
-        void CreateLamppost();                // Extra obstacle
-        void CreateTeeterTotter();            // Bonus constraint example
+        void CreateLamppost();
+        void CreateTeeterTotter();
         void CreateProjectile();
         void TogglePause();
-        void RenderPauseOverlay();            // "PAUSED" text or background
+        void RenderPauseOverlay();
 
-        // We store time just for minimal illusions
         float m_timeSinceLastUpdate = 0.0f;
-
-        // For demonstration, we do not push/pop states with the StateMachine,
-        // but you can do so if you prefer. The assignment wants a push/pop approach
-        // for the paused overlay. That is left flexible.
 
     };
 

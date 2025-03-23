@@ -33,6 +33,10 @@ namespace Common
 
 		btRigidBody* GetRigidBody()
 		{
+			if (!m_bInitialized)
+			{
+				this->Update(0.0f);
+			}
 			return m_pBody;
 		}
 
@@ -53,6 +57,7 @@ namespace Common
 		glm::vec3 m_vOffset;
 
 		bool m_bKinematic;
+		bool m_disabledDeactivation = false;
 
 		//initalization shit
 		bool m_bInitialized = false;
