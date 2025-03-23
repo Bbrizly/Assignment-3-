@@ -74,6 +74,7 @@ namespace Common {
                         }
                         else if (strcmp(szName, "playerObjectName") == 0)
                         {
+                            //std::cout << "Lookat\n-----------\n\n\n\n" << szValue << "\n\n\n-----";
                             comp->m_playerName = szValue;
                         }
                     }
@@ -104,13 +105,17 @@ namespace Common {
 
             }
 
+            //std::cout << "\n\Qaa\n\n";
             if (Common::SceneManager::Instance()->GetCamera() == m_camera)
             {
+                //std::cout << "\n\ZZZZZ\n\n";
                 if (GetGameObject() && GetGameObject()->GetManager())
                 {
                     GameObject* playerGO = GetGameObject()->GetManager()->GetGameObject(m_playerName);
+                    //std::cout << m_playerName << " - - WHAT\n\n";
                     if (playerGO)
                     {
+                        //std::cout << "\n\AH\n\n";
                         glm::vec3 playerPos = playerGO->GetTransform().GetTranslation();
                         m_camera->SetTarget(playerPos);
                     }
@@ -121,7 +126,6 @@ namespace Common {
 
         void MakeActive()
         {
-            std::cout << "\n\ 1A\n\n";
             if (m_camera)
             {
                 Common::SceneManager::Instance()->AttachCamera(m_camera);

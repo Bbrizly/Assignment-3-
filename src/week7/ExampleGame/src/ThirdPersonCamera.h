@@ -5,7 +5,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
-namespace week2 {
+namespace week7 {
 
     class ThirdPersonCamera : public Common::SceneCamera
     {
@@ -17,6 +17,8 @@ namespace week2 {
         void Rotate(float yaw, float pitch, const glm::vec2& mouseMovement);
         void SetTarget(const glm::vec3& target);
         void SwitchShoulder();
+
+        bool lockMouse = true;
 
     private:
         glm::vec2 currentMousePos;
@@ -39,6 +41,6 @@ namespace week2 {
 
     };
 
-} // namespace week2
+} // namespace week7
 
 #endif // THIRDPERSONCAMERA_H

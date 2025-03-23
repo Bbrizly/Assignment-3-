@@ -10,6 +10,7 @@
 #include <glm/glm.hpp>
 #include <string>
 #include <cmath>
+#include "PlayerScore.h"
 
 namespace Common {
 
@@ -39,18 +40,6 @@ namespace Common {
         float m_time;
     };
 
-    class CoinCollision : public ComponentBase {
-    public:
-        CoinCollision(GameObject* player) : g_playerGameObject(player) {}
-        virtual void Update(float deltaTime) override;
-        virtual const std::string FamilyID() override { return "GOC_CoinCollision"; }
-        virtual const std::string ComponentID() override { return "GOC_CoinCollision"; }
-    private:
-        bool CollidesWithPlayer();
-        GameObject* g_playerGameObject = nullptr;
-        
-    };
-
     class CoinScore : public ComponentBase {
     public:
         CoinScore(int value) : m_value(value) {}
@@ -61,6 +50,24 @@ namespace Common {
     private:
         int m_value;
     };
+
+    class CoinCollision : public ComponentBase {
+    public:
+        CoinCollision(GameObject* playerGameObject) : g_playerGameObject(playerGameObject)
+        {
+            EventManager::Instance().AddListener(EventType::GameObjectCollision,
+                [this](const Event& e) { OnBulletCollision(e); });
+        }
+
+        virtual void Update(float /*deltaTime*/) override {}
+        virtual const std::string FamilyID()    override { return "GOC_CoinCollision"; }
+        virtual const std::string ComponentID() override { return "GOC_CoinCollision"; }
+
+    private:
+        void OnBulletCollision(const Event& e);
+        GameObject* g_playerGameObject = nullptr;
+    };
+
 
 } // namespace Common
 

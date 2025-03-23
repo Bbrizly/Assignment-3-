@@ -7,6 +7,7 @@
 // Manager to handle integration and initialization with Bullet.
 //------------------------------------------------------------------------
 
+#include "../week7/ExampleGame/src/EventManager.h"
 #include "BulletPhysicsManager.h"
 #include "GameObject.h"
 #include <cassert>
@@ -211,10 +212,8 @@ BulletPhysicsMaterialManager::PhysicsMaterial* BulletPhysicsManager::GetMaterial
 //------------------------------------------------------------------------------
 void BulletPhysicsManager::TickCallback(btDynamicsWorld *p_pWorld, btScalar p_fTimeStep)
 {
-	// This is a static callback, so we need to get the BulletPhysicsManager instance from the world user info.
 	BulletPhysicsManager* pPhysicsManagerInstance = static_cast<BulletPhysicsManager*>(p_pWorld->getWorldUserInfo());
 
-	// Check for collisions
 	int numManifolds = p_pWorld->getDispatcher()->getNumManifolds();
 	for (int i = 0; i < numManifolds; ++i)
 	{
@@ -234,8 +233,21 @@ void BulletPhysicsManager::TickCallback(btDynamicsWorld *p_pWorld, btScalar p_fT
 				const btVector3& ptB = pt.getPositionWorldOnB();
 				const btVector3& normalOnB = pt.m_normalWorldOnB;
 
-				// TODO: do something with the collision here; perhaps store a list of contact pairs in order to generate and queue an event?
+
+				//FOR TRIGGERING EVENTS ON EVERY COLLISION
+				Event e;
+				e.type = EventType::GameObjectCollision;
+				e.sender = (void*)pGameObjectA;
+				e.extra = (void*)pGameObjectB;
+				EventManager::Instance().TriggerEvent(e);
+
+				Event e2;
+				e2.type = EventType::GameObjectCollision;
+				e2.sender = (void*)pGameObjectB;
+				e2.extra = (void*)pGameObjectA;
+				EventManager::Instance().TriggerEvent(e2);
 			}
 		}
+
 	}
 }

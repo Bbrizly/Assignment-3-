@@ -14,3 +14,12 @@ _deps
 /src/week7/ExampleGame/.vs
 /src/week7/ExampleGame/.vs
 /src/week7/ExampleGame/.vs
+src/week7/ExampleGame/.vs/ExampleGame/v17/Browse.VC.db
+*.db
+/src/week7/ExampleGame/Debug
+/src/week7/ExampleGame/.vs/ExampleGame/v17
+/src/week7/ExampleGame/ExampleGame/Debug
+/src/week7/ExampleGame/ExampleGame/Debug
+*.obj
+*.tlog
+/src/week7/ExampleGame/ExampleGame/Debug

@@ -4,7 +4,7 @@
 #include "ComponentThirdPersonCamera.h"
 #include "tinyxml.h"
 #include <string>
-#include <GL/glfw.h>  // for glfwGetKey() etc.
+#include <GL/glfw.h> 
 
 namespace Common {
 

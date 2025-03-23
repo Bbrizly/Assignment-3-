@@ -51,8 +51,8 @@ public:
         glm::vec4 transformedCenter = worldTransform * glm::vec4(m_localCenter, 1.0f);
         center = glm::vec3(transformedCenter);
 
-        std::cout << "\nLocal center:"<< m_localCenter.x << ", " << m_localCenter.y << ", " << m_localCenter.z <<
-            "\nCenter: " << center.x << ", " << center.y << ", " << center.z;
+        //std::cout << "\nLocal center:"<< m_localCenter.x << ", " << m_localCenter.y << ", " << m_localCenter.z <<
+            //"\nCenter: " << center.x << ", " << center.y << ", " << center.z;
 
         float scaleX = glm::length(glm::vec3(worldTransform[0]));
         float scaleY = glm::length(glm::vec3(worldTransform[1]));

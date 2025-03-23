@@ -40,6 +40,7 @@ namespace Common
 		const glm::vec3& GetPos() const;
 		void Update(float deltaTime)
 		{
+			if (deltaTime == 0) return;
 			UpdateTarget(m_vTarget);
 		}
 
@@ -52,6 +53,22 @@ namespace Common
 
 		const glm::mat4& GetProjectionMatrix() const;
 		virtual const glm::mat4& GetViewMatrix() const;
+		
+		glm::vec3 GetLookDirection()
+		{
+			const glm::mat4& view = GetViewMatrix();
+			glm::mat4 invView = glm::inverse(view);
+
+			glm::vec4 localForward(0.0f, 0.0f, -1.0f, 0.0f);
+
+			glm::vec4 worldForward = invView * localForward;
+			return glm::normalize(glm::vec3(worldForward));
+		}
+
+		glm::vec3 GetPosition()
+		{
+			return m_vPos;
+		}
 
 		glm::vec3 m_vPos;
 

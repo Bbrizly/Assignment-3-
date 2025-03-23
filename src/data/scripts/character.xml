@@ -1,0 +1,45 @@
+<!-- character.xml -->
+<GameObject name ="playerChar">
+    <Transform scale="0.05 0.05 0.05" translation="0 2 0" rotation="0 0 0" />
+	<!-- <Transform scale="1 1 1" translation="0 0 0" rotation="0 0 0" /> -->
+
+	<GOC_AnimController>
+		<Anim name="idle" resource="data/characters/swat/anim/idle.pod" start="0" end="31" loop="true"/>
+		<Anim name="walking" resource="data/characters/swat/anim/walking.pod" start="0" end="31" loop="true"/>
+		<Anim name="right_strafe" resource="data/characters/swat/anim/right_strafe.pod" start="0" end="31" loop="true"/>
+		<Anim name="right_strafe_walking" resource="data/characters/swat/anim/right_strafe_walking.pod" start="0" end="31" loop="true"/>
+		<Anim name="jump" resource="data/characters/swat/anim/jump.pod" start="0" end="31" loop="false"/>
+		<Anim name="left_strafe" resource="data/characters/swat/anim/left_strafe.pod" start="0" end="31" loop="true"/>
+		<Anim name="left_strafe_walking" resource="data/characters/swat/anim/left_strafe_walking.pod" start="0" end="31" loop="true"/>
+		<Anim name="left_turn_90" resource="data/characters/swat/anim/left_turn_90.pod" start="0" end="31" loop="false"/>
+		<Anim name="right_turn_90" resource="data/characters/swat/anim/right_turn_90.pod" start="0" end="31" loop="false"/>
+		<Anim name="standard_run" resource="data/characters/swat/anim/standard_run.pod" start="0" end="22" loop="true"/>
+	</GOC_AnimController>
+
+	<GOC_RenderableMesh>
+    	<Param name="modelFile" value="data/characters/swat/Swat.pod" />
+		<Param name="modelPath" value="data/characters/swat/" />
+		<Param name="vertexShader" value="data/As1/shaders/skinned.vsh"/>
+		<Param name="fragmentShader" value="data/As1/shaders/skinned.fsh"/>
+	</GOC_RenderableMesh>
+
+	<GOC_RigidBody>
+		<Param name="shape" value="capsule" />
+		<Param name="halfExtents" value="1.5 4 3" />
+		<Param name="material" value="Crate" />
+		<Param name="mass" value="2.0" />
+		<Param name="offset" value="0 -4 0" />
+		<Param name="kinematic" value="false" />
+		<Param name="disableDeactivation" value="true" />
+	</GOC_RigidBody>
+
+	<GOC_CharacterController />
+	<GOC_PlayerScore />
+
+	<GOC_BoundingVolume>
+        <Param name="volumeType" value="Sphere" />
+        <Param name="center" value="0 80 0" />
+        <Param name="radius" value="30.0" />
+	</GOC_BoundingVolume>
+
+</GameObject>

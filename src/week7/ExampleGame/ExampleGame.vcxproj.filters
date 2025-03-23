@@ -425,5 +425,6 @@
     <ClInclude Include="src\SphereVolume.h">
       <Filter>bounding</Filter>
     </ClInclude>
+    <ClInclude Include="src\ComponentProjectile.h" />
   </ItemGroup>
 </Project>

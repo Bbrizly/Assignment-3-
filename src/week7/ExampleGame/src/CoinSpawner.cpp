@@ -43,6 +43,10 @@ void CoinSpawner::SpawnCoin() {
 
     coin->AddComponent(pCoinMesh);
 
+    ComponentRigidBody* pCoinRB = new ComponentRigidBody();
+    coin->AddComponent(pCoinRB);
+    pCoinRB->Init(new btSphereShape(2.0f), "Normal", 0.0f, vec3(0.f), true);
+
     //COIN BOUNDING
     SphereVolume* coinSphere = new SphereVolume(glm::vec3(0.0f), 5.0f);
     coin->AddComponent(new BoundingVolumeComponent(coinSphere));

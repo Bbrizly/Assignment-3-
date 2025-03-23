@@ -86,7 +86,7 @@ SceneManager::~SceneManager()
 	}
 }
 
-void SceneManager::AddTextBox(string text, float x, float y, float width, float height)
+TextBox* SceneManager::AddTextBox(string text, float x, float y, float width, float height)
 {
 	if (!m_textRenderer)
 	{
@@ -94,13 +94,14 @@ void SceneManager::AddTextBox(string text, float x, float y, float width, float 
 		m_textRenderer = new TextRenderer();
 		m_textRenderer->init();
 		m_font = m_textRenderer->createFont("Arial"); //"data/Fonts/Arial"
-
 	}
 	TextBox* txtBox = m_textRenderer->createTextBox(m_font, text, x, y, width, height);
 	txtBox->SetColor(0, 0, 0, 255);
 	txtBox->SetAlignment(1);
 	txtBox->SetVerticalAlignment(1);
 	m_textRenderer->setTextBox(txtBox);
+
+	return txtBox;
 }
 
 TextBox* SceneManager::GetTextBox(int id)

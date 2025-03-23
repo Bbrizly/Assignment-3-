@@ -12,6 +12,7 @@
 
 #include "btBulletDynamicsCommon.h"
 #include "ComponentBase.h"
+#include "tinyxml.h"
 
 namespace Common
 {
@@ -28,27 +29,51 @@ namespace Common
 		virtual const std::string FamilyID(){ return std::string("GOC_RigidBody"); }
 		virtual void Update(float p_fDelta);
 
+		static ComponentBase* CreateComponent(TiXmlNode* pNode);
+
+		btRigidBody* GetRigidBody()
+		{
+			if (!m_bInitialized)
+			{
+				this->Update(0.0f);
+			}
+			return m_pBody;
+		}
+
 		//------------------------------------------------------------------------------
 		// Public methods for "GOC_RigidBody" family of components
 		//------------------------------------------------------------------------------
 		virtual void Init(btCollisionShape* p_pCollisionShape, const std::string& p_strMaterial, float p_fMass, const glm::vec3& p_vOffset, bool p_bIsKinematic = false);
+
+		void Scale(const glm::vec3& scale);
+		void ScaleXYZ(float sx, float sy, float sz) { Scale(glm::vec3(sx, sy, sz)); }
+		#if defined(_WIN32)
+			static void ExportToLua();
+		#endif
 
 	private:
 		//------------------------------------------------------------------------------
 		// Private members.
 		//------------------------------------------------------------------------------
 
-		// Bullet physics rigid body
 		btRigidBody* m_pBody;
 
-		// Collision shape
 		btCollisionShape* m_pCollisionShape;
 
-		// Offset from rigid body
 		glm::vec3 m_vOffset;
 
-		// Is Physics controlled or manually controlled
 		bool m_bKinematic;
+		bool m_disabledDeactivation = false;
+
+		//initalization shit
+		bool m_bInitialized = false;
+		std::string m_storedShape;
+		glm::vec3 m_storedHalfExtents;
+		float m_storedMass;
+		std::string m_storedMaterial;
+		glm::vec3 m_storedOffset;
+		bool m_storedKinematic;
+
 	};
 }
 

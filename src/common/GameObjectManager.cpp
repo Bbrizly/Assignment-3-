@@ -148,9 +148,28 @@ GameObject* GameObjectManager::CreateGameObject(const std::string& p_strGameObje
 
 	// Look for <GameObject>
 	TiXmlNode* pNode = doc.FirstChild("GameObject");
-	if (!pNode) return nullptr;
 
+	if (!pNode) return nullptr;
 	GameObject* pGO = new GameObject(this);
+
+
+	//std::cout << "Q\n";
+	TiXmlElement* pElem = doc.FirstChildElement("GameObject");
+	if (pElem)
+	{
+		//std::cout << "A\n";
+		const char* customName = pElem->Attribute("name");
+		//std::cout << "O\n";
+		if (customName)
+		{
+			//std::cout << "E -"<< customName <<"- E\n";
+			//SetGameObjectGUID(pGO, customName);
+			pGO->SetGUID(customName);
+			//std::cout << "Z -" << pGO->GetGUID() << "- Z\n";
+		}
+	}
+
+
 	m_mGOMap.insert(std::make_pair(pGO->GetGUID(), pGO));
 
 	// We do TWO passes:
@@ -215,59 +234,6 @@ GameObject* GameObjectManager::CreateGameObject(const std::string& p_strGameObje
 }
 
 
-/*
-//------------------------------------------------------------------------------
-// Method:    CreateGameObject
-// Parameter: const std::string & p_strGameObject
-// Returns:   GameObject*
-// 
-// Factory creation method for GameObjects defined by an XML file. Returns NULL
-// if the GameObject couldn't be properly constructed.
-//------------------------------------------------------------------------------
-GameObject* GameObjectManager::CreateGameObject(const std::string& p_strGameObject)
-{
-	
-	// Load the document and return NULL if it fails to parse
-	TiXmlDocument doc(p_strGameObject.c_str());
-	if (doc.LoadFile() == false)
-	{
-		return NULL;
-	}
-
-	// Look for the root "GameObject" node and return NULL if it's missing
-	TiXmlNode* pNode = doc.FirstChild("GameObject");
-	if (pNode == NULL)
-	{
-		return NULL;
-	}
-
-	// Create the game object
-	GameObject* pGO = new GameObject(this);
-	std::cout << "Name: " << pGO->GetGUID() << "\n\n";
-	m_mGOMap.insert(std::pair<std::string, GameObject*>(pGO->GetGUID(), pGO));
-
-	// Iterate components in the XML and delegate to factory methods to construct components
-	TiXmlNode* pComponentNode = pNode->FirstChild();
-	while (pComponentNode != NULL)
-	{
-		const char* szComponentName = pComponentNode->Value();
-		ComponentFactoryMap::iterator it = m_mComponentFactoryMap.find(szComponentName);
-		if (it != m_mComponentFactoryMap.end())
-		{
-			ComponentFactoryMethod factory = it->second;
-			ComponentBase* pComponent = factory(pComponentNode);
-			if (pComponent != NULL)
-			{
-				pGO->AddComponent(pComponent);
-			}
-		}
-
-		pComponentNode = pComponentNode->NextSibling();
-	}
-		
-	return pGO;
-}
-*/
 //------------------------------------------------------------------------------
 // Method:    RegisterComponentFactory
 // Parameter: const std::string & p_strComponentId

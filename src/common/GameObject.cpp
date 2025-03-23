@@ -167,6 +167,7 @@ void GameObject::ExportToLua()
 
 	// Register methods
 	metaTable.RegisterObjectDirect("GetTransform", (GameObject*) 0, &GameObject::GetTransformLua);
+	metaTable.RegisterObjectDirect("GetRigidBody", (GameObject*) 0,	&GameObject::GetRigidBodyLua);
 	metaTable.RegisterObjectDirect("AddComponent", (GameObject*) 0, &GameObject::AddComponentLua);
 }
 
@@ -217,5 +218,22 @@ LuaPlus::LuaObject GameObject::GetTransformLua()
 
 	return luaInstance;
 }
+
+LuaPlus::LuaObject GameObject::GetRigidBodyLua()
+{
+	LuaPlus::LuaObject luaInstance;
+	ComponentBase* comp = this->GetComponent("GOC_RigidBody");
+	if (comp)
+	{
+		luaInstance.AssignNewTable(LuaScriptManager::Instance()->GetLuaState());
+		luaInstance.SetLightUserData("__object", comp);
+
+		LuaPlus::LuaObject metaTable = LuaScriptManager::Instance()->GetLuaState()->GetGlobals().GetByName("ComponentRigidBodyMetaTable");
+		luaInstance.SetMetaTable(metaTable);
+	}
+	return luaInstance;
+}
+
+
 
  #endif

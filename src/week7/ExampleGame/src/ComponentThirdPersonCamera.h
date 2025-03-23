@@ -72,6 +72,7 @@ namespace Common {
                         }
                         else if (strcmp(szName, "playerObjectName") == 0)
                         {
+                            //std::cout << "Thirdperson\n-----------\n\n\n\n" << szValue << "\n\n\n-----";
                             comp->m_playerName = szValue;
                         }
                     }
@@ -91,7 +92,7 @@ namespace Common {
 
             if (!m_camera)
             {
-                m_camera = new week2::ThirdPersonCamera(
+                m_camera = new week7::ThirdPersonCamera(
                     m_fov, m_aspect, m_near, m_far,
                     glm::vec3(0.0f),
                     m_distance
@@ -122,13 +123,13 @@ namespace Common {
             }
         }
 
-        week2::ThirdPersonCamera* GetCamera() { return m_camera; }
+        week7::ThirdPersonCamera* GetCamera() { return m_camera; }
 
         virtual const std::string FamilyID()    override { return "GOC_ThirdPersonCamera"; }
         virtual const std::string ComponentID() override { return "GOC_ThirdPersonCamera"; }
 
     private:
-        week2::ThirdPersonCamera* m_camera;
+        week7::ThirdPersonCamera* m_camera;
 
         float m_fov;
         float m_aspect;

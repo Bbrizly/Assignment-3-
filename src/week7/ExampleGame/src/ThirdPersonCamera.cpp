@@ -4,7 +4,7 @@
 
 using namespace std;
 
-using namespace week2;
+using namespace week7;
 
 ThirdPersonCamera::ThirdPersonCamera(float p_fFOV, float p_fAspectRatio, float p_fNearClip, float p_fFarClip,
     const glm::vec3& target, float distance)
@@ -20,6 +20,14 @@ ThirdPersonCamera::ThirdPersonCamera(float p_fFOV, float p_fAspectRatio, float p
 }
 
 void ThirdPersonCamera::Update(float deltaTime) {
+
+    if (deltaTime == 0) return;
+
+    if (glfwGetKey(GLFW_KEY_TAB) == GLFW_PRESS)
+    {
+        lockMouse = !lockMouse;
+    }
+
     ProcessMouseInput();
     UpdateCameraPosition();
 }
@@ -35,8 +43,19 @@ void ThirdPersonCamera::ProcessMouseInput() {
     if (glm::length(mouseMovement) > 0.01f)
     {
         Rotate(mouseMovement.x * m_sensitivity, -mouseMovement.y * m_sensitivity);
-        glfwSetMousePos(640, 360);
-        m_lastMousePos = glm::vec2(640, 360);
+
+        if (lockMouse)
+        {
+            glfwSetMousePos(640, 360);
+            m_lastMousePos = glm::vec2(640, 360);
+            glfwDisable(GLFW_MOUSE_CURSOR);
+        }
+        else
+        {
+            glfwGetMousePos(&xpos, &ypos);
+            m_lastMousePos = glm::vec2(xpos, ypos);
+            glfwEnable(GLFW_MOUSE_CURSOR);
+        }
     }
     static bool bLastShoulderKeyDown = false;
     bool bShoulderKeyDown = glfwGetKey('Q') || glfwGetKey('q');

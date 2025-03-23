@@ -67,6 +67,14 @@ public:
     // (This is called automatically if you used ObserveTextID)
     void OnTextTableChanged();
 
+    //Get size
+    float getPosX() { return m_positionX; }
+    float getPosY() { return m_positionY; }
+    float getBPosX() { return m_basePositionX; }
+    float getBPosY() { return m_basePositionY; }
+    float getWidth() { return m_width; }
+    float getHeight() { return m_height; }
+
 private:
     void GenerateVertices();
     string SubstitutePlaceholders(const string& raw) const;

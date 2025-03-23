@@ -1,0 +1,19 @@
+<GameObject>
+	<GOC_AnimController>
+		<Anim name="idle" start="1" end="120" loop="true" />
+		<Anim name="run" start="252" end="276" loop="true" />
+		<Anim name="walk" start="305" end="340" loop="true" />
+	</GOC_AnimController>
+	
+	<GOC_RenderableMesh>
+		<Model path="assignment2/data/character/vincent.pod" />
+		<Textures path="assignment2/data/character/" />
+		<VertexProgram path="assignment2/data/shaders/skinned.vsh" />
+		<FragmentProgram path="assignment2/data/shaders/skinned.fsh" />
+	</GOC_RenderableMesh>
+	
+	<GOC_CollisionSphere>
+		<Radius value="3.0f" />
+	</GOC_CollisionSphere>
+	
+</GameObject>
