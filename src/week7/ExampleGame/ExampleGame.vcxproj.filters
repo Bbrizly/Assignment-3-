@@ -179,6 +179,36 @@
     <ClCompile Include="src\SphereVolume.cpp">
       <Filter>bounding</Filter>
     </ClCompile>
+    <ClCompile Include="src\AIActionNode.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AIDecisionNode.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AIDecisionTree.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AIPathfinder.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AIStateChasing.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AIStateChasingFast.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AIStateIdle.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AIStateWander.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentAIController.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\common\StateMachine.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="wolf">
@@ -198,6 +228,9 @@
     </Filter>
     <Filter Include="bounding">
       <UniqueIdentifier>{93023546-b9f8-44c2-b8b3-a57a8fdd49ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai">
+      <UniqueIdentifier>{d8fbbb80-56b9-4732-8984-b81ffa15ae9b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -426,5 +459,41 @@
       <Filter>bounding</Filter>
     </ClInclude>
     <ClInclude Include="src\ComponentProjectile.h" />
+    <ClInclude Include="src\AIActionNode.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIDecisionNode.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIDecisionTree.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AINode.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIPathfinder.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIStateChasing.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIStateChasingFast.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIStateIdle.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AIStateWander.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentAIController.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\StateBase.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\common\StateMachine.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
